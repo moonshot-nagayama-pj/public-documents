@@ -19,8 +19,16 @@ Central to photonic ES is the Hong-Ou-Mandel (HOM) effect, regardless of the pho
 in this section, we give a brief overview of this effect.
 
 Consider two indistinguishable photons incident on a 50:50 beamsplitter (BS).
-One photon is in the input mode _a_, while the pther photon is in the other input mode _b_.
+One photon is in the input mode _a_, while the pther photon is in the other input mode _b_, as shown in the Figure below.
 
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
 </p>
+
+There are four possible cases that may occur:
+- Case A: photon in mode _a_ is reflected, while photon in mode _b_ is transmitted.
+- Case B: both photons are transmitted.
+- Case C: both photons are reflected
+- Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
+
+However, if the photons are completely indistinguishable (same frequency, polarization and arive at the BS at the same time), Cases B and C are never observed.
