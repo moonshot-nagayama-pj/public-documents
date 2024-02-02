@@ -21,4 +21,6 @@ in this section, we give a brief overview of this effect.
 Consider two indistinguishable photons incident on a 50:50 beamsplitter (BS).
 One photon is in the input mode _a_, while the pther photon is in the other input mode _b_.
 
-![](https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png)
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
+</p>
