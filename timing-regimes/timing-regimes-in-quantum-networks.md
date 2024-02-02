@@ -11,3 +11,12 @@ H. __host-side application-level tasks (e.g. post-measurement operations):__ mil
 I. __background tasks (link tomography calculations, routing table updates):__ seconds to minutes  
 
 Some of these can only be achieved using high-quality hardware, while others are software tasks. Detailed analysis of these regimes will affect core software design in each network node type.
+
+## Hong-Ou-Mandel Effect
+
+Entnaglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
+Central to photonic ES is the Hong-Ou-Mandel (HOM) effect, regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
+in this section, we give a brief overview of this effect.
+
+Consider two indistinguishable photons incident on a 50:50 beamsplitter (BS).
+A single-photon detector (SPD) is placed in each output mode of the BS.
