@@ -19,4 +19,6 @@ Central to photonic ES is the Hong-Ou-Mandel (HOM) effect, regardless of the pho
 in this section, we give a brief overview of this effect.
 
 Consider two indistinguishable photons incident on a 50:50 beamsplitter (BS).
-A single-photon detector (SPD) is placed in each output mode of the BS.
+One photon is in the input mode _a_, while the pther photon is in the other input mode _b_.
+
+![](https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png)
