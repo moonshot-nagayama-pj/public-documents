@@ -40,3 +40,4 @@ $$\hat{a} \rightarrow \frac{\hat{c}+\hat{d}}{\sqrt{2}},\qquad\text{ and}\qquad\h
 The minus sign ensures that the transformation is unitary.
 The initial state is transformed to the following output state,
 $$|1,1\rangle_{\text{ab}} = \hat{a}^{\dagger}\hat{b}^{\dagger}|0,0\rangle_{\text{ab}} \rightarrow \frac{1}{2}\left(\hat{c}^{\dagger}+\hat{d}^{\dagger}\right)\left(\hat{c}^{\dagger}-\hat{d}^{\dagger}\right)|0,0\rangle_{\text{cd}}=\frac{1}{\sqrt{2}}\left(|2,0\rangle_{\text{cd}}-|0,2\rangle_{\text{cd}}\right).$$
+This shows that both photons are found in the same output mode of the BS with equal probability of $1/2$.
