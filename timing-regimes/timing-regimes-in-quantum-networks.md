@@ -15,11 +15,13 @@ Some of these can only be achieved using high-quality hardware, while others are
 ## Hong-Ou-Mandel Effect
 
 Entnaglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
-Central to photonic ES is the Hong-Ou-Mandel (HOM) effect, regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
+Central to photonic ES is the Hong-Ou-Mandel (HOM) effect [1], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
 in this section, we give a brief overview of this effect.
 
-Consider two indistinguishable photons incident on a 50:50 beamsplitter (BS).
-One photon is in the input mode _a_, while the other photon is in the other input mode _b_, as shown in the Figure below.
+Consider two photons incident on a beamsplitter (BS) with reflectivity $\eta$.
+We label the input modes as _a_ and _b_.
+The output modes of the BS are labelled with _a_ and _b_ as well, with the understanding that if output mode _a_ corresponds to input mode _a_ being transmitted.
+Similarly for output mode _b_, as shown in the Figure below.
 
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
@@ -48,3 +50,8 @@ In order to observe the HOM effect, the two input photons must in __indistinguis
 
 Partial distinguishability of the photons will result in a finite probability of observing coincidence events.
 In the context of photonic ES, the effect is to reduce the fidelity of the end-to-end qubit pair.
+
+
+## References
+
+[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).
