@@ -32,8 +32,6 @@ There are four possible cases that may occur:
 - Case C: both photons are reflected
 - Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
 
-However, if the photons are completely indistinguishable (frequency, polarization, arrival time at the BS), Cases B and C are never observed due to destructive interference of their corresponding probability amplitudes.
-
 The input modes are described by bosonic creation/annihilation operators $\hat{a}/\hat{a}^{\dagger}$ and $\hat{b}/\hat{b}^{\dagger}$, while the output modes are described by $\hat{c}/\hat{c}^{\dagger}$ and $\hat{d}/\hat{d}^{\dagger}$.
 The individual input modes are transformed at the BS according to the following rule,
 $$\hat{a} \rightarrow \frac{\hat{c}+\hat{d}}{\sqrt{2}},\qquad\text{ and}\qquad\hat{b} \rightarrow \frac{\hat{c}-\hat{d}}{\sqrt{2}}.$$
@@ -41,3 +39,12 @@ The minus sign ensures that the transformation is unitary.
 The initial state is transformed to the following output state,
 $$|1,1\rangle_{\text{ab}} = \hat{a}^{\dagger}\hat{b}^{\dagger}|0,0\rangle_{\text{ab}} \rightarrow \frac{1}{2}\left(\hat{c}^{\dagger}+\hat{d}^{\dagger}\right)\left(\hat{c}^{\dagger}-\hat{d}^{\dagger}\right)|0,0\rangle_{\text{cd}}=\frac{1}{\sqrt{2}}\left(|2,0\rangle_{\text{cd}}-|0,2\rangle_{\text{cd}}\right).$$
 This shows that both photons are found in the same output mode of the BS with equal probability of $1/2$.
+Placing a single-photon detector (SPD) in each output mode results in only one of the detectors registering a click, with no coincidence counts occurring.
+
+In order to observe the HOM effect, the two input photons must in __indistinguishable__, meaning they must
+- have the same __polarization__,
+- have the same __wavelength__,
+- arrive at the same __time__.
+
+Partial distinguishability of the photons will result in a finite probability of observing coincidence events.
+In the context of photonic ES, the effect is to reduce the fidelity of the end-to-end qubit pair.
