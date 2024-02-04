@@ -61,6 +61,8 @@ On the other hand, if the input photons have indistinguishable polarizations, fo
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
 Both photons exit the BS in the same output mode, therefore the probability of a coincide vanishes.
 
+### Temporal distinguishability
+
 
 ## References
 
