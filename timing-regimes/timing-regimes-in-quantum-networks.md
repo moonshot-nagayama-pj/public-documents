@@ -19,37 +19,47 @@ Central to photonic ES is the Hong-Ou-Mandel (HOM) effect [1], regardless of the
 in this section, we give a brief overview of this effect.
 
 Consider two photons incident on a beamsplitter (BS) with reflectivity $\eta$.
-We label the input modes as _a_ and _b_.
-The output modes of the BS are labelled with _a_ and _b_ as well, with the understanding that if output mode _a_ corresponds to input mode _a_ being transmitted.
-Similarly for output mode _b_, as shown in the Figure below.
-
+We label the input modes as $a$ and $b$.
+The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that if output mode $a$ corresponds to input mode $a$ being transmitted.
+Similarly for output mode $b$, as shown in the Figure below.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
 </p>
 
-We are interested in the observed bahavior at the output modes _c_ and _d_.
+The input state can be expressed as
+$$|\psi ^{\text{in}}\rangle_{ab} = \hat{a}^{\dagger}_j\hat{b}^{\dagger}_k |0\rangle _{ab},$$
+where $\hat{a}^{\dagger}_j$ and $\hat{b}^{\dagger}_k$ are the bosonic creation operators corresponding to BS output modes $a$ and $b$, respectively.
+The indices $j$ and $k$ represent other properties of the photons that determine how distinguishable the photons are.
+For example, $j$ and $k$ could represent:
+- polarizations,
+- spectral modes,
+- temporal modes,
+- arrival time,
+- transverse spatial mode.
+
+We are interested in the observed bahavior at the output modes of the BS.
 There are four possible cases that may occur:
 - Case A: photon in mode _a_ is reflected, while photon in mode _b_ is transmitted.
 - Case B: both photons are transmitted.
 - Case C: both photons are reflected
 - Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
 
-The input modes are described by bosonic creation/annihilation operators $\hat{a}/\hat{a}^{\dagger}$ and $\hat{b}/\hat{b}^{\dagger}$, while the output modes are described by $\hat{c}/\hat{c}^{\dagger}$ and $\hat{d}/\hat{d}^{\dagger}$.
-The individual input modes are transformed at the BS according to the following rule,
-$$\hat{a} \rightarrow \frac{\hat{c}+\hat{d}}{\sqrt{2}},\qquad\text{ and}\qquad\hat{b} \rightarrow \frac{\hat{c}-\hat{d}}{\sqrt{2}}.$$
-The minus sign ensures that the transformation is unitary.
-The initial state is transformed to the following output state,
-$$|1,1\rangle_{\text{ab}} = \hat{a}^{\dagger}\hat{b}^{\dagger}|0,0\rangle_{\text{ab}} \rightarrow \frac{1}{2}\left(\hat{c}^{\dagger}+\hat{d}^{\dagger}\right)\left(\hat{c}^{\dagger}-\hat{d}^{\dagger}\right)|0,0\rangle_{\text{cd}}=\frac{1}{\sqrt{2}}\left(|2,0\rangle_{\text{cd}}-|0,2\rangle_{\text{cd}}\right).$$
-This shows that both photons are found in the same output mode of the BS with equal probability of $1/2$.
-Placing a single-photon detector (SPD) in each output mode results in only one of the detectors registering a click, with no coincidence counts occurring.
+The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
+$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a} + \sqrt{\eta}\hat{b}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a} + \sqrt{1-\eta}\hat{b}.$$
+The output state of the two photons is
+$$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
+For a 50:50 BS with $\eta=1/2$, we obtain,
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{k} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 
-In order to observe the HOM effect, the two input photons must in __indistinguishable__, meaning they must
-- have the same __polarization__,
-- have the same __wavelength__,
-- arrive at the same __time__.
 
-Partial distinguishability of the photons will result in a finite probability of observing coincidence events.
-In the context of photonic ES, the effect is to reduce the fidelity of the end-to-end qubit pair.
+### Polarization
+If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
+It is easy to see that the probability of coincidence is $1/2$.
+
+On the other hand, if the input photons have indistinguishable polarizations, for example $j=k=H$, the output state is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
+Both photons exit the BS in the same output mode, therefore the probability of a coincide vanishes.
 
 
 ## References
