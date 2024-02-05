@@ -89,8 +89,8 @@ $$p ^{\text{arb}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_
 __Example: Gaussain photons__
 
 Consider the photons to be Gaussian spectral amplitude function
-$$\phi_i(\omega) = \frac{1}{(\pi)^{1/4}\sqrt{\sigma_i}} e^{-\frac{(\omega-\bar{\omega}_i)}{2\sigma_i^2}}, \qquad i=a,b,$$
-where $\hat{\omega}_i$ is th ecentral frequency of photon $i$, and $\sigma_i$ defines the spectral width of the photon.
+$$\phi_i(\omega) = \frac{1}{(\pi)^{1/4}\sqrt{\sigma_i}} e^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma_i^2}}, \qquad i=a,b,$$
+where $\hat{\omega}_i$ is th central frequency of photon $i$, and $\sigma_i$ defines the spectral width of the photon.
 The probability of a coincidence event is then
 $$p ^{\text{Gauss}} _{\text{coincidence}} = \frac{1}{2} - \frac{\sigma_a\sigma_b}{\sigma^2_a+\sigma^2_b} e^{-\frac{\sigma^2_a\sigma^2_b\tau^2+(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma^2_a+\sigma^2_b}}.$$
 
