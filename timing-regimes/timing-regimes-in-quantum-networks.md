@@ -45,7 +45,7 @@ There are four possible cases that may occur:
 - Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
 
 The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
-$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a} + \sqrt{\eta}\hat{b}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a} + \sqrt{1-\eta}\hat{b}.$$
+$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a} + \sqrt{\eta}\hat{b}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a} - \sqrt{1-\eta}\hat{b}.$$
 The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $\eta=1/2$, we obtain,
@@ -61,7 +61,42 @@ On the other hand, if the input photons have indistinguishable polarizations, fo
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
 Both photons exit the BS in the same output mode, therefore the probability of a coincide vanishes.
 
-### Temporal distinguishability
+### Temporal and spectral distinguishability of pure photons
+
+We will now include the photon's _spectral profile_ and _time of arrival_ at the BS, and theie effects on the probability of detecting a coincidence event.
+The 'shape' of the photon's wavepacket is characterized by the _spectral amplitude function_ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
+We denote a photon with spectral amplitude $\phi(\omega)$ by
+$$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
+where $\hat{a}^{\dagger}(\omega)$ creates a photon in the BS input mode $a$ with frequency $\omega$, and we have the normalization condition $\int d\omega |\phi(\omega)|^2=1$.
+
+Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
+$\hat{b}^{\dagger}(\omega) \rightarrow \hat{b}^{\dagger}(\omega) e^{-i\omega\tau}.$
+Two input photons with arbitrary spectral arbitrary functions $\phi$ and $\varphi$, with photon $b$ arriving late, are described by
+$$|\psi ^{\text{td}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int d\omega_1 \phi(\omega_1)\hat{a}^{\dagger}(\omega_1) \int d\omega_2 \varphi(\omega_2)\hat{b}^{\dagger}(\omega_2) e^{-i\omega_2\tau} |0\rangle _{ab}.$$
+We assume that the BS acts on the different frequency modes independently, and that the reflectivity is also frequency-independent.
+Applying the same transformation rules as in the previous section, the output state of the two photons is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi(\omega_1) \int d\omega_2 \varphi(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
+The projector corresponding a detection event in mode $a$ is given by
+$$\hat{P}_a = \int d\omega\hat{a}^{\dagger}(\omega) |0\rangle_a\langle0|_a\hat{a}(\omega),$$
+and similarly for mode $b$.
+The probability of detecting a coincidence of detecting one photon in each output mode is then
+$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab}.$$
+For two pure photons with arbitrary spectral amplitude functions, this expression reduces to
+$$p ^{\text{arb}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2) e^{i\omega_2\tau}.$$
+When the two photons have the same specrtal amplitude functions, $\phi(\omega)=\varphi(\omega)$,
+$$p ^{\text{arb}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1|\phi(\omega_1)|^2 e^{-i\omega_1\tau} \int d\omega_2 |\phi(\omega_2)|^2 e^{i\omega_2\tau}.$$
+
+__Example: Gaussain photons__
+
+Consider the photons to be Gaussian spectral amplitude function
+$$\phi_i(\omega) = \frac{1}{(\pi)^{1/4}\sqrt{\sigma_i}} e^{-\frac{(\omega-\bar{\omega}_i)}{2\sigma_i^2}}, \qquad i=a,b,$$
+where $\hat{\omega}_i$ is th ecentral frequency of photon $i$, and $\sigma_i$ defines the spectral width of the photon.
+The probability of a coincidence event is then
+$$p ^{\text{Gauss}} _{\text{coincidence}} = \frac{1}{2} - \frac{\sigma_a\sigma_b}{\sigma^2_a+\sigma^2_b} e^{-\frac{\sigma^2_a\sigma^2_b\tau^2+(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma^2_a+\sigma^2_b}}.$$
+
+### Temporal and spectral distinguishability of mixed photons
+
+In this section, we consider input photons that are entangled with other degrees of freedom, such as other photons or other atoms.
 
 
 ## References
