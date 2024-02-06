@@ -12,7 +12,7 @@ I. __background tasks (link tomography calculations, routing table updates):__ s
 
 Some of these can only be achieved using high-quality hardware, while others are software tasks. Detailed analysis of these regimes will affect core software design in each network node type.
 
-## Hong-Ou-Mandel Effect
+# Hong-Ou-Mandel Effect
 
 Entnaglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
 Central to photonic ES is the Hong-Ou-Mandel (HOM) effect [1], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
@@ -50,18 +50,21 @@ The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $\eta=1/2$, we obtain,
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{k} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
+The main quantity of interest is the probability of registering a coincidence count, $p _{\text{coincidence}}$, between the two outpu modes of the BS.
+If the input photons are indistinguishable polarizations, $j=k$, the output state is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
+Both photons exit the BS in the same output mode, therefore the probability of a coincidence vanishes.
 
+## Polarization/temporal/spectral distibguishability
 
-### Polarization
+We now turn our attention to the effect that partial distinguishability of the input photons has on the probability of a coincidence event $p _{\text{coincidence}}$.
+
+## Polarization
 If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
 It is easy to see that the probability of coincidence is $1/2$.
 
-On the other hand, if the input photons have indistinguishable polarizations, for example $j=k=H$, the output state is
-$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
-Both photons exit the BS in the same output mode, therefore the probability of a coincide vanishes.
-
-### Temporal and spectral distinguishability of pure photons
+## Temporal and spectral distinguishability of pure photons
 
 We will now include the photon's _spectral profile_ and _time of arrival_ at the BS, and theie effects on the probability of detecting a coincidence event.
 The 'shape' of the photon's wavepacket is characterized by the _spectral amplitude function_ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
@@ -94,7 +97,7 @@ where $\hat{\omega}_i$ is th central frequency of photon $i$, and $\sigma_i$ def
 The probability of a coincidence event is then
 $$p ^{\text{Gauss}} _{\text{coincidence}} = \frac{1}{2} - \frac{\sigma_a\sigma_b}{\sigma^2_a+\sigma^2_b} e^{-\frac{\sigma^2_a\sigma^2_b\tau^2+(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma^2_a+\sigma^2_b}}.$$
 
-### Temporal and spectral distinguishability of mixed photons
+## Temporal and spectral distinguishability of mixed photons
 
 In this section, we consider input photons that are entangled with other degrees of freedom, such as other photons or other atoms.
 
