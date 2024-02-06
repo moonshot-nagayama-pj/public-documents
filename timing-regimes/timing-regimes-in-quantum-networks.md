@@ -57,18 +57,18 @@ Both photons exit the BS in the same output mode, therefore the probability of a
 
 ## Polarization/temporal/spectral distibguishability
 
-We are interested in the effect that distinguishability of the input photons has on the probability of a coincidence event $p _{\text{coincidence}}$.
+We are interested in the effect that distinguishability of the input photons, as shown in the Figure below, has on the probability of a coincidence event $p _{\text{coincidence}}$.
 We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/spectral_temporal_dist.png"/>
 </p>
 
-## Polarization
+### Polarization
 If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
 It is easy to see that the probability of coincidence is $1/2$.
 
-## Temporal and spectral distinguishability of pure photons
+### Temporal and spectral distinguishability
 
 We will now include the photon's _spectral profile_ and _time of arrival_ at the BS, and theie effects on the probability of detecting a coincidence event.
 The 'shape' of the photon's wavepacket is characterized by the _spectral amplitude function_ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
