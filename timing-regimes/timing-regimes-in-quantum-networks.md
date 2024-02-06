@@ -59,6 +59,9 @@ Both photons exit the BS in the same output mode, therefore the probability of a
 
 We are interested in the effect that distinguishability of the input photons has on the probability of a coincidence event $p _{\text{coincidence}}$.
 We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/spectral_temporal_dist.png"/>
+</p>
 
 ## Polarization
 If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
