@@ -50,14 +50,15 @@ The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $\eta=1/2$, we obtain,
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{k} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
-The main quantity of interest is the probability of registering a coincidence count, $p _{\text{coincidence}}$, between the two outpu modes of the BS.
-If the input photons are indistinguishable polarizations, $j=k$, the output state is
+The main quantity of interest is the probability of registering a coincidence count, $p _{\text{coincidence}}$, between the two output modes of the BS.
+If the input photons are indistinguishable, that is if $j=k$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
 Both photons exit the BS in the same output mode, therefore the probability of a coincidence vanishes.
 
 ## Polarization/temporal/spectral distibguishability
 
-We now turn our attention to the effect that partial distinguishability of the input photons has on the probability of a coincidence event $p _{\text{coincidence}}$.
+We are interested in the effect that distinguishability of the input photons has on the probability of a coincidence event $p _{\text{coincidence}}$.
+We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
 
 ## Polarization
 If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
