@@ -64,9 +64,18 @@ We begin with a treatment of the polarization degree of freedom before analyzing
 </p>
 
 ### Polarization
-If the input photons are distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
+If the input photons are fully distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
 It is easy to see that the probability of coincidence is $1/2$.
+
+In general, the two input photons will have polarizations given by two unit vectors $\vec{\epsilon}$ and $\vec{\epsilon}'$.
+The output state can be written as
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_a + |1;\vec{\epsilon}'\rangle_a |1;\vec{\epsilon}\rangle_b - |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_b - |1;\vec{\epsilon}\rangle_b |1;\vec{\epsilon}'\rangle_b \right).$$
+The projection operators corresponding to a detection even at detector $i$ is given by
+$$\hat{P}_i = |1;\vec{\epsilon}\rangle_i \langle 1;\vec{\epsilon}|_i + |1;\vec{\epsilon}'\rangle_i \langle 1;\vec{\epsilon}'|_i.$$
+The probability of coincidence is then
+$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
+where the overlap between the polarization unit vectors is parametrized by $\theta$.
 
 ### Temporal and spectral distinguishability
 
@@ -87,23 +96,33 @@ The projector corresponding a detection event in mode $a$ is given by
 $$\hat{P}_a = \int d\omega\hat{a}^{\dagger}(\omega) |0\rangle_a\langle0|_a\hat{a}(\omega),$$
 and similarly for mode $b$.
 The probability of detecting a coincidence of detecting one photon in each output mode is then
-$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab}.$$
+$$p ^{\text{pure}} _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab}.$$
 For two pure photons with arbitrary spectral amplitude functions, this expression reduces to
-$$p ^{\text{arb}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2) e^{i\omega_2\tau}.$$
+$$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2) e^{i\omega_2\tau}.$$
 When the two photons have the same specrtal amplitude functions, $\phi(\omega)=\varphi(\omega)$,
-$$p ^{\text{arb}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1|\phi(\omega_1)|^2 e^{-i\omega_1\tau} \int d\omega_2 |\phi(\omega_2)|^2 e^{i\omega_2\tau}.$$
+$$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1|\phi(\omega_1)|^2 e^{-i\omega_1\tau} \int d\omega_2 |\phi(\omega_2)|^2 e^{i\omega_2\tau}.$$
 
-__Example: Gaussain photons__
+We are now in a position to treat the case when the input photons are in a __mixed state__.
+Such states may arise as the result of a probabilistic preparation of a pure photon, or the photon being entangled with a different degree of freedom such as another photon of a quantum memory.
+The density matrix representing a mixture of spectral amplitude functions is
+$$\rho_{\phi} = \sum_k q_k |1;\phi_k\rangle_a\langle1;\phi_k|_a.$$
+The two photon input state can be written as
+$$\rho ^{\text{in}} _{ab} = \rho _{\phi} \otimes \rho _{\varphi} = \sum _{kk'} q_k q _{k'} |1;\phi_k\rangle_a |1;\varphi _{k'}\rangle_b \langle 1;\phi_k|_a \langle 1;\varphi _{k'}|_b.$$
+Considering that input photon $b$ is delayed by $\tau$, the output state of the two photons is
+$$\rho ^{\text{out}} _{ab} = \sum _{kk'} q_k q _{k'} |\psi ^{\text{out}} _{kk'}\rangle _{ab} \langle\psi ^{\text{out}} _{kk'}| _{ab},$$
+where
+$$|\psi ^{\text{out}} _{kk'}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi_k(\omega_1) \int d\omega_2 \varphi _{k'}(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
+Using linearity of quantum mechanics, computing the probability of coincidence, $p ^{\text{mix}} _{\text{coincidence}}$, can be done by simply summing the in probabilities $p ^{\text{pure}} _{\text{coincidence}}$ over the spectral amplitude function indices $k$ and $k'$ with the appropriate weighing probabilities $q_k$ and $q _{k'}$,
+$$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} q_k q _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
-Consider the photons to be Gaussian spectral amplitude function
-$$\phi_i(\omega) = \frac{1}{(\pi)^{1/4}\sqrt{\sigma_i}} e^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma_i^2}}, \qquad i=a,b,$$
-where $\hat{\omega}_i$ is th central frequency of photon $i$, and $\sigma_i$ defines the spectral width of the photon.
-The probability of a coincidence event is then
-$$p ^{\text{Gauss}} _{\text{coincidence}} = \frac{1}{2} - \frac{\sigma_a\sigma_b}{\sigma^2_a+\sigma^2_b} e^{-\frac{\sigma^2_a\sigma^2_b\tau^2+(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma^2_a+\sigma^2_b}}.$$
-
-## Temporal and spectral distinguishability of mixed photons
-
-In this section, we consider input photons that are entangled with other degrees of freedom, such as other photons or other atoms.
+__Example: Independent SPDC sources__  
+Two independent SPDC sources generate two pure entangled pairs of photons,
+$$|\psi_1\rangle _{ab} = \int d\omega_1 \int d\omega_2 f(\omega_1, \omega_2) \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) |0\rangle _{ab}, \quad |\psi_2\rangle _{cd} = \int d\omega_1 \int d\omega_2 h(\omega_1, \omega_2) \hat{c}^{\dagger}(\omega_1)\hat{d}^{\dagger}(\omega_2) |0\rangle _{cd}.$$
+Since photons $a/c$ and $b/d$ are entangled, it is necessary to use a joint spectral amplitude function $f/h$ for the entire pair.
+Photons $b$ and $c$ are the input photons for the BS, with their reduced states being
+$$\rho _{\phi} = \sum_k u^2_k|1;\phi_k\rangle_b\langle1;\phi_k|_b, \quad \rho _{\varphi} = \sum_k v^2_k|1;\varphi_k\rangle_c\langle1;\varphi_k|_c,$$
+where the functions $\phi_k$ and $\varphi_k$ are obtained from the Schmidt decomposition of the joint spectral amplitude function,
+$$f(\omega_1,\omega_2)=\sum_k u_k \phi'_k(\omega_1)\phi_k(\omega_2), \quad h(\omega_1,\omega_2)=\sum_k v_k \varphi_k(\omega_1)\varphi'_k(\omega_2).$$
 
 
 ## References
