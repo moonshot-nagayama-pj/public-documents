@@ -15,7 +15,7 @@ Some of these can only be achieved using high-quality hardware, while others are
 # Hong-Ou-Mandel Effect
 
 Entnaglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
-Central to photonic ES is the Hong-Ou-Mandel (HOM) effect [1], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
+Central to photonic ES is the Hong-Ou-Mandel (HOM) interference [1,2], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
 in this section, we give a brief overview of this effect.
 
 Consider two photons incident on a beamsplitter (BS) with reflectivity $\eta$.
@@ -126,7 +126,11 @@ $$f(\omega_1,\omega_2)=\sum_k u_k \phi'_k(\omega_1)\phi_k(\omega_2), \quad h(\om
 The coincidence probability then becomes
 $$p ^{\text{SPDC}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
+### Visibility
+In the case 
+
 
 ## References
 
-[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).
+[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
+[2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).
