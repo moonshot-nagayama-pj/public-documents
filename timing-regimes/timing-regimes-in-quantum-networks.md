@@ -127,7 +127,13 @@ The coincidence probability then becomes
 $$p ^{\text{SPDC}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
 ### Visibility
-In the case 
+The visibility of the HOM interference is quantified by the __visibility__, defined by
+$$V = \frac{p_{\text{max}} - p_{\text{min}}}{p_{\text{max}}},$$
+where
+$$p_{\text{max}} = \lim_{\tau\rightarrow\infty} p_{\text{coincidence}} = \frac{1}{2}, \quad p_{\text{max}} = \lim_{\tau\rightarrow 0} p_{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} q_k q _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
+Often, one is also interested in how the visibility changes as a function of the difference in time in the detection events, which is given by the time delay $\tau$.
+The expression for the visibility can be modified in the following way,
+$$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
 
 
 ## References
