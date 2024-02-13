@@ -82,7 +82,10 @@ The probability of coincidence is then
 $$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
 where the overlap between the polarization unit vectors is parametrized by $\theta$.
 
-
+Ensuring that the two input photons are indistinguishable in their polarization degree of freedom is critical for proper operation of the BSA.
+Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to _drift_ in the fiber and change its state from the one that the photon possessed immediately after emission.
+Analyzing the polarization drift 
+This issue is mainly relevant in non-polarization-maintaining single-mode fibers.
 
 ### Temporal and spectral distinguishability
 
@@ -141,6 +144,8 @@ $$p_{\text{max}} = \lim_{\tau\rightarrow\infty} p_{\text{coincidence}} = \frac{1
 Often, one is also interested in how the visibility changes as a function of the difference in time in the detection events, which is given by the time delay $\tau$.
 The expression for the visibility can be modified in the following way,
 $$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
+
+# Detector recovery timing (C)
 
 
 ## References
