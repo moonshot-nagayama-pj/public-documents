@@ -82,10 +82,12 @@ The probability of coincidence is then
 $$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
 where the overlap between the polarization unit vectors is parametrized by $\theta$.
 
+
+
 ### Temporal and spectral distinguishability
 
 We will now include the photon's __spectral profile__ and __time of arrival__ at the BS, and their effects on the probability of detecting a coincidence event.
-The 'shape' of the photon's wavepacket is characterized by the _spectral amplitude function_ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
+The 'shape' of the photon's wavepacket is characterized by the __spectral amplitude function__ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
 We denote a photon with spectral amplitude $\phi(\omega)$ by
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
 where $\hat{a}^{\dagger}(\omega)$ creates a photon in the BS input mode $a$ with frequency $\omega$, and we have the normalization condition $\int d\omega |\phi(\omega)|^2=1$.
@@ -97,7 +99,7 @@ $$|\psi ^{\text{td}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int 
 We assume that the BS acts on the different frequency modes independently, and that the reflectivity is also frequency-independent.
 Applying the same transformation rules as in the previous section, the output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi(\omega_1) \int d\omega_2 \varphi(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
-The projector corresponding to a detection event in mode $a$ is given by
+The projector corresponding to a detection event in output mode $a$ is given by
 $$\hat{P}_a = \int d\omega\hat{a}^{\dagger}(\omega) |0\rangle_a\langle0|_a\hat{a}(\omega),$$
 and similarly for mode $b$.
 The probability of detecting a coincidence of detecting one photon in each output mode is then
@@ -108,7 +110,7 @@ When the two photons have the same spectral amplitude functions, $\phi(\omega)=\
 $$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1|\phi(\omega_1)|^2 e^{-i\omega_1\tau} \int d\omega_2 |\phi(\omega_2)|^2 e^{i\omega_2\tau}.$$
 
 We are now in a position to treat the case when the input photons are in a __mixed state__.
-Such states may arise as the result of a probabilistic preparation of a pure photon, or the photon being entangled with a different degree of freedom such as another photon of a quantum memory.
+Such states may arise as the result of a probabilistic preparation of a pure photon, or the photon being entangled with a different degree of freedom such as another photon or a quantum memory.
 The density matrix representing a mixture of spectral amplitude functions is
 $$\rho_{\phi} = \sum_k q_k |1;\phi_k\rangle_a\langle1;\phi_k|_a.$$
 The two photon input state can be written as
@@ -117,7 +119,7 @@ Considering that input photon $b$ is delayed by $\tau$, the output state of the 
 $$\rho ^{\text{out}} _{ab} = \sum _{kk'} q_k q _{k'} |\psi ^{\text{out}} _{kk'}\rangle _{ab} \langle\psi ^{\text{out}} _{kk'}| _{ab},$$
 where
 $$|\psi ^{\text{out}} _{kk'}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi_k(\omega_1) \int d\omega_2 \varphi _{k'}(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
-Using linearity of quantum mechanics, computing the probability of coincidence, $p ^{\text{mix}} _{\text{coincidence}}$, can be done by simply summing the in probabilities $p ^{\text{pure}} _{\text{coincidence}}$ over the spectral amplitude function indices $k$ and $k'$ with the appropriate weighing probabilities $q_k$ and $q _{k'}$,
+Using linearity of quantum mechanics, computing the probability of coincidence, $p ^{\text{mix}} _{\text{coincidence}}$, can be done by simply summing the probabilities $p ^{\text{pure}} _{\text{coincidence}}$ over the spectral amplitude function indices $k$ and $k'$ with the appropriate weighing probabilities $q_k$ and $q _{k'}$,
 $$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} q_k q _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
 __Example: Independent SPDC sources__  
