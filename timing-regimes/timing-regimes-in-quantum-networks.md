@@ -16,13 +16,16 @@ I. __background tasks (link tomography calculations, routing table updates):__ s
 
 Some of these can only be achieved using high-quality hardware, while others are software tasks. Detailed analysis of these regimes will affect core software design in each network node type.
 
-# Interferometric Stabilization (A) and Photon Wave Packet Overlap (B) timing regimes
+# A. Interferometric Stabilization
 
 Entanglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
 Central to photonic ES is the Hong-Ou-Mandel (HOM) interference [1,2], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
-We begin by giving a brief overview of this effect, and discuss how interferometric stabilization (A) and photon wave packet overlap (B) timing regimes rely on it.
+We begin by introducing the notation used, giving a brief overview of the effect, as well as discussing how to quantify the effect.
+We then continue with a discussion of the requirements that must be satisfied in order to observe the effect.
 
-Consider two photons incident on a beamsplitter (BS) with reflectivity $\eta$.
+## A.1. Hong-Ou-Mandel interference
+
+Consider two photons incident on a beamsplitter (BS) with reflectivity $r$.
 We label the input modes $a$ and $b$.
 The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that output mode $a$ corresponds to the input mode $a$ being transmitted.
 Similarly for output mode $b$, as shown in the Figure below.
@@ -35,10 +38,10 @@ $$|\psi ^{\text{in}}\rangle_{ab} = \hat{a}^{\dagger}_j\hat{b}^{\dagger}_k |0\ran
 where $\hat{a}^{\dagger}_j$ and $\hat{b}^{\dagger}_k$ are the bosonic creation operators corresponding to BS input modes $a$ and $b$, respectively.
 The indices $j$ and $k$ represent other properties of the photons that determine how distinguishable the photons are.
 For example, $j$ and $k$ could represent
-- polarizations,
+- polarizations (for polarization-encoded qubits),
 - spectral modes,
-- temporal modes,
-- arrival time,
+- temporal modes (for time-bin qubits),
+- arrival time (discussed in Section B),
 - transverse spatial mode.
 
 We are interested in the observed behavior at the output modes of the BS.
@@ -49,16 +52,28 @@ There are four possible cases that may occur:
 - Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
 
 The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
-$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a}^{\dagger} + \sqrt{\eta}\hat{b}^{\dagger}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a}^{\dagger} - \sqrt{1-\eta}\hat{b}^{\dagger}.$$
+$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-r}\hat{a}^{\dagger} + \sqrt{r}\hat{b}^{\dagger}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{r}\hat{a}^{\dagger} - \sqrt{1-r}\hat{b}^{\dagger}.$$
 The output state of the two photons is
-$$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
-For a 50:50 BS with $\eta=1/2$, we obtain,
-$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{k} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
-The main quantity of interest is the __probability of coincidence__, $p _{\text{coincidence}}$, between the two output modes of the BS.
-This means that a photon is detected in output mode $a$, and another photon is detected in output mode $b$.
-If the input photons are indistinguishable, that is if $j=k$, the output state is
-$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
-Both photons exit the BS in the same output mode, therefore the probability of a coincidence event vanishes.
+$$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{r(1-r)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + r \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-r) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-r)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
+For a 50:50 BS with $r=1/2$, we obtain,
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
+From this expression, we can see that when $j=k$, in other words when the input photons indistinguishable, the output state has the following form,
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2\rangle_a - |2\rangle_b \right).$$
+The probability amplitudes for the cases where both input photons are transmitted or both reflected (Cases B and C in the figure above) interfere destructively.
+Perfectly indistinguishable input photons always exit the BS in the same ouput mode.
+It is this interference effect that is at the heart of quantum networking.
+
+In order to quantify the effect that distibguishability has on the HOM interference, we consider the __probability of a coincidence detection__, $p_{\text{coin}}$, where one photon is detected in the BS output mode $a$, and the other photon in output mode $b$.
+This probability is defined as
+$$p_{\text{coin}} = \langle\psi^{\text{out}}|_{ab} \hat{P}_a \otimes \hat{P}_b |\psi^{\text{out}}\rangle _{ab},$$
+where $\hat{P}_i$, for $i=a,b$, are the projection operators representing a detection of a single photon in output mode $i$ of the BS.
+For completely indistinguishable input photons that undergo the full HOM interference, we have $p _{\text{coin}}=0$.
+On the other hand, for fully distinguishable photons, the probability of a coincidence detection attains its maximum value $p _{\text{coin}}=1/2$.
+
+Often used measure that quantifies the degree of HOM interference is the __visibility__ $V$, defined via the probability of a coincidence detection,
+$$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\text{coin}}^{\text{max}}} = 1 - 2 p_{\text{coin}}^{\text{min}},$$
+where we used the fact the the maximum probability of a coincidence detection is $1/2$.
+We can observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
 ## Polarization/temporal/spectral distinguishability
 
