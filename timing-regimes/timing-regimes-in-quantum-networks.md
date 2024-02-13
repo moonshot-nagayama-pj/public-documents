@@ -16,15 +16,15 @@ I. __background tasks (link tomography calculations, routing table updates):__ s
 
 Some of these can only be achieved using high-quality hardware, while others are software tasks. Detailed analysis of these regimes will affect core software design in each network node type.
 
-# Hong-Ou-Mandel Effect
+# Interferometric Stabilization (A) and Photon Wave Packet Overlap (B) timing regimes
 
 Entanglement distribution in quantum networks is performed by entanglement swapping (ES) on photonic qubits.
 Central to photonic ES is the Hong-Ou-Mandel (HOM) interference [1,2], regardless of the photonic qubit encoding or of the particular protocol implementing photonic ES.
-In this section, we give a brief overview of this effect.
+We begin by giving a brief overview of this effect, and discuss how interferometric stabilization (A) and photon wave packet overlap (B) timing regimes rely on it.
 
 Consider two photons incident on a beamsplitter (BS) with reflectivity $\eta$.
 We label the input modes $a$ and $b$.
-The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that if output mode $a$ corresponds to input mode $a$ being transmitted.
+The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that output mode $a$ corresponds to the input mode $a$ being transmitted.
 Similarly for output mode $b$, as shown in the Figure below.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
@@ -32,9 +32,9 @@ Similarly for output mode $b$, as shown in the Figure below.
 
 The input state can be expressed as
 $$|\psi ^{\text{in}}\rangle_{ab} = \hat{a}^{\dagger}_j\hat{b}^{\dagger}_k |0\rangle _{ab},$$
-where $\hat{a}^{\dagger}_j$ and $\hat{b}^{\dagger}_k$ are the bosonic creation operators corresponding to BS output modes $a$ and $b$, respectively.
+where $\hat{a}^{\dagger}_j$ and $\hat{b}^{\dagger}_k$ are the bosonic creation operators corresponding to BS input modes $a$ and $b$, respectively.
 The indices $j$ and $k$ represent other properties of the photons that determine how distinguishable the photons are.
-For example, $j$ and $k$ could represent:
+For example, $j$ and $k$ could represent
 - polarizations,
 - spectral modes,
 - temporal modes,
@@ -49,7 +49,7 @@ There are four possible cases that may occur:
 - Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
 
 The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
-$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a} + \sqrt{\eta}\hat{b}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a} - \sqrt{1-\eta}\hat{b}.$$
+$$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-\eta}\hat{a}^{\dagger} + \sqrt{\eta}\hat{b}^{\dagger}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{\eta}\hat{a}^{\dagger} - \sqrt{1-\eta}\hat{b}^{\dagger}.$$
 The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $\eta=1/2$, we obtain,
@@ -57,7 +57,7 @@ $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} 
 The main quantity of interest is the probability of registering a coincidence count, $p _{\text{coincidence}}$, between the two output modes of the BS.
 If the input photons are indistinguishable, that is if $j=k$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
-Both photons exit the BS in the same output mode, therefore the probability of a coincidence vanishes.
+Both photons exit the BS in the same output mode, therefore the probability of a coincidence event vanishes.
 
 ## Polarization/temporal/spectral distinguishability
 
