@@ -54,7 +54,8 @@ The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{\eta(1-\eta)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \eta \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-\eta) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-\eta)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $\eta=1/2$, we obtain,
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{k} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
-The main quantity of interest is the probability of registering a coincidence count, $p _{\text{coincidence}}$, between the two output modes of the BS.
+The main quantity of interest is the __probability of coincidence__, $p _{\text{coincidence}}$, between the two output modes of the BS.
+This means that a photon is detected in output mode $a$, and another photon is detected in output mode $b$.
 If the input photons are indistinguishable, that is if $j=k$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{\sqrt{2}} \left( |2;H\rangle_a - |2;H\rangle_b \right).$$
 Both photons exit the BS in the same output mode, therefore the probability of a coincidence event vanishes.
@@ -68,14 +69,14 @@ We begin with a treatment of the polarization degree of freedom before analyzing
 </p>
 
 ### Polarization
-If the input photons are fully distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
+If the polarization of the input photons is fully distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
 It is easy to see that the probability of coincidence is $1/2$.
 
 In general, the two input photons will have polarizations given by two unit vectors $\vec{\epsilon}$ and $\vec{\epsilon}'$.
 The output state can be written as
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_a + |1;\vec{\epsilon}'\rangle_a |1;\vec{\epsilon}\rangle_b - |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_b - |1;\vec{\epsilon}\rangle_b |1;\vec{\epsilon}'\rangle_b \right).$$
-The projection operators corresponding to a detection even at detector $i$ is given by
+The projection operators corresponding to a detection even at detector $i$ ($i=a,b$), is given by
 $$\hat{P}_i = |1;\vec{\epsilon}\rangle_i \langle 1;\vec{\epsilon}|_i + |1;\vec{\epsilon}'\rangle_i \langle 1;\vec{\epsilon}'|_i.$$
 The probability of coincidence is then
 $$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
@@ -83,7 +84,7 @@ where the overlap between the polarization unit vectors is parametrized by $\the
 
 ### Temporal and spectral distinguishability
 
-We will now include the photon's _spectral profile_ and _time of arrival_ at the BS, and their effects on the probability of detecting a coincidence event.
+We will now include the photon's __spectral profile__ and __time of arrival__ at the BS, and their effects on the probability of detecting a coincidence event.
 The 'shape' of the photon's wavepacket is characterized by the _spectral amplitude function_ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
 We denote a photon with spectral amplitude $\phi(\omega)$ by
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
