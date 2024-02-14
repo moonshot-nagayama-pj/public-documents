@@ -103,6 +103,9 @@ We can define the corresponding visibility as a function of the nagle between th
 $$V(\theta) = 1 - 2 p_{\text{coin}} = \cos^2\theta.$$
 When the photons have identical polarization, $\theta=0$, the visibility reaches its maximum of $V=1$.
 On the other hand, when the photons are fully distinguishable and their polarization vectors are orthogonal, $\theta=\pm\pi/2$, visibility is $V=0$.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_polarization.png"/>
+</p>
  
 ## Temporal/spectral distinguishability
 
