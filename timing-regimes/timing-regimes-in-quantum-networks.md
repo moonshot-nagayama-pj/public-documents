@@ -72,8 +72,8 @@ On the other hand, for fully distinguishable photons, the probability of a coinc
 
 Often used measure that quantifies the degree of HOM interference is the __visibility__ $V$, defined via the probability of a coincidence detection,
 $$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\text{coin}}^{\text{max}}} = 1 - 2 p_{\text{coin}}^{\text{min}},$$
-where we used the fact the the maximum probability of a coincidence detection is $1/2$.
-We can observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
+where we used the fact that the maximum probability of a coincidence detection is $1/2$.
+We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
 ## Polarization/temporal/spectral distinguishability
 
