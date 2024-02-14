@@ -75,32 +75,37 @@ $$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\tex
 where we used the fact that the maximum probability of a coincidence detection is $1/2$.
 We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
-## Polarization/temporal/spectral distinguishability
+In the following subsections, we address and quantify how distinguishable photons affect the visibility of the HOM interference.
+
+## A.2. Polarization
+
+We now consider the case when he input photons differ in their polrization degree of photons.
+The maximum probability of a coincidence detection is obtained for orthogonally polarized photons, for example when $j=H$ and $k=V$.
+The output state of the two photons is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
+We can immediately see that $p _{\text{coin}} ^{\text{max}}=1/2$.
+
+In general, the two input photons will have polarizations given by two unit vectors, $j=\vec{\epsilon}$ and $k=\vec{\epsilon}'$.
+The output state can be written as
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_a + |1;\vec{\epsilon}'\rangle_a |1;\vec{\epsilon}\rangle_b - |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_b - |1;\vec{\epsilon}\rangle_b |1;\vec{\epsilon}'\rangle_b \right).$$
+The projection operators corresponding to a detection even at detector $i$ ($i=a,b$), is given by
+$$\hat{P}_i = |1;\vec{\epsilon}\rangle_i \langle 1;\vec{\epsilon}|_i + |1;\vec{\epsilon}'\rangle_i \langle 1;\vec{\epsilon}'|_i.$$
+Either a $\vec{\epsilon}$-polarized or a $\vec{\epsilon}'$-polarized photon is detected in the output mode $i$.
+The probability of coincidence is then
+$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
+where the overlap between the polarization unit vectors is parametrized by $\theta$, and can be written as $\langle\vec{\epsilon}'|\vec{\epsilon}\rangle = \cos\theta$.
+
+Ensuring that the two input photons are indistinguishable in their polarization degree of freedom is critical for proper operation of the BSA.
+Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to __drift__ during its transmission and change its state from the one that the photon possessed immediately after emission. 
+This issue is mainly relevant in non-polarization-maintaining single-mode fibers.
+ 
+## Temporal/spectral distinguishability
 
 We are interested in the effect that distinguishability of the input photons, as shown in the Figure below, has on the probability of a coincidence event $p _{\text{coincidence}}$.
 We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/spectral_temporal_dist.png"/>
 </p>
-
-### Polarization
-If the polarization of the input photons is fully distinguishable (orthogonal), for example $j=H$ and $k=V$, the output state is
-$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
-It is easy to see that the probability of coincidence is $1/2$.
-
-In general, the two input photons will have polarizations given by two unit vectors $\vec{\epsilon}$ and $\vec{\epsilon}'$.
-The output state can be written as
-$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_a + |1;\vec{\epsilon}'\rangle_a |1;\vec{\epsilon}\rangle_b - |1;\vec{\epsilon}\rangle_a |1;\vec{\epsilon}'\rangle_b - |1;\vec{\epsilon}\rangle_b |1;\vec{\epsilon}'\rangle_b \right).$$
-The projection operators corresponding to a detection even at detector $i$ ($i=a,b$), is given by
-$$\hat{P}_i = |1;\vec{\epsilon}\rangle_i \langle 1;\vec{\epsilon}|_i + |1;\vec{\epsilon}'\rangle_i \langle 1;\vec{\epsilon}'|_i.$$
-The probability of coincidence is then
-$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
-where the overlap between the polarization unit vectors is parametrized by $\theta$.
-
-Ensuring that the two input photons are indistinguishable in their polarization degree of freedom is critical for proper operation of the BSA.
-Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to _drift_ in the fiber and change its state from the one that the photon possessed immediately after emission.
-Analyzing the polarization drift 
-This issue is mainly relevant in non-polarization-maintaining single-mode fibers.
 
 ### Temporal and spectral distinguishability
 
@@ -151,11 +156,6 @@ $$f(\omega_1,\omega_2)=\sum_k u_k \phi'_k(\omega_1)\phi_k(\omega_2), \quad h(\om
 The coincidence probability then becomes
 $$p ^{\text{SPDC}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
-### Visibility
-The visibility of the HOM interference is quantified by the __visibility__, defined by
-$$V = \frac{p_{\text{max}} - p_{\text{min}}}{p_{\text{max}}},$$
-where
-$$p_{\text{max}} = \lim_{\tau\rightarrow\infty} p_{\text{coincidence}} = \frac{1}{2}, \quad p_{\text{max}} = \lim_{\tau\rightarrow 0} p_{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} q_k q _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
 Often, one is also interested in how the visibility changes as a function of the difference in time in the detection events, which is given by the time delay $\tau$.
 The expression for the visibility can be modified in the following way,
 $$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
