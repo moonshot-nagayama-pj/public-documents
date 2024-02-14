@@ -111,6 +111,9 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
 ## A.3. Spectral distinguishability
 
 Another important source of distinguishability in HOM interference is the spectral property of the input photons.
+The photon wave packet of a photon is represented by its __spectral amplitude function__ $\phi(\omega)$, where $\int d\omega |\phi(\omega)|^2=1$.
+Two input photons are  partially/fully distinguishable if their respective spectral amplitude functions are not equal.
+The two photons may have different mean frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$, or the 
  
 ## Temporal/spectral distinguishability
 
