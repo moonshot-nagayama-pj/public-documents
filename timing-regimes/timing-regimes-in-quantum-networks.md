@@ -92,12 +92,17 @@ The projection operators corresponding to a detection even at detector $i$ ($i=a
 $$\hat{P}_i = |1;\vec{\epsilon}\rangle_i \langle 1;\vec{\epsilon}|_i + |1;\vec{\epsilon}'\rangle_i \langle 1;\vec{\epsilon}'|_i.$$
 Either a $\vec{\epsilon}$-polarized or a $\vec{\epsilon}'$-polarized photon is detected in the output mode $i$.
 The probability of coincidence is then
-$$p _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
+$$p _{\text{coin}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( 1 - \left| \langle\vec{\epsilon}'|\vec{\epsilon}\rangle \right|^2 \right) = \frac{1}{2} \sin^2\theta,$$
 where the overlap between the polarization unit vectors is parametrized by $\theta$, and can be written as $\langle\vec{\epsilon}'|\vec{\epsilon}\rangle = \cos\theta$.
 
 Ensuring that the two input photons are indistinguishable in their polarization degree of freedom is critical for proper operation of the BSA.
 Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to __drift__ during its transmission and change its state from the one that the photon possessed immediately after emission. 
 This issue is mainly relevant in non-polarization-maintaining single-mode fibers.
+
+We can define the corresponding visibility as a function of the nagle between the two polarization vectors,
+$$V(\theta) = 1 - 2 p_{\text{coin}} = \cos^2\theta.$$
+When the photons have identical polarization, $\theta=0$, the visibility reaches its maximum of $V=1$.
+On the other hand, when the photons are fully distinguishable and their polarization vectors are orthogonal, $\theta=\pm\pi/2$, visibility is $V=0$.
  
 ## Temporal/spectral distinguishability
 
