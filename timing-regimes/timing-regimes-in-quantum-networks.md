@@ -107,6 +107,10 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_polarization.png"/>
 </p>
+
+## A.3. Spectral distinguishability
+
+Another important source of distinguishability in HOM interference is the spectral property of the input photons.
  
 ## Temporal/spectral distinguishability
 
