@@ -120,21 +120,28 @@ The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_
 </p>
 In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
-## Temporal/spectral distinguishability
-
-We are interested in the effect that distinguishability of the input photons, as shown in the Figure below, has on the probability of a coincidence event $p _{\text{coincidence}}$.
-We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
-<p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
-</p>
-
-### Temporal and spectral distinguishability
-
-We will now include the photon's __spectral profile__ and __time of arrival__ at the BS, and their effects on the probability of detecting a coincidence event.
-The 'shape' of the photon's wavepacket is characterized by the __spectral amplitude function__ $\phi(\omega)$, while the time delay between the photons' arrival at the BS is given by $\tau$.
-We denote a photon with spectral amplitude $\phi(\omega)$ by
+__Pure states.__
+We begin the discussion by focusing on pure states of the input photons first.
+Single-photon state with a spectral amplitude function $\phi(\omega)$ is a superposition written as
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
-where $\hat{a}^{\dagger}(\omega)$ creates a photon in the BS input mode $a$ with frequency $\omega$, and we have the normalization condition $\int d\omega |\phi(\omega)|^2=1$.
+where $\hat{a}^{\dagger}(\omega)$ creates a photon in the BS input mode $a$ with frequency $\omega$.
+Two input photons with arbitrary spectral arbitrary functions $\phi$ and $\varphi$, are described by
+$$|\psi ^{\text{in}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int d\omega_1 \phi(\omega_1)\hat{a}^{\dagger}(\omega_1) \int d\omega_2 \varphi(\omega_2)\hat{b}^{\dagger}(\omega_2) |0\rangle _{ab}.$$
+We assume that the BS acts on the different frequency modes independently, and that the reflectivity is frequency-independent.
+Applying the same transformation rules for the creation operators, the output state of the two photons is
+$$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi(\omega_1) \int d\omega_2 \varphi(\omega_2) \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
+The projection operators corresponding to a detection event in output mode $a$ and output mode $b$ are given by
+$$\hat{P}_a = \int d\omega\hat{a}^{\dagger}(\omega) |0\rangle_a\langle0|_a\hat{a}(\omega),\quad \hat{P}_b = \int d\omega\hat{b}^{\dagger}(\omega) |0\rangle_b\langle0|_b\hat{b}(\omega)$$
+and similarly for mode $b$.
+The probability of a coincidence detection is then
+$$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1) \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2).$$
+The form of this expression is the same as the one in Subsection A.2, where the probability of a coincidence detection depended on the overlap between the polarization vectors $\vec{\epsilon}$ and $\vec{\epsilon}'$.
+Now, $p _{\text{coin}}$ depends on the overlap between the spectral amplitude functions.
+If the input photons are fully distinguishable, their respective spectral amplitude functions $\phi(\omega)$ and $\varphi(\omega)$ are orthogonal and the integrals vanish, meaning $p _{\text{coin}}=1/2$.
+On the other hand, for completely indistinguishable input photons we have $\phi(\omega)=\varphi(\omega)$, and due to the normalization condition we obtain $p _{\text{coin}}=0$.
+
+
+## Temporal/spectral distinguishability
 
 Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
 $\hat{b}^{\dagger}(\omega) \rightarrow \hat{b}^{\dagger}(\omega) e^{-i\omega\tau}.$
@@ -182,6 +189,10 @@ The expression for the visibility can be modified in the following way,
 $$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
 
 # B. Wave Packet Overlap
+
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
+</p>
 
 # C. Detector Recovery
 
