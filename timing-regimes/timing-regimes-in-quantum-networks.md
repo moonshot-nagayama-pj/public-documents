@@ -118,6 +118,7 @@ The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_spectral.png"/>
 </p>
+In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
 ## Temporal/spectral distinguishability
 
