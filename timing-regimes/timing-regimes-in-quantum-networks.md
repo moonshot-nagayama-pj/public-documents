@@ -113,14 +113,14 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
 Another important source of distinguishability in HOM interference is the spectral property of the input photons.
 The photon wave packet of a photon is represented by its __spectral amplitude function__ $\phi(\omega)$, where $\int d\omega |\phi(\omega)|^2=1$.
 Two input photons become distinguishable if their respective spectral amplitude functions are not equal.
-The two photons may have different mean frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$.
-The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_b$, provided that the _shape_ of the wave packet is different, as shown in the Figure below.
+The two photons may have different central frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$.
+The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_b$, provided that the shape of the wave packet is different, as shown in the Figure below.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_spectral.png"/>
 </p>
 In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
-__Pure states.__
+__Pure states.__  
 We begin the discussion by focusing on pure states of the input photons first.
 Single-photon state with a spectral amplitude function $\phi(\omega)$ is a superposition written as
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
@@ -140,6 +140,23 @@ Now, $p _{\text{coin}}$ depends on the overlap between the spectral amplitude fu
 If the input photons are fully distinguishable, their respective spectral amplitude functions $\phi(\omega)$ and $\varphi(\omega)$ are orthogonal and the integrals vanish, meaning $p _{\text{coin}}=1/2$.
 On the other hand, for completely indistinguishable input photons we have $\phi(\omega)=\varphi(\omega)$, and due to the normalization condition we obtain $p _{\text{coin}}=0$.
 
+__Mixed states.__  
+Previous discussion of pure states can be extended to include mixed states of the input photons.
+Such states will inevitably arise due to imperfections in the preparation procedure and due to the input photons being entangled with other degrees of freedom.
+These can include other photons or quantum memories.
+
+Mixed state of an input photon is described by the following density matrix,
+$$\rho_a = \sum_k u_k |1;\phi_k\rangle_a\langle1;\phi_k|_a,$$
+where the state of the photon is a mixture of pure single-photon states with spectral amplitude function $\phi_k(\omega)$, weighted by probability $u_k$.
+The normalization condition requires that $\sum_k u_k=1$.
+The two-photon input state can be written as
+$$\rho ^{\text{in}} _{ab} = \sum _{kk'} u_k v _{k'} |1;\phi_k\rangle_a |1;\varphi _{k'}\rangle_b \langle 1;\phi_k|_a \langle 1;\varphi _{k'}|_b.$$
+It is not necessary to repeat the entire calculation we did for pure states.
+Due to the linearity of quantum mechincs, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
+$$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\omega_1\phi^\ast_k(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
+
+__Example 1: Gaussian wave packets with different central frequencies__
+In this example, we consider input photons with Gaussian spectral amplitude functions with identical spreads but different central frequencies.
 
 ## Temporal/spectral distinguishability
 
