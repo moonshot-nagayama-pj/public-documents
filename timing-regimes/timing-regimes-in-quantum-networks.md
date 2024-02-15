@@ -115,6 +115,9 @@ The photon wave packet of a photon is represented by its __spectral amplitude fu
 Two input photons become distinguishable if their respective spectral amplitude functions are not equal.
 The two photons may have different mean frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$.
 The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_b$, provided that the _shape_ of the wave packet is different, as shown in the Figure below.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_spectral.png"/>
+</p>
 
 ## Temporal/spectral distinguishability
 
