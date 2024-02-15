@@ -155,10 +155,13 @@ It is not necessary to repeat the entire calculation we did for pure states.
 Due to the linearity of quantum mechincs, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\omega_1\phi^\ast_k(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
 
-__Example 1: Gaussian wave packets with different central frequencies__
-In this example, we consider input photons with Gaussian spectral amplitude functions with identical spreads but different central frequencies.
+__Example 1: Gaussian wave packets with different central frequencies__  
+In this example, we consider input photons with Gaussian spectral amplitude functions and different central frequencies.
+The spectral amplitude functions are given by
+$$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{\sigma^2_i}},\quad\text{for } i=a,b.$$
+We assume that the two spectral amplitude functions have the same standard deviation $\sigma_a=\sigma_b=\sigma$.
 
-## Temporal/spectral distinguishability
+## A.4: Temporal distinguishability
 
 Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
 $\hat{b}^{\dagger}(\omega) \rightarrow \hat{b}^{\dagger}(\omega) e^{-i\omega\tau}.$
