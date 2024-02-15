@@ -125,7 +125,7 @@ In this subsection, we analyze the requirements in terms of the photonic spectra
 We are interested in the effect that distinguishability of the input photons, as shown in the Figure below, has on the probability of a coincidence event $p _{\text{coincidence}}$.
 We begin with a treatment of the polarization degree of freedom before analyzing temporal and spectral distinguishability.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/spectral_temporal_dist.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
 </p>
 
 ### Temporal and spectral distinguishability
