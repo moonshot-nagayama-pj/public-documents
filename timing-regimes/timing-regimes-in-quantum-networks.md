@@ -155,11 +155,11 @@ It is not necessary to repeat the entire calculation we did for pure states.
 Due to the linearity of quantum mechincs, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\omega_1\phi^\ast_k(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
 
-__Example 1: Gaussian wave packets with different central frequencies__  
-In this example, we consider input photons with Gaussian spectral amplitude functions and different central frequencies.
+__Example 1: Gaussian wave packets__  
+In this example, we consider input photons with Gaussian spectral amplitude functions.
 The spectral amplitude functions are given by
 $$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma^2_i}},\quad\text{for } i=a,b.$$
-The probaiblit of a coincidence detection is then
+The probability of a coincidence detection is then
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2\pi\sigma^2} \left( \int d\omega_1 e ^{-\frac{(\omega_1-\bar{\omega}_a)^2}{2\sigma_a^2}} e ^{-\frac{(\omega_1-\bar{\omega}_b)^2}{2\sigma_b^2}} \right) \left( \int d\omega_2 e ^{-\frac{(\omega_2-\bar{\omega}_a)^2}{2\sigma_a^2}} e ^{-\frac{(\omega_2-\bar{\omega}_b)^2}{2\sigma_b^2}} \right) = \frac{1}{2} -\frac{\sigma_a\sigma_b}{\sigma_a^2 + \sigma_b^2} e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma_a^2+\sigma_b^2}}.$$
 We assume that the two spectral amplitude functions have the same standard deviation $\sigma_a=\sigma_b=\sigma$, which simplifies the expression for the probability of a coincidence detection to
 $$p _{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}} \right).$$
@@ -168,6 +168,9 @@ For fully distinguishable wave packets, when $\bar{\omega}_a-\bar{\omega}_b\righ
 
 We can now define visibility as a function of the differernce between the central frequencies $\bar{\omega}_a-\bar{\omega}_b$,
 $$V(\bar{\omega}_a-\bar{\omega}_b) = e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}}.$$
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_spectral.png"/>
+</p>
 
 
 # B. Wave Packet Overlap
