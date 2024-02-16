@@ -158,40 +158,36 @@ $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\o
 __Example 1: Gaussian wave packets with different central frequencies__  
 In this example, we consider input photons with Gaussian spectral amplitude functions and different central frequencies.
 The spectral amplitude functions are given by
-$$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{\sigma^2_i}},\quad\text{for } i=a,b.$$
+$$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma^2_i}},\quad\text{for } i=a,b.$$
+The probaiblit of a coincidence detection is then
+$$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2\pi\sigma^2} \left( \int d\omega_1 e ^{-\frac{(\omega_1-\bar{\omega}_a)^2}{2\sigma_a^2}} e ^{-\frac{(\omega_1-\bar{\omega}_b)^2}{2\sigma_b^2}} \right)^2$$
 We assume that the two spectral amplitude functions have the same standard deviation $\sigma_a=\sigma_b=\sigma$.
 
-## A.4: Temporal distinguishability
+
+# B. Wave Packet Overlap
+
+So far we have assumed that the two input photons arrive at the BS at exactly the same time.
+In this subsection, we address this unrealistic assumption and quantify how temporal distinguishability affects the visibility of HOM interference.
+Even for photons with identical spectral amplitude functions, different arrival times result in decreased overlap between the photons' wave packets, diminishing the visibility of the HOM interference.
+If the times of arrival are too different as shown inthe Figure below, probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
+
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
+</p>
 
 Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
 $\hat{b}^{\dagger}(\omega) \rightarrow \hat{b}^{\dagger}(\omega) e^{-i\omega\tau}.$
 Two input photons with arbitrary spectral arbitrary functions $\phi$ and $\varphi$, with photon $b$ arriving late, are described by
-$$|\psi ^{\text{td}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int d\omega_1 \phi(\omega_1)\hat{a}^{\dagger}(\omega_1) \int d\omega_2 \varphi(\omega_2)\hat{b}^{\dagger}(\omega_2) e^{-i\omega_2\tau} |0\rangle _{ab}.$$
+$$|\psi ^{\text{in}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int d\omega_1 \phi(\omega_1)\hat{a}^{\dagger}(\omega_1) \int d\omega_2 \varphi(\omega_2)\hat{b}^{\dagger}(\omega_2) e^{-i\omega_2\tau} |0\rangle _{ab}.$$
 We assume that the BS acts on the different frequency modes independently, and that the reflectivity is also frequency-independent.
 Applying the same transformation rules as in the previous section, the output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi(\omega_1) \int d\omega_2 \varphi(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
-The projector corresponding to a detection event in output mode $a$ is given by
-$$\hat{P}_a = \int d\omega\hat{a}^{\dagger}(\omega) |0\rangle_a\langle0|_a\hat{a}(\omega),$$
-and similarly for mode $b$.
-The probability of detecting a coincidence of detecting one photon in each output mode is then
-$$p ^{\text{pure}} _{\text{coincidence}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_b |\psi ^{\text{out}}\rangle _{ab}.$$
-For two pure photons with arbitrary spectral amplitude functions, this expression reduces to
-$$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2) e^{i\omega_2\tau}.$$
-When the two photons have the same spectral amplitude functions, $\phi(\omega)=\varphi(\omega)$,
-$$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1|\phi(\omega_1)|^2 e^{-i\omega_1\tau} \int d\omega_2 |\phi(\omega_2)|^2 e^{i\omega_2\tau}.$$
+For pure input states, the probability of a coincidence detection is
+$$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega_1\phi^\ast(\omega_1)\varphi(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi^\ast(\omega_2) \phi(\omega_2) e^{i\omega_2\tau},$$
+while for mixed states is can be generalized to the following form,
+$$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
-We are now in a position to treat the case when the input photons are in a __mixed state__.
-Such states may arise as the result of a probabilistic preparation of a pure photon, or the photon being entangled with a different degree of freedom such as another photon or a quantum memory.
-The density matrix representing a mixture of spectral amplitude functions is
-$$\rho_{\phi} = \sum_k q_k |1;\phi_k\rangle_a\langle1;\phi_k|_a.$$
-The two photon input state can be written as
-$$\rho ^{\text{in}} _{ab} = \rho _{\phi} \otimes \rho _{\varphi} = \sum _{kk'} q_k q _{k'} |1;\phi_k\rangle_a |1;\varphi _{k'}\rangle_b \langle 1;\phi_k|_a \langle 1;\varphi _{k'}|_b.$$
-Considering that input photon $b$ is delayed by $\tau$, the output state of the two photons is
-$$\rho ^{\text{out}} _{ab} = \sum _{kk'} q_k q _{k'} |\psi ^{\text{out}} _{kk'}\rangle _{ab} \langle\psi ^{\text{out}} _{kk'}| _{ab},$$
-where
-$$|\psi ^{\text{out}} _{kk'}\rangle _{ab} = \frac{1}{2} \int d\omega_1 \phi_k(\omega_1) \int d\omega_2 \varphi _{k'}(\omega_2) e^{-i\omega_2\tau} \left[ \hat{a}^{\dagger}(\omega_1)\hat{a}^{\dagger}(\omega_2) + \hat{a}^{\dagger}(\omega_2)\hat{b}^{\dagger}(\omega_1) - \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) - \hat{b}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) \right] |0\rangle _{ab}.$$
-Using linearity of quantum mechanics, computing the probability of coincidence, $p ^{\text{mix}} _{\text{coincidence}}$, can be done by simply summing the probabilities $p ^{\text{pure}} _{\text{coincidence}}$ over the spectral amplitude function indices $k$ and $k'$ with the appropriate weighing probabilities $q_k$ and $q _{k'}$,
-$$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} q_k q _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
+## [OLD stuff]
 
 __Example: Independent SPDC sources__  
 Two independent SPDC sources generate two pure entangled pairs of photons,
@@ -207,12 +203,6 @@ $$p ^{\text{SPDC}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'}
 Often, one is also interested in how the visibility changes as a function of the difference in time in the detection events, which is given by the time delay $\tau$.
 The expression for the visibility can be modified in the following way,
 $$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
-
-# B. Wave Packet Overlap
-
-<p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
-</p>
 
 # C. Detector Recovery
 
