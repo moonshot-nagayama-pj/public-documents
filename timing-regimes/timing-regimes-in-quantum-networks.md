@@ -76,18 +76,13 @@ where we used the fact that the maximum probability of a coincidence detection i
 We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
 Visibility $V$ plays a useful role when modelling the effects of imperfect HOM intereference in the context of entanglement swapping.
-Consider two entnagled pairs of qubits, $a - b$ and $c - d$, where the BS input photons, $b$ and $c$, are entangled with qubits $a$ and $d$, repectively.
-The degree to which photons $b$ and $c$ interfere at the BS is directly related to the fidelity $F$ of the resulting entangled pair $a - d$.
-Fidelity of a state $\rho$ with respect to the ideal state $|\psi\rangle$ is
-$$F(\rho) = \langle\psi|\rho|\psi\rangle.$$
-Non-ideal HOM interference can be modelled as a two-qubit dephasing on the qubit pair $a - d$ [3].
-We denote the state of qubits $a$ and $d$, resulting from an ideal ES with perfect HOM interference, by $\rho_{ad}^{\text{ideal}}$.
-Note that in general, $\rho_{ad}^{\text{ideal}}$ is not a pure Bell state because it is affected by other sources of noise such as decoherence, imperfect prepartion procedure, and detector dark counts.
-The fully dephased state of that this density matrix is obtained by setting all of its off-diagonal elements to 0, and is denoted by $\rho_{ad}^{\text{deph}}$.
-The state of qubits $a$ and $d$ can be written as
-$$\rho_{ad} = V \times \rho_{ad}^{\text{ideal}} + (1 - V) \times \rho_{ad}^{\text{deph}}.$$
-This allows us to immediately compute the fidelity of the distributed state $\rho_{ad}$ with respect to the ideal state $|\psi^{\pm}\rangle$,
-$$F(\rho_{ad}) = V + (1-V) \langle\psi^{\pm}|\rho_{ad}^{\text{deph}}|\psi^{\pm}\rangle.$$
+Consider the case when the input photons $a$, $b$ are entangled with auxilliary systems $s_1$ and $s_2$, respectively.
+The BSA performs ES by measuring the input photons, entangling systems $s_1$ and $s_2$ in the process.
+Fidelity of the new entangled pair is directly proportional to the visibility $V$ of the HOM interference.
+Denote by $\rho_{s_1s_2}^{\text{no-deph}}$ the density matrix resulting from an ideal ES at the BSA with unit visibility of the HOM interference.
+Non-ideal HOM interference can be modelled as a two-qubit dephasing [3],
+$$\rho_{s_1s_2} = V \times \rho_{s_1s_2}^{\text{no-deph}} + (1 - V) \times \rho_{s_1s_2}^{\text{deph}},$$
+where $\rho_{s_1s_2}^{\text{deph}}$ is a fully dephased state obtained by setting all off-diagonal elements of $\rho_{s_1s_2}^{\text{no-deph}}$ to zero.
 
 In the following subsections, we address and quantify how distinguishable photons affect the visibility of the HOM interference.
 
