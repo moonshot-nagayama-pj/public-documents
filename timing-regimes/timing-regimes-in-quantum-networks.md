@@ -75,6 +75,20 @@ $$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\tex
 where we used the fact that the maximum probability of a coincidence detection is $1/2$.
 We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
+Visibility $V$ plays a useful role when modelling the effects of imperfect HOM intereference in the context of entanglement swapping.
+Consider two entnagled pairs of qubits, $a - b$ and $c - d$, where the BS input photons, $b$ and $c$, are entangled with qubits $a$ and $d$, repectively.
+The degree to which photons $b$ and $c$ interfere at the BS is directly related to the fidelity $F$ of the resulting entangled pair $a - d$.
+Fidelity of a state $\rho$ with respect to the ideal state $|\psi\rangle$ is
+$$F(\rho) = \langle\psi|\rho|\psi\rangle.$$
+Non-ideal HOM interference can be modelled as a two-qubit dephasing on the qubit pair $a - d$ [3].
+We denote the state of qubits $a$ and $d$, resulting from an ideal ES with perfect HOM interference, by $\rho_{ad}^{\text{ideal}}$.
+Note that in general, $\rho_{ad}^{\text{ideal}}$ is not a pure Bell state because it is affected by other sources of noise such as decoherence, imperfect prepartion procedure, and detector dark counts.
+The fully dephased state of that this density matrix is obtained by setting all of its off-diagonal elements to 0, and is denoted by $\rho_{ad}^{\text{deph}}$.
+The state of qubits $a$ and $d$ can be written as
+$$\rho_{ad} = V \times \rho_{ad}^{\text{ideal}} + (1 - V) \times \rho_{ad}^{\text{deph}}.$$
+This allows us to immediately compute the fidelity of the distributed state $\rho_{ad}$ with respect to the ideal state $|\psi^{\pm}\rangle$,
+$$F(\rho_{ad}) = V + (1-V) \langle\psi^{\pm}|\rho_{ad}|\psi^{\pm}\rangle.$$ 
+
 In the following subsections, we address and quantify how distinguishable photons affect the visibility of the HOM interference.
 
 ## A.2. Polarization
@@ -219,4 +233,5 @@ $$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max
 ## References
 
 [1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
-[2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).
+[2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).  
+[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, _Phys. Rev. Lett._ __130__, 050803 (2023).
