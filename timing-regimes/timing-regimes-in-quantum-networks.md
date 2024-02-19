@@ -54,7 +54,7 @@ There are four possible cases that may occur:
 The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
 $$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-r}\hat{a}^{\dagger} + \sqrt{r}\hat{b}^{\dagger}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{r}\hat{a}^{\dagger} - \sqrt{1-r}\hat{b}^{\dagger}.$$
 The output state of the two photons is
-$$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{r(1-r)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + r \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-r) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{\eta(1-r)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
+$$|\psi ^{\text{out}}\rangle _{ab} = \hat{U} _{ab} |\psi ^{\text{in}}\rangle _{ab} = \left( \sqrt{r(1-r)}\hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + r \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - (1-r) \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \sqrt{r(1-r)} \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 For a 50:50 BS with $r=1/2$, we obtain,
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( \hat{a} ^{\dagger} _{j} \hat{a} ^{\dagger} _{k} + \hat{a} ^{\dagger} _{k} \hat{b} ^{\dagger} _{j} - \hat{a} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} - \hat{b} ^{\dagger} _{j} \hat{b} ^{\dagger} _{k} \right) |0\rangle _{ab}.$$
 From this expression, we can see that when $j=k$, in other words when the input photons indistinguishable, the output state has the following form,
