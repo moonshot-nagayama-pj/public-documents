@@ -87,7 +87,7 @@ The fully dephased state of that this density matrix is obtained by setting all 
 The state of qubits $a$ and $d$ can be written as
 $$\rho_{ad} = V \times \rho_{ad}^{\text{ideal}} + (1 - V) \times \rho_{ad}^{\text{deph}}.$$
 This allows us to immediately compute the fidelity of the distributed state $\rho_{ad}$ with respect to the ideal state $|\psi^{\pm}\rangle$,
-$$F(\rho_{ad}) = V + (1-V) \langle\psi^{\pm}|\rho_{ad}|\psi^{\pm}\rangle.$$ 
+$$F(\rho_{ad}) = V + (1-V) \langle\psi^{\pm}|\rho_{ad}^{\text{deph}}|\psi^{\pm}\rangle.$$
 
 In the following subsections, we address and quantify how distinguishable photons affect the visibility of the HOM interference.
 
