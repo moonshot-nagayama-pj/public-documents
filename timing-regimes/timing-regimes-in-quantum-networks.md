@@ -170,13 +170,23 @@ The spectral amplitude functions are given by
 $$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma^2_i}},\quad\text{for } i=a,b.$$
 The probability of a coincidence detection is then
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2\pi\sigma^2} \left( \int d\omega_1 e ^{-\frac{(\omega_1-\bar{\omega}_a)^2}{2\sigma_a^2}} e ^{-\frac{(\omega_1-\bar{\omega}_b)^2}{2\sigma_b^2}} \right) \left( \int d\omega_2 e ^{-\frac{(\omega_2-\bar{\omega}_a)^2}{2\sigma_a^2}} e ^{-\frac{(\omega_2-\bar{\omega}_b)^2}{2\sigma_b^2}} \right) = \frac{1}{2} -\frac{\sigma_a\sigma_b}{\sigma_a^2 + \sigma_b^2} e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{\sigma_a^2+\sigma_b^2}}.$$
+
+__Case A (different central frequencies):__
 We assume that the two spectral amplitude functions have the same standard deviation $\sigma_a=\sigma_b=\sigma$, which simplifies the expression for the probability of a coincidence detection to
 $$p _{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}} \right).$$
 We observe that for identical photons, when $\bar{\omega}_a=\bar{\omega}_b$, the probability of a coincidence detection vanishes.
 For fully distinguishable wave packets, when $\bar{\omega}_a-\bar{\omega}_b\rightarrow\infty$, the probability approaches 1/2, as expected.
-
 We can now define visibility as a function of the differernce between the central frequencies $\bar{\omega}_a-\bar{\omega}_b$,
 $$V(\bar{\omega}_a-\bar{\omega}_b) = e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}}.$$
+
+__Case B (different standard deviations):__
+The spectral amplitude functions have the same central frequencies, $\omega_a=\omega_b$, which gives the following expression for the probability of coincidence,
+$$p_{\text{coin}} = \frac{1}{2} - \frac{\sigma_a\sigma_b}{\sigma_a^2 + \sigma_b^2}= \frac{1}{2} - \frac{\sigma_b/\sigma_a}{1 + (\sigma_b/\sigma_a)^2},$$
+allowing us to define the visibility of the HOM interference as a function of the ratio between the standard deviations of the spectral amplitude functions,
+$$V(\sigma_b/\sigma_a) = \frac{2\sigma_b/\sigma_a}{1 + (\sigma_b/\sigma_a)^2}.$$
+
+The probability of coincidence and corresponding visibility for both Cases are shown in the Figure below.
+
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_spectral.png"/>
 </p>
