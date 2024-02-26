@@ -215,6 +215,14 @@ $$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega
 while for mixed states is can be generalized to the following form,
 $$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
+__Example: Gaussian wave packets__  
+Consider two identical wavepackets, which arrive at the BS with a time difference given by $\tau$.
+The probability of coincidence is given by
+$$p_{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{1}{2}\sigma^2\tau^2} \right) = \frac{1}{2} \left( 1 - e^{-\frac{1}{2}\tau^{\prime 2}} \right),$$
+where we have defined a dimensionless time rescaled by the standard deviation of the spectral amplitude function of the photon, $\tau^{\prime} = \sigma\tau$.
+The corresponding visibility is given by
+$$V(\tau^{\prime}) = e^{-\frac{1}{2}\tau^{\prime 2}}.$$
+
 ## [OLD stuff]
 
 __Example: Independent SPDC sources__  
