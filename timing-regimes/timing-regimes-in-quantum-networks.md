@@ -222,23 +222,10 @@ $$p_{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{1}{2}\sigma^2\tau^2} \right
 where we have defined a dimensionless time rescaled by the standard deviation of the spectral amplitude function of the photon, $\tau^{\prime} = \sigma\tau$.
 The corresponding visibility is given by
 $$V(\tau^{\prime}) = e^{-\frac{1}{2}\tau^{\prime 2}}.$$
-
-## [OLD stuff]
-
-__Example: Independent SPDC sources__  
-Two independent SPDC sources generate two pure entangled pairs of photons,
-$$|\psi_1\rangle _{ab} = \int d\omega_1 \int d\omega_2 f(\omega_1, \omega_2) \hat{a}^{\dagger}(\omega_1)\hat{b}^{\dagger}(\omega_2) |0\rangle _{ab}, \quad |\psi_2\rangle _{cd} = \int d\omega_1 \int d\omega_2 h(\omega_1, \omega_2) \hat{c}^{\dagger}(\omega_1)\hat{d}^{\dagger}(\omega_2) |0\rangle _{cd}.$$
-Since photons $a/c$ and $b/d$ are entangled, it is necessary to use a joint spectral amplitude function $f/h$ for the entire pair.
-Photons $b$ and $c$ are the input photons for the BS, with their reduced states being
-$$\rho _{\phi} = \sum_k u^2_k|1;\phi_k\rangle_b\langle1;\phi_k|_b, \quad \rho _{\varphi} = \sum_k v^2_k|1;\varphi_k\rangle_c\langle1;\varphi_k|_c,$$
-where the functions $\phi_k$ and $\varphi_k$ are obtained from the Schmidt decomposition of the joint spectral amplitude function,
-$$f(\omega_1,\omega_2)=\sum_k u_k \phi'_k(\omega_1)\phi_k(\omega_2), \quad h(\omega_1,\omega_2)=\sum_k v_k \varphi_k(\omega_1)\varphi'_k(\omega_2).$$
-The coincidence probability then becomes
-$$p ^{\text{SPDC}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
-
-Often, one is also interested in how the visibility changes as a function of the difference in time in the detection events, which is given by the time delay $\tau$.
-The expression for the visibility can be modified in the following way,
-$$V(\tau) = \frac{p _{\text{max}} - p _{\text{coincidence}}(\tau)}{p _{\text{max}}}.$$
+Figure below displays the visibility and probability of coincidence for this case.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_temporal.png"/>
+</p>
 
 # C. Detector Recovery
 
