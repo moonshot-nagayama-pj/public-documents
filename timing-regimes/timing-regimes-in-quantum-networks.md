@@ -234,9 +234,23 @@ This on the other hand results in a large uncertainty of the emission time, give
 Therefore, even if the two remote nodes commence their atom excitation procedure in a perfectly synchronized fashion, they will likely emit their photons at slightly different times, leading to photon emission time jitter, and finite difference of arrival $\tau$ at the BSA.
 
 The amount of emission time jitter depends on the physical system used to implement the emissive memory.
-For example, recent experiment [3] using trapped ions as emissive memories characterized the emission probability as a function of time, leading to a Poissonian distribution with 
+For example, recent trapped ions experiment [3] characterized the emission probability as a function of time, leading to a Poissonian distribution with standard deviation of approximately 10 $\mu\text{s}$.
 
-# C. Detector Recovery
+# C. Detector Timing Windows
+
+In this section, we discuss how properties of single-photon detectors (SPDs) affect the timing regimes in quantum networks.
+An ideal SPD generates an electrical signal after absorbing a photon, and generates no signal in the absence of illumination.
+This is not always true for real-world SPDs.
+Performance of SPDs can be quantified by the following characteristics,
+- __Spectral range:__ SPDs are sensitive over a limited range of wavelengths. This range depends on the materials used in the fabrication of the detector. Typical spectral ranges are in the near-infrared, around 1550nm, where commercial optical fibers perform best in terms of photon loss rates.
+- __Detection efficiency:__ The overall probability that an incoming photon registers a count, denotwed by $\eta$. This efficiency can be further broken down. Proaility of losing hte photon before it reaches the detector is described by the *coupling efficiency*, $\eta_{\text{coupling}}$. The type of material and geometry of the detector determine the photon *absorption efficiency*, $\eta_{\text{absorption}}$. Finally, the probability that an electric signal is generated upon successful absorption of a photon is descibed by the *registering efficiency*, $\eta_{\text{registering}}$. The overall *system detection efficiency* is given by the product of these three,
+$$\eta_{\text{sde}} = \eta_{\text{coupling}} \times \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
+The *device detection efficiency* is given by
+$$\eta_{\text{dde}} = \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
+Detection efficiency affects the rate at which entnaglement can be distributed.
+- __Recovery time:__ Denoted by $\tau_{\text{recovery}}$ and also known as 'dead' time. It is the time duration following an absorption of a photon during which the detector is unable to reliably detect another photon. Recovery time affects the entanglement distribution rate.
+- __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
+- __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in hte Figure below.
 
 
 ## References
