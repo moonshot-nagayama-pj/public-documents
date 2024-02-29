@@ -30,7 +30,7 @@ We label the input modes $a$ and $b$.
 The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that output mode $a$ corresponds to the input mode $a$ being transmitted.
 Similarly for output mode $b$, as shown in the Figure below.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/HOM.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A1-HOM.png"/>
 </p>
 
 The input state can be expressed as
@@ -114,7 +114,7 @@ When the photons have identical polarization, $\theta=0$, the visibility reaches
 On the other hand, when the photons are fully distinguishable and their polarization vectors are orthogonal, $\theta=\pm\pi/2$, visibility is $V=0$.
 The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\text{coin}}$ are both displayed in the Figure below.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_polarization.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A2-visibility_polarization.png"/>
 </p>
 
 ## A.3. Spectral distinguishability
@@ -125,7 +125,7 @@ Two input photons become distinguishable if their respective spectral amplitude 
 The two photons may have different central frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$.
 The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_b$, provided that the shape of the wave packet is different, as shown in the Figure below.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_spectral.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A3-distinguish_spectral.png"/>
 </p>
 In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
@@ -188,7 +188,7 @@ $$V(\sigma_b/\sigma_a) = \frac{2\sigma_b/\sigma_a}{1 + (\sigma_b/\sigma_a)^2}.$$
 The probability of coincidence and corresponding visibility for both Cases are shown in the Figure below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_spectral.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A3-visibility_spectral.png"/>
 </p>
 
 
@@ -200,7 +200,7 @@ Even for photons with identical spectral amplitude functions, different arrival 
 If the times of arrival are too different as shown inthe Figure below, probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/distinguish_temporal.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-distinguish_temporal.png"/>
 </p>
 
 Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
@@ -224,7 +224,7 @@ The corresponding visibility is given by
 $$V(\tau^{\prime}) = e^{-\frac{1}{2}\tau^{\prime 2}}.$$
 Figure below displays the visibility and probability of coincidence for this case.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/visibility_temporal.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-visibility_temporal.png"/>
 </p>
 
 __Photon emission time jitter__  
@@ -251,6 +251,9 @@ Detection efficiency affects the rate at which entnaglement can be distributed.
 - __Recovery time:__ Denoted by $\tau_{\text{recovery}}$ and also known as 'dead' time. It is the time duration following an absorption of a photon during which the detector is unable to reliably detect another photon. Recovery time affects the entanglement distribution rate.
 - __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
 - __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in hte Figure below.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png"/>
+</p>
 
 
 ## References
