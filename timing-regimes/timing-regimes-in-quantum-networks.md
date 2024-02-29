@@ -252,7 +252,7 @@ Detection efficiency affects the rate at which entnaglement can be distributed.
 - __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
 - __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in hte Figure below.
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
 
 
