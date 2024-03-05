@@ -117,6 +117,23 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A2-visibility_polarization.png", width="400"/>
 </p>
 
+__Interference of photons from two independent EPPS__  
+The oreceeding discussion was concerned with two inpedent pure photons of different polarization.
+In the context of quantum networking, a much more common scenario is that of two entangled pairs of photons originating from two inpedendent EPPS nodes, where two qubits from each pair are incident onto a BS and undergo HOM interference.
+The two pairs are in the following initial state,
+$$|\psi^{\text{in}}\rangle_{ab} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{ab} + e^{i\theta_1} |VH\rangle_{ab} \right), \qquad |\psi^{\text{in}}\rangle_{cd} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{cd} + e^{i\theta_2} |VH\rangle_{cd} \right),$$
+where $\theta_1$ and $\theta_2$ represent the polarization drift induced in the single-mode fiber.
+Photons $b$ and $c$ are incident onto a BS, where they undergo HOM interference.
+Following the same calculation as above, it can be shown that the proabiblity of a coincidence event is
+$$p_{\text{coin}} = \frac{1}{4}, \quad\text{regardless of the polarizaiton drift }\theta_{1/2}.$$
+This suggests that the visibility is insestivive to the polarization drift.
+However, the polarization drift must be tracked regardless because it affects the fidelity of the post-ES state of photons $a$ and $d$,
+$$|\Psi^{\pm}\rangle_{ad} = \frac{1}{\sqrt{2}} \left( |HV\rangle_{ad} \pm e^{i(\theta_1-\theta_2)} |VH\rangle_{ad} \right).$$
+It is therefore important to characterize the polarization drift at the BSA at regular intervals and compensate for it.
+This can be done at the nodes generating the photon pairs at the cost of the BSA having to communicate polarization drift results to the ends nodes.
+Or it can be compensated for directly at the BSA using waveplates at the cost of increased complexity of the BSA.
+In [3], the process of polarization drift characterization and compensation at the BSA takes few minutes and is performed every 20 minutes.
+
 ## A.3. Spectral distinguishability
 
 Another important source of distinguishability in HOM interference is the spectral property of the input photons.
