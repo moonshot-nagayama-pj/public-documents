@@ -258,6 +258,9 @@ For example, recent trapped ions experiment [3] characterized the emission proba
 In this section, we discuss how properties of single-photon detectors (SPDs) affect the timing regimes in quantum networks.
 An ideal SPD generates an electrical signal after absorbing a photon, and generates no signal in the absence of a photon.
 This is not always true for real-world SPDs [4].
+
+## C.1. Detector basics
+
 Performance of SPDs can be quantified by the following characteristics,
 - __Spectral range:__ SPDs are sensitive over a limited range of wavelengths. This range depends on the materials used in the fabrication of the detector. Typical spectral ranges are in the near-infrared, around 1550nm, where commercial optical fibers perform best in terms of photon loss rates.
 - __Detection efficiency:__ The overall probability that an incoming photon registers a count, denotwed by $\eta$.
@@ -282,7 +285,7 @@ On the other hand, if the photon source is highly efficient, it is important to 
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
 
-The table below shows displays few of the above characteristics for a SNSPD.
+The table below shows the above characteristics for a SNSPD [5].
 
 | Wavelength                  | 800 nm  | 1550 nm |
 |-----------------------------|---------|---------|
@@ -291,9 +294,12 @@ The table below shows displays few of the above characteristics for a SNSPD.
 | Dark count rate             | < 1 Hz  | < 1 Hz  |
 | Timing jitter               | < 15 ps | < 15 ps |
 
+## C.2. Timing Windows
+
 ## References
 
 [1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
 [2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).  
-[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, *Phys. Rev. Lett.* __130__, 050803 (2023).
-[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, *Nature Photonics* __3__, 696 (2009).
+[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, *Phys. Rev. Lett.* __130__, 050803 (2023).  
+[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, *Nature Photonics* __3__, 696 (2009).  
+[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf)
