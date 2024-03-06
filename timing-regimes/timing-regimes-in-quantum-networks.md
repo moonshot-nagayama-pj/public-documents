@@ -282,7 +282,14 @@ On the other hand, if the photon source is highly efficient, it is important to 
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
 
+The table below shows displays few of the above characteristics for a SNSPD.
 
+| Wavelength                  | 800 nm  | 1550 nm |
+|-----------------------------|---------|---------|
+| System detection efficiency | > 90%   | > 90%   |
+| Recovery time               | 10 ns   | 20 ns   |
+| Dark count rate             | < 1 Hz  | < 1 Hz  |
+| Timing jitter               | < 15 ps | < 15 ps |
 
 ## References
 
