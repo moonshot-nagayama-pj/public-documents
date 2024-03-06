@@ -284,7 +284,6 @@ On the other hand, if the photon source is highly efficient, it is important to 
 
 
 
-
 ## References
 
 [1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
