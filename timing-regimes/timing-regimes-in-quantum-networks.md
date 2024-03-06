@@ -256,25 +256,38 @@ For example, recent trapped ions experiment [3] characterized the emission proba
 # C. Detector Timing Windows
 
 In this section, we discuss how properties of single-photon detectors (SPDs) affect the timing regimes in quantum networks.
-An ideal SPD generates an electrical signal after absorbing a photon, and generates no signal in the absence of illumination.
-This is not always true for real-world SPDs.
+An ideal SPD generates an electrical signal after absorbing a photon, and generates no signal in the absence of a photon.
+This is not always true for real-world SPDs [4].
 Performance of SPDs can be quantified by the following characteristics,
 - __Spectral range:__ SPDs are sensitive over a limited range of wavelengths. This range depends on the materials used in the fabrication of the detector. Typical spectral ranges are in the near-infrared, around 1550nm, where commercial optical fibers perform best in terms of photon loss rates.
-- __Detection efficiency:__ The overall probability that an incoming photon registers a count, denotwed by $\eta$. This efficiency can be further broken down. Proaility of losing hte photon before it reaches the detector is described by the *coupling efficiency*, $\eta_{\text{coupling}}$. The type of material and geometry of the detector determine the photon *absorption efficiency*, $\eta_{\text{absorption}}$. Finally, the probability that an electric signal is generated upon successful absorption of a photon is descibed by the *registering efficiency*, $\eta_{\text{registering}}$. The overall *system detection efficiency* is given by the product of these three,
+- __Detection efficiency:__ The overall probability that an incoming photon registers a count, denotwed by $\eta$.
+This efficiency can be further broken down.
+Probability of losing the photon before it reaches the detector is described by the *coupling efficiency*, $\eta_{\text{coupling}}$.
+The type of material and geometry of the detector determine the photon *absorption efficiency*, $\eta_{\text{absorption}}$.
+Finally, the probability that an electric signal is generated upon successful absorption of a photon is described by the *registering efficiency*, $\eta_{\text{registering}}$.
+The overall *system detection efficiency* is given by the product of these three,
 $$\eta_{\text{sde}} = \eta_{\text{coupling}} \times \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
 The *device detection efficiency* is given by
 $$\eta_{\text{dde}} = \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
 Detection efficiency affects the rate at which entnaglement can be distributed.
-- __Recovery time:__ Denoted by $\tau_{\text{recovery}}$ and also known as 'dead' time. It is the time duration following an absorption of a photon during which the detector is unable to reliably detect another photon. Recovery time affects the entanglement distribution rate.
+- __Recovery time:__ Denoted by $\tau_{\text{recovery}}$ and also known as 'dead' time.
+It is the time duration following an absorption of a photon during which the detector is unable to reliably detect another photon.
+Recovery time affects the maximum detection rate.
+If the source of photons has low efficiency, the clock rate does not need to be limited by the recovery time, as majority of the trials will not produce a photon.
+This could also be the case if the probability of losing the photon is high (either due to loss in fiber or due to low system detection efficiency $\eta_{\text{sde}}$).
+On the other hand, if the photon source is highly efficient, it is important to ensure that the separation between the wavepackets is longer than $\tau_{\text{recovery}}$ to ensure effcient use of the generated photons.
 - __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
-- __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in the Figure below.
+- __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in the Figure below taken from [4].
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
+
+
 
 
 ## References
 
 [1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
 [2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).  
-[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, _Phys. Rev. Lett._ __130__, 050803 (2023).
+[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, *Phys. Rev. Lett.* __130__, 050803 (2023).
+[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, *Nature Photonics* __3__, 696 (2009).
