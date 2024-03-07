@@ -248,7 +248,7 @@ __Photon emission time jitter__
 Photon emission is fundamentally a __non-deterministic__ process, owing to the Heisenberg uncertainty principle $\Delta E \Delta t \geq \hbar/2$.
 Following our disciussion in Section A.3 (Spectral distinguishability), it is desirable for the emitted photons to be spectrally pure, which corresponds to small $\Delta E$.
 This on the other hand results in a large uncertainty of the emission time, given by $\Delta t$.
-Therefore, even if the two remote nodes commence their atom excitation procedure in a perfectly synchronized fashion, they will likely emit their photons at slightly different times, leading to photon emission time jitter, and finite difference of arrival $\tau$ at the BSA.
+Therefore, even if the two remote nodes commence their atom excitation procedure in a perfectly synchronized fashion, they will likely emit their photons at slightly different times, leading to photon emission time jitter, $J_{\text{emission}}$, and finite difference of arrival $\tau$ at the BSA.
 
 The amount of emission time jitter depends on the physical system used to implement the emissive memory.
 For example, recent trapped ions experiment [3] characterized the emission probability as a function of time, leading to a Poissonian distribution with standard deviation of approximately 10 $\mu\text{s}$.
@@ -280,7 +280,8 @@ If the source of photons has low efficiency, the clock rate does not need to be 
 This could also be the case if the probability of losing the photon is high (either due to loss in fiber or due to low system detection efficiency $\eta_{\text{sde}}$).
 On the other hand, if the photon source is highly efficient, it is important to ensure that the separation between the wavepackets is longer than $\tau_{\text{recovery}}$ to ensure effcient use of the generated photons.
 - __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
-- __Timing jitter:__ Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in the Figure below taken from [4].
+- __Timing jitter:__ Denoted by $J_{\text{timing}}$.
+Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in the Figure below taken from [4].
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
@@ -294,19 +295,27 @@ The table below shows the above characteristics for a SNSPD [5].
 | Dark count rate             | < 1 Hz  | < 1 Hz  |
 | Timing jitter               | < 15 ps | < 15 ps |
 
-## C.2. Timing Windows
+## C.2. Acceptance window
 
 In the previous Section, we used $\tau$ to denote the difference between the arrival time of the photons at the BSA.
 However, due to emission jitter it is impossible to know the precise time of arrival of a photon.
 The only information that is available comes from the electric output signal of a detector.
-Time of detection is in general different from the time of photon arrival due to finite time needed to generate the output signal described by the timing jitter.
+Time of detection is in general different from the time of photon arrival due to finite time needed to generate the output signal described by the timing jitter $J_{\text{timing}}$.
 Therefore, we will use $\tau$ to denote the difference in detection time of the two photons.
 
-Measurement at the BSA is successful when the correct pattern of detector clicks is observed, and the difference in detection times $\tau$ is smaller than a given detection window, $T_{\text{window}}$.
-The size of the window affects both the fidelity and th generation rate of the entangled pairs that the link produces.
-Large detection windows produce high rates but low fidelity, while small detection windows result in low rates and high fidelity.
-Appropriate size of the window must be chosen in order to satisfy the demands of the application requesting the entangled states.
+Measurement at the BSA is successful when the correct pattern of detector clicks is observed, and the difference in detection times $\tau$ is smaller than a given detection __acceptance window__, $T_{\text{window}}$.
+The size of this window affects both the fidelity and the generation rate of the entangled pairs that the link produces.
+Large acceptance windows produce high rates but low fidelity, while small acceptance windows result in low rates and high fidelity.
+Appropriate size of the aceptance window must be chosen in order to satisfy the demands of the application requesting the entangled states.
 Reaching the requested fidelity should take priority over high generation rate.
+
+## C.3. Cycle time
+
+Current experiments on quantum repeaters use single quantum memory per QNIC [3].
+As quantum technologies improve, it is likely that QNICs will be equipped with a number of quantum memories.
+This will allow for generation of link-level entanglement in a multiplexed manner, where trains of photons, each originating from a different memory inside the same QNIC, are sent to the BSA.
+The photons must be well separated such that upon a successful BSM, the BSA can uniquely identify which two photons were measured.
+We refer to the separation between the photons as the __cycle time__ $T_{\text{cycle}}$.
 
 
 
