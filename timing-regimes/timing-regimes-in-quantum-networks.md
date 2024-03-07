@@ -296,10 +296,24 @@ The table below shows the above characteristics for a SNSPD [5].
 
 ## C.2. Timing Windows
 
+In the previous Section, we used $\tau$ to denote the difference between the arrival time of the photons at the BSA.
+However, due to emission jitter it is impossible to know the precise time of arrival of a photon.
+The only information that is available comes from the electric output signal of a detector.
+Time of detection is in general different from the time of photon arrival due to finite time needed to generate the output signal described by the timing jitter.
+Therefore, we will use $\tau$ to denote the difference in detection time of the two photons.
+
+Measurement at the BSA is successful when the correct pattern of detector clicks is observed, and the difference in detection times $\tau$ is smaller than a given detection window, $T_{\text{window}}$.
+The size of the window affects both the fidelity and th generation rate of the entangled pairs that the link produces.
+Large detection windows produce high rates but low fidelity, while small detection windows result in low rates and high fidelity.
+Appropriate size of the window must be chosen in order to satisfy the demands of the application requesting the entangled states.
+Reaching the requested fidelity should take priority over high generation rate.
+
+
+
 ## References
 
-[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, _Phys. Rev. Lett._ __59__, 2044 (1987).  
-[2] Branczyk, A. M., Hong-Ou-Mandel Interference, arXiv:1711.00080 (2017).  
-[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, *Phys. Rev. Lett.* __130__, 050803 (2023).  
-[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, *Nature Photonics* __3__, 696 (2009).  
-[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf)
+[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).  
+[2] Branczyk, A. M., Hong-Ou-Mandel Interference, [*arXiv:1711.00080* (2017)](https://arxiv.org/abs/1711.00080).  
+[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).  
+[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).  
+[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).
