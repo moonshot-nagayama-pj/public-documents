@@ -309,14 +309,32 @@ Large acceptance windows produce high rates but low fidelity, while small accept
 Appropriate size of the aceptance window must be chosen in order to satisfy the demands of the application requesting the entangled states.
 Reaching the requested fidelity should take priority over high generation rate.
 
-## C.3. Cycle time
+## C.3. Wavepacket separation
 
 Current experiments on quantum repeaters use single quantum memory per QNIC [3].
-As quantum technologies improve, it is likely that QNICs will be equipped with a number of quantum memories.
+As quantum technologies improve, it is likely that QNICs will be equipped with multiple quantum memories.
 This will allow for generation of link-level entanglement in a multiplexed manner, where trains of photons, each originating from a different memory inside the same QNIC, are sent to the BSA.
 The photons must be well separated such that upon a successful BSM, the BSA can uniquely identify which two photons were measured.
-We refer to the separation between the photons as the __cycle time__ $T_{\text{cycle}}$.
+We refer to the minimum separation between the photons as the __separation time__ $T_{\text{separation}}$.
 
+The size of the seapration time depends on the following:
+- __Wave packet shape:__ Individual photons cannot have overlapping spatial wavepackets, which may lead to incorrect assignement of entangled qubits following a successful meadurement at the BSA. We will use $T_{\text{photon}}$ to denote the length of a wavepacket in seconds.
+- __Detector recovery time:__ Spacing the wavepackets too close to each other may result in some of the photons being lost due to the detector recovering following a detection event, leading to inefficient use of initially generated entangled pairs (either memory-photon or photon-photon).
+- __Memory emission jitter:__ The separation between the wavepackets must take into account the probabilistic nature of photon emission from a quantum memory in order to prevent wavepacket overlap.
+- __Detector timing jitter:__ Generation of the electric signal following absorption of a photon varies in duration, leading to a variance in timing of the detection event. This may lead to the BSA mislabelling which photons were part of a successful measurement if their wavepackets are spaced too closely.
+
+General (conservative) separation time should therefore be set to
+$$T_{\text{separation}} = T_{\text{photon}} + J_{\text{emission}} + J_{\text{timing}}.$$
+
+The above discussion assumes that the photons can be generated nearly on-demand.
+This is a fair assumption in the case of quantum memories based on trapped ions [3].
+Here, the memory must be first initialized by cooling it to its ground state, a process which takes $<1\text{ms}$.
+The memory is then excited by a laser pulse of ~ $50\mu \text{s}$ that generates a photon.
+
+On the other hand, the conservative separation time may be relaxed in the case of memory-less link architectures.
+Here, EPPS nodes utilizing the principle of spontaneous parametric down-conversion (SPDC) generate entangled photon pairs.
+Each photon is sent to a different BSA, where they are measured with a photon originating from a different EPPS node.
+SPDC is an inefficient process with success probability of around $10^{-6}$.
 
 
 ## References
