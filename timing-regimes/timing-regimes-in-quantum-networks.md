@@ -339,6 +339,8 @@ This means that most of the time windows given by the separation time will not c
 However, the separation time should be maintain in order to correcly identify the photons that were part of a successful measurement at the BSA.
 The separation time governs the maximum rate at which EPPS attempts to generate the entangled photon pairs, which is given by $1/T_{\text{separation}}$.
 
+# D. Measurement basis selection
+
 
 ## References
 
