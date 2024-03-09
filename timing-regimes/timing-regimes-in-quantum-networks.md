@@ -331,10 +331,13 @@ This is a fair assumption in the case of quantum memories based on trapped ions 
 Here, the memory must be first initialized by cooling it to its ground state, a process which takes $<1\text{ms}$.
 The memory is then excited by a laser pulse of ~ $50\mu \text{s}$ that generates a photon.
 
-On the other hand, the conservative separation time may be relaxed in the case of memory-less link architectures.
+In the cxase of memory-less link architectures, the picture is slightly different.
 Here, EPPS nodes utilizing the principle of spontaneous parametric down-conversion (SPDC) generate entangled photon pairs.
 Each photon is sent to a different BSA, where they are measured with a photon originating from a different EPPS node.
-SPDC is an inefficient process with success probability of around $10^{-6}$.
+SPDC is an inefficient process with success probability of around $10^{-6}$ per pump photon.
+This means that most of the time windows given by the separation time will not contain a photon.
+However, the separation time should be maintain in order to correcly identify the photons that were part of a successful measurement at the BSA.
+The separation time governs the maximum rate at which EPPS attempts to generate the entangled photon pairs, which is given by $1/T_{\text{separation}}$.
 
 
 ## References
