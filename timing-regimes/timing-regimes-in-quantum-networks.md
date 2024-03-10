@@ -353,19 +353,30 @@ An example of this are teh so-called all-photonic quantum repeaters, where measu
 ## D.1. Measurement basics
 
 We will first discuss quantum measurements in general before discussing concrete implementations and their timing requirements based on their physical implementations.
+
+___Single-qubit measurements:__
 For simplicty, we begin with measurements on a single qubit before generalizing to two qubit measurements.
 Consider a general state of the qubit,
 $$|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,$$
 where $|\alpha|^2+|\beta|^2=1$.
 Measurement in an arbitrary basis $\hat{M}$ projects the initial state $|\psi\rangle$ onto one of the eigenvectors of $\hat{M}$, given by $\\{|\phi\rangle,|\phi^{\perp}\rangle\\}$.
 Probabilities of the two possible measurement outcomes are given by the overlaps between the initial state $|\psi\rangle$ and the eigenvectors of the observable $\hat{M}$,
-$$\text{Pr}(|\phi\rangle)=|\langle\phi|\psi\rangle|^2, \quad\text{and}\quad \text{Pr}(|\phi^{\perp}\rangle)=|\langle\phi^{\perp}|\psi\rangle|^2.$$
+$$\text{Pr}(|\phi\rangle;|\psi\rangle)=|\langle\phi|\psi\rangle|^2, \quad\text{and}\quad \text{Pr}(|\phi^{\perp}\rangle;|\psi\rangle)=|\langle\phi^{\perp}|\psi\rangle|^2.$$
+We read this notation as ``proability of the measurement outcome being the state $|\phi\rangle$, given that the initial state was $|\psi\rangle$''.
 For example, measurement in the Pauli $Z$ basis projects onto the states $\\{|0\rangle,|1\rangle\\}$, while measurement in the Pauli $X$ basis porjects onto the states $\\{|+\rangle,|-\rangle\\}$.
 
 It is often difficult to directly measure the qubit in an arbitrary basis when it comes to real-world implementation.
 In such a case, the qubit needs to be pre-rotated by an appropirate unitary operation, and then measured in the $Z$ basis, which can usually be implemented in a straightforward way.
-This approach greatly simplifies the implementation of arbitrary measurements. 
+This approach greatly simplifies the implementation of arbitrary measurements.
 
+Consider that the observable $\hat{M}$ is related to the Pauli $\hat{Z}$ by unitary $\hat{U}$,
+$$\hat{M} = \hat{U} \hat{Z} \hat{U}^{\dagger}.$$
+This means the unitary $\hat{U}$ also relates the eigenvectors of the two observables,
+$$|\phi\rangle = \hat{U} |0\rangle, \quad\text{and}\quad |\phi^{\perp}\rangle = \hat{U}|1\rangle.$$
+We can perform measurement in the $\hat{M}$ basis by applying $\hat{U}^{\dagger}$ to the initial state $|\psi\rangle$, and them measuring it in the Pauli $Z$ basis.
+This can be easily verified by rewriting the above probabilities corresponding to the two measurement outcomes,
+$$\text{Pr}(|\phi\rangle;|\psi\rangle) = |\langle\phi|\psi\rangle|^2 = |\langle0|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|0\rangle;\hat{U}^{\dagger}|\psi\rangle),$$
+$$\text{Pr}(|\phi^{\perp}\rangle;|\psi\rangle) = |\langle\phi^{\perp}|\psi\rangle|^2 = |\langle1|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|1\rangle;\hat{U}^{\dagger}|\psi\rangle).$$
 
 
 
