@@ -354,7 +354,7 @@ An example of this are teh so-called all-photonic quantum repeaters, where measu
 
 We will first discuss quantum measurements in general before discussing concrete implementations and their timing requirements based on their physical implementations.
 
-___Single-qubit measurements:__
+__Single-qubit measurements:__  
 For simplicty, we begin with measurements on a single qubit before generalizing to two qubit measurements.
 Consider a general state of the qubit,
 $$|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,$$
@@ -377,6 +377,16 @@ We can perform measurement in the $\hat{M}$ basis by applying $\hat{U}^{\dagger}
 This can be easily verified by rewriting the above probabilities corresponding to the two measurement outcomes,
 $$\text{Pr}(|\phi\rangle;|\psi\rangle) = |\langle\phi|\psi\rangle|^2 = |\langle0|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|0\rangle;\hat{U}^{\dagger}|\psi\rangle),$$
 $$\text{Pr}(|\phi^{\perp}\rangle;|\psi\rangle) = |\langle\phi^{\perp}|\psi\rangle|^2 = |\langle1|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|1\rangle;\hat{U}^{\dagger}|\psi\rangle).$$
+This is pictured in the Figure below.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_1qubit.png", width="500"/>
+</p>
+
+__Two-qubit measurements:__  
+The same principle of changing the measurement basis can be generalized to two qubits.
+This time state $|\psi\rangle$ represents a general two-qubit state, unitary $\hat{U}^{\dagger}$ acts on both qubits, which are both finally measured in Pauli $Z$ basis.
+In majority of cases, we are interested in performing measurements in the Bell basis.
+Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary that creates a Bell pair when the qubits are both initialized in $|0\rangle$, as shown in the Figure below.
 
 
 
