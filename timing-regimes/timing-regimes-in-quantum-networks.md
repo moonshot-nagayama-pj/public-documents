@@ -341,6 +341,35 @@ The separation time governs the maximum rate at which EPPS attempts to generate 
 
 # D. Measurement basis selection
 
+We have encountered Bell-state measurements performed by the BSA on photonic qubits that are needed for entanglement swapping.
+These measurements were static in the sense that we did not need to change the measurement basis.
+Observed detection pattern determined whether the post-measurement state of the remote quantum systems (either quantum memories or other photons) was $|\Psi^+\rangle$ or $|\Psi^-\rangle$.
+Projection onto two of the four Bell-basis states was achieved probabilistically without actively applying any transformations on the photonic qubits.
+We will see in this Section, that photonic BSA is a very special case in this regard, and that changing the basis of the measurement is an indispensable part of quantum networking.
+Entanglement swapping on stationary qubits stored in quantum memories is not possible without applying appropriate unitaries first that change the basis of the measurement.
+There are also cases, where change of basis is required even when dealing with only photonic qubits.
+An example of this are teh so-called all-photonic quantum repeaters, where measurement basis is conditioned on the outcomes of previous measurements, leading to the requirement of very fast basis switching.
+
+## D.1. Measurement basics
+
+We will first discuss quantum measurements in general before discussing concrete implementations and their timing requirements based on their physical implementations.
+For simplicty, we begin with measurements on a single qubit before generalizing to two qubit measurements.
+Consider a general state of the qubit,
+$$|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,$$
+where $|\alpha|^2+|\beta|^2=1$.
+Measurement in an arbitrary basis $\hat{M}$ projects the initial state $|\psi\rangle$ onto one of the eigenvectors of $\hat{M}$, given by $\\{|\phi\rangle,|\phi^{\perp}\rangle\\}$.
+Probabilities of the two possible measurement outcomes are given by the overlaps between the initial state $|\psi\rangle$ and the eigenvectors of the observable $\hat{M}$,
+$$\text{Pr}(|\phi\rangle)=|\langle\phi|\psi\rangle|^2, \quad\text{and}\quad \text{Pr}(|\phi^{\perp}\rangle)=|\langle\phi^{\perp}|\psi\rangle|^2.$$
+For example, measurement in the Pauli $Z$ basis projects onto the states $\\{|0\rangle,|1\rangle\\}$, while measurement in the Pauli $X$ basis porjects onto the states $\\{|+\rangle,|-\rangle\\}$.
+
+It is often difficult to directly measure the qubit in an arbitrary basis when it comes to real-world implementation.
+In such a case, the qubit needs to be pre-rotated by an appropirate unitary operation, and then measured in the $Z$ basis, which can usually be implemented in a straightforward way.
+This approach greatly simplifies the implementation of arbitrary measurements. 
+
+
+
+
+
 
 ## References
 
