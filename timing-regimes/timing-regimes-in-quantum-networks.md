@@ -387,7 +387,9 @@ The same principle of changing the measurement basis can be generalized to two q
 This time state $|\psi\rangle$ represents a general two-qubit state, unitary $\hat{U}^{\dagger}$ acts on both qubits, which are both finally measured in Pauli $Z$ basis.
 In majority of cases, we are interested in performing measurements in the Bell basis.
 Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary that creates a Bell pair when the qubits are both initialized in $|0\rangle$, as shown in the Figure below.
-
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_2qubit.png", width="200"/>
+</p>
 
 
 
