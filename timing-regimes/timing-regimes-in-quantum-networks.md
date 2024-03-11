@@ -393,6 +393,17 @@ Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary t
 
 ## D.2. Measurements on quantum memories
 
+In this Section, we discuss various methods of implementing measurements of quantum memories.
+These methods vary based on the quantum technology used as the quantum memory, and even within the same technology there are usually variations.
+We are mainly concerned with giving an overview of the different measurement methods, and their respective timing regimes.
+
+__Trapped ions:__  
+Trapped ions possess two degrees of freedom [6].
+The first one is the motional degree of freedom, resulting from the ion oscillating around its equilibrium position in the trap.
+The second one is the internal degree of freedom, represented by the ground state $|g\rangle$ and the excited state $|e\rangle$.
+It is the latter degree of freedom which is used to encode a qubit and hence acts as a quantum memory.
+
+Measurement in the Pauli $\hat{Z}$ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$.
 
 ## D.3. Measurements on photonic qubits
 
@@ -401,8 +412,9 @@ Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary t
 
 ## References
 
-[1] Hong, C.K., Ou, Z.Y., and Mandel L., Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).  
-[2] Branczyk, A. M., Hong-Ou-Mandel Interference, [*arXiv:1711.00080* (2017)](https://arxiv.org/abs/1711.00080).  
-[3] Krutyanskiy, V. _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).  
-[4] Hadfield, R. H., Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).  
-[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).
+[1] C.K. Hong, Z.Y. Ou, and L. Mandel, Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).  
+[2] A. M. Branczyk, Hong-Ou-Mandel Interference, [*arXiv:1711.00080* (2017)](https://arxiv.org/abs/1711.00080).  
+[3] V. Krutyanskiy _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).  
+[4] R. H. Hadfield, Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).  
+[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).  
+[6] D. Leibfried, R. Blatt, C. Monroe, and D. Wineland, Quantum dynamics of single trapped ions, [*Rev. Mod. Phys.* __75__, 281 (2003)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.75.281).
