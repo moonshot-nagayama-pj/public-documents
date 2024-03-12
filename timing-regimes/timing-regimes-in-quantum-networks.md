@@ -403,11 +403,26 @@ The first one is the motional degree of freedom, resulting from the ion oscillat
 The second one is the internal degree of freedom, represented by the ground state $|g\rangle$ and the excited state $|e\rangle$.
 It is the latter degree of freedom which is used to encode a qubit and hence acts as a quantum memory.
 
-Measurement in the Pauli $\hat{Z}$ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$, $\tau_e \gg \tau_r$.
+Measurement in the __Pauli $\hat{Z}$__ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$, $\tau_e \gg \tau_r$ [7].
 Figure below demonstrates this method works.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D2-shelving.png", width="250"/>
 </p>
+
+The ion is illuminated by light tuned to resonant with the transition $|g\rangle-|r\rangle$, represented by the red straight arrow in the Figure above.
+If fluorescence is immediately observed, this corresponds to measuring the ion in the ground state $|g\rangle$.
+If no fluorescence is observed, the ion is measured in the excited state $|e\rangle$.
+Combined with laser pulses that apply a single-qubit rotation, measurement of a __single ion in an arbitrary basis__ can be performed in $1-2 \text{ ms}$ [3].
+
+The __CNOT gate__ can be applied in two different ways
+The original proposal is due to Cirac and Zoller [8], where the ions needed to be cooled to their collective motional ground state first.
+This approach was demonstrated experimentally using $^{40}\text{Ca}^+$ ions [9].
+Applicaiton of the take took around $600\mu\text{s}$, with the achieved fidelity being $<0.8$.
+The second apporach is due to Molmer and Sorensen [10], and is more robust against motional excitation.
+This led to high-fidelity demonstrations of $>0.99$, and gate times of around $50\mu\text{s}$ .
+
+__NV centers in diamond:__  
+Text
 
 ## D.3. Measurements on photonic qubits
 
@@ -421,4 +436,9 @@ Figure below demonstrates this method works.
 [3] V. Krutyanskiy _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).  
 [4] R. H. Hadfield, Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).  
 [5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).  
-[6] D. Leibfried, R. Blatt, C. Monroe, and D. Wineland, Quantum dynamics of single trapped ions, [*Rev. Mod. Phys.* __75__, 281 (2003)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.75.281).
+[6] D. Leibfried, R. Blatt, C. Monroe, and D. Wineland, Quantum dynamics of single trapped ions, [*Rev. Mod. Phys.* __75__, 281 (2003)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.75.281).  
+[7] C. Gardiner, and P. Zoller, The Quantum World of Ultra-Cold Atoms and Light: The Physics of Quantum-Optical Devices, [Imperial College Press, (2015)](https://www.amazon.co.jp/Quantum-World-Ultra-Cold-Atoms-Light/dp/1783266163).  
+[8] J.I. Cirac, and P. Zoller, Quantum Computations with Cold Trapped Ions, [*Phys. Rev. Lett.* __74__, 4091 (1995)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4091).  
+[9] F. Schmidt-Kaler *et. al.*, Realization of the Cirac–Zoller controlled-NOT quantum gate, [*Nature* __422__, 408 (2003)](https://www.nature.com/articles/nature01494).  
+[10] K. Molmer, and A. Sorensen, Multiparticle Entanglement of Hot Trapped Ions, [*Phys. Rev. Lett.* __82__, 1835 (1999)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835).  
+[11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).
