@@ -75,7 +75,7 @@ $$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\tex
 where we used the fact that the maximum probability of a coincidence detection is $1/2$.
 We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
-Visibility $V$ plays a useful role when modelling the effects of imperfect HOM intereference in the context of entanglement swapping.
+Visibility $V$ plays a useful role when modelling the effects of imperfect HOM interference in the context of entanglement swapping.
 Consider the case when the input photons $a$, $b$ are entangled with auxiliary systems $s_1$ and $s_2$, respectively.
 The BSA performs ES by measuring the input photons, entangling systems $s_1$ and $s_2$ in the process.
 Fidelity of the new entangled pair is directly proportional to the visibility $V$ of the HOM interference.
