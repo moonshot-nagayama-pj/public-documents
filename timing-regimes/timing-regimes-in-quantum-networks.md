@@ -403,7 +403,7 @@ The first one is the motional degree of freedom, resulting from the ion oscillat
 The second one is the internal degree of freedom, represented by the ground state $|g\rangle$ and the excited state $|e\rangle$.
 It is the latter degree of freedom which is used to encode a qubit and hence acts as a quantum memory.
 
-Measurement in the Pauli $\hat{Z}$ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$.
+Measurement in the Pauli $\hat{Z}$ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$, $\tau_e \gg \tau_r$.
 Figure below demonstrates this method works.
 
 ## D.3. Measurements on photonic qubits
