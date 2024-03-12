@@ -405,6 +405,9 @@ It is the latter degree of freedom which is used to encode a qubit and hence act
 
 Measurement in the Pauli $\hat{Z}$ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$, $\tau_e \gg \tau_r$.
 Figure below demonstrates this method works.
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D2-shelving.png", width="250"/>
+</p>
 
 ## D.3. Measurements on photonic qubits
 
