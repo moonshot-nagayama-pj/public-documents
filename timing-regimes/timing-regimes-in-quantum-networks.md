@@ -63,20 +63,20 @@ The probability amplitudes for the cases where both input photons are transmitte
 Perfectly indistinguishable input photons always exit the BS in the same ouput mode.
 It is this interference effect that is at the heart of quantum networking.
 
-In order to quantify the effect that distibguishability has on the HOM interference, we consider the __probability of a coincidence detection__, $p_{\text{coin}}$, where one photon is detected in the BS output mode $a$, and the other photon in output mode $b$.
+In order to quantify the effect that distinguishability has on the HOM interference, we consider the __probability of a coincidence detection__, $p_{\text{coin}}$, where one photon is detected in the BS output mode $a$, and the other photon in output mode $b$.
 This probability is defined as
 $$p_{\text{coin}} = \langle\psi^{\text{out}}|_{ab} \hat{P}_a \otimes \hat{P}_b |\psi^{\text{out}}\rangle _{ab},$$
 where $\hat{P}_i$, for $i=a,b$, are the projection operators representing a detection of a single photon in output mode $i$ of the BS.
 For completely indistinguishable input photons that undergo the full HOM interference, we have $p _{\text{coin}}=0$.
 On the other hand, for fully distinguishable photons, the probability of a coincidence detection attains its maximum value $p _{\text{coin}}=1/2$.
 
-Often used measure that quantifies the degree of HOM interference is the __visibility__ $V$, defined via the probability of a coincidence detection,
+An often-used measure that quantifies the degree of HOM interference is the __visibility__ $V$, defined via the probability of a coincidence detection,
 $$V = \frac{p_{\text{coin}}^{\text{max}} - p_{\text{coin}}^{\text{min}}}{p_{\text{coin}}^{\text{max}}} = 1 - 2 p_{\text{coin}}^{\text{min}},$$
 where we used the fact that the maximum probability of a coincidence detection is $1/2$.
 We observe that the visibility varies from $V=0$ for fully distinguishable input photons to $V=1$ for perfectly indistinguishable ones.
 
 Visibility $V$ plays a useful role when modelling the effects of imperfect HOM intereference in the context of entanglement swapping.
-Consider the case when the input photons $a$, $b$ are entangled with auxilliary systems $s_1$ and $s_2$, respectively.
+Consider the case when the input photons $a$, $b$ are entangled with auxiliary systems $s_1$ and $s_2$, respectively.
 The BSA performs ES by measuring the input photons, entangling systems $s_1$ and $s_2$ in the process.
 Fidelity of the new entangled pair is directly proportional to the visibility $V$ of the HOM interference.
 Denote by $\rho_{s_1s_2}^{\text{no-deph}}$ the density matrix resulting from an ideal ES at the BSA with unit visibility of the HOM interference.
@@ -88,7 +88,7 @@ In the following subsections, we address and quantify how distinguishable photon
 
 ## A.2. Polarization
 
-We now consider the case when the input photons differ in their polrization degree of photons.
+We now consider the case when the input photons differ in their polarization degree of photons.
 The maximum probability of a coincidence detection is obtained for orthogonally polarized photons, for example when $j=H$ and $k=V$.
 The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
@@ -118,21 +118,21 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
 </p>
 
 __Interference of photons from two independent EPPS__  
-The oreceeding discussion was concerned with two inpedent pure photons of different polarization.
+The preceding discussion was concerned with two independent pure photons of different polarization.
 In the context of quantum networking, a much more common scenario is that of two entangled pairs of photons originating from two inpedendent EPPS nodes, where two qubits from each pair are incident onto a BS and undergo HOM interference.
 The two pairs are in the following initial state,
 $$|\psi^{\text{in}}\rangle_{ab} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{ab} + e^{i\theta_1} |VH\rangle_{ab} \right), \qquad |\psi^{\text{in}}\rangle_{cd} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{cd} + e^{i\theta_2} |VH\rangle_{cd} \right),$$
 where $\theta_1$ and $\theta_2$ represent the polarization drift induced in the single-mode fiber.
 Photons $b$ and $c$ are incident onto a BS, where they undergo HOM interference.
-Following the same calculation as above, it can be shown that the proabiblity of a coincidence event is
-$$p_{\text{coin}} = \frac{1}{4}, \quad\text{regardless of the polarizaiton drift }\theta_{1/2}.$$
-This suggests that the visibility is insestivive to the polarization drift.
+Following the same calculation as above, it can be shown that the probability of a coincidence event is
+$$p_{\text{coin}} = \frac{1}{4}, \quad\text{regardless of the polarization drift }\theta_{1/2}.$$
+This suggests that the visibility is insensitive to the polarization drift.
 However, the polarization drift must be tracked regardless because it affects the fidelity of the post-ES state of photons $a$ and $d$,
 $$|\Psi^{\pm}\rangle_{ad} = \frac{1}{\sqrt{2}} \left( |HV\rangle_{ad} \pm e^{i(\theta_1-\theta_2)} |VH\rangle_{ad} \right).$$
 It is therefore important to characterize the polarization drift at the BSA at regular intervals and compensate for it.
 This can be done at the nodes generating the photon pairs at the cost of the BSA having to communicate polarization drift results to the ends nodes.
 Or it can be compensated for directly at the BSA using waveplates at the cost of increased complexity of the BSA.
-In [3], the process of polarization drift characterization and compensation at the BSA takes few minutes and is performed every 20 minutes.
+In [3], the process of polarization drift characterization and compensation at the BSA takes a few minutes and is performed every 20 minutes.
 
 ## A.3. Spectral distinguishability
 
@@ -214,7 +214,7 @@ The probability of coincidence and corresponding visibility for both Cases are s
 So far we have assumed that the two input photons arrive at the BS at exactly the same time.
 In this subsection, we address this unrealistic assumption and quantify how temporal distinguishability affects the visibility of HOM interference.
 Even for photons with identical spectral amplitude functions, different arrival times result in decreased overlap between the photons' wave packets, diminishing the visibility of the HOM interference.
-If the times of arrival are too different as shown in the Figure below, probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
+If the times of arrival are too different as shown in the Figure below, the probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
 
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-distinguish_temporal.png", width="800"/>
@@ -246,7 +246,7 @@ Figure below displays the visibility and probability of coincidence for this cas
 
 __Photon emission time jitter__  
 Photon emission is fundamentally a __non-deterministic__ process, owing to the Heisenberg uncertainty principle $\Delta E \Delta t \geq \hbar/2$.
-Following our disciussion in Section A.3 (Spectral distinguishability), it is desirable for the emitted photons to be spectrally pure, which corresponds to small $\Delta E$.
+Following our discussion in Section A.3 (Spectral distinguishability), it is desirable for the emitted photons to be spectrally pure, which corresponds to small $\Delta E$.
 This on the other hand results in a large uncertainty of the emission time, given by $\Delta t$.
 Therefore, even if the two remote nodes commence their atom excitation procedure in a perfectly synchronized fashion, they will likely emit their photons at slightly different times, leading to photon emission time jitter, $J_{\text{emission}}$, and finite difference of arrival $\tau$ at the BSA.
 
@@ -263,7 +263,7 @@ This is not always true for real-world SPDs [4].
 
 Performance of SPDs can be quantified by the following characteristics,
 - __Spectral range:__ SPDs are sensitive over a limited range of wavelengths. This range depends on the materials used in the fabrication of the detector. Typical spectral ranges are in the near-infrared, around 1550nm, where commercial optical fibers perform best in terms of photon loss rates.
-- __Detection efficiency:__ The overall probability that an incoming photon registers a count, denotwed by $\eta$.
+- __Detection efficiency:__ The overall probability that an incoming photon registers a count, denoted by $\eta$.
 This efficiency can be further broken down.
 Probability of losing the photon before it reaches the detector is described by the *coupling efficiency*, $\eta_{\text{coupling}}$.
 The type of material and geometry of the detector determine the photon *absorption efficiency*, $\eta_{\text{absorption}}$.
@@ -272,16 +272,16 @@ The overall *system detection efficiency* is given by the product of these three
 $$\eta_{\text{sde}} = \eta_{\text{coupling}} \times \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
 The *device detection efficiency* is given by
 $$\eta_{\text{dde}} = \eta_{\text{absorption}} \times \eta_{\text{registering}}.$$
-Detection efficiency affects the rate at which entnaglement can be distributed.
+Detection efficiency affects the rate at which entanglement can be distributed.
 - __Recovery time:__ Denoted by $\tau_{\text{recovery}}$ and also known as 'dead' time.
 It is the time duration following an absorption of a photon during which the detector is unable to reliably detect another photon.
 Recovery time affects the maximum detection rate.
 If the source of photons has low efficiency, the clock rate does not need to be limited by the recovery time, as majority of the trials will not produce a photon.
 This could also be the case if the probability of losing the photon is high (either due to loss in fiber or due to low system detection efficiency $\eta_{\text{sde}}$).
 On the other hand, if the photon source is highly efficient, it is important to ensure that the separation between the wavepackets is longer than $\tau_{\text{recovery}}$ to ensure effcient use of the generated photons.
-- __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distirbuted entangled states.
+- __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distributed entangled states.
 - __Timing jitter:__ Denoted by $J_{\text{timing}}$.
-Describes the variation in time between the photon being absorbed and the output electric signal being generated. Few example profiles are shown in the Figure below taken from [4].
+Describes the variation in time between the photon being absorbed and the output electric signal being generated. A few example profiles are shown in the Figure below taken from [4].
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
 </p>
@@ -306,7 +306,7 @@ Therefore, we will use $\tau$ to denote the difference in detection time of the 
 Measurement at the BSA is successful when the correct pattern of detector clicks is observed, and the difference in detection times $\tau$ is smaller than a given detection __acceptance window__, $T_{\text{window}}$.
 The size of this window affects both the fidelity and the generation rate of the entangled pairs that the link produces.
 Large acceptance windows produce high rates but low fidelity, while small acceptance windows result in low rates and high fidelity.
-Appropriate size of the aceptance window must be chosen in order to satisfy the demands of the application requesting the entangled states.
+The appropriate size of the acceptance window must be chosen in order to satisfy the demands of the application requesting the entangled states.
 Reaching the requested fidelity should take priority over high generation rate.
 
 ## C.3. Wavepacket separation
@@ -317,14 +317,14 @@ This will allow for generation of link-level entanglement in a multiplexed manne
 The photons must be well separated such that upon a successful BSM, the BSA can uniquely identify which two photons were measured.
 We refer to the minimum separation between the photons as the __separation time__ $T_{\text{separation}}$.
 
-The size of the seapration time depends on the following:
+The size of the separation time depends on the following:
 - __Wave packet shape:__ Individual photons cannot have overlapping spatial wavepackets, which may lead to incorrect assignement of entangled qubits following a successful meadurement at the BSA. We will use $T_{\text{photon}}$ to denote the length of a wavepacket in seconds.
 - __Detector recovery time:__ Spacing the wavepackets too close to each other may result in some of the photons being lost due to the detector recovering following a detection event, leading to inefficient use of initially generated entangled pairs (either memory-photon or photon-photon).
 - __Memory emission jitter:__ The separation between the wavepackets must take into account the probabilistic nature of photon emission from a quantum memory in order to prevent wavepacket overlap.
 - __Detector timing jitter:__ Generation of the electric signal following absorption of a photon varies in duration, leading to a variance in timing of the detection event. This may lead to the BSA mislabelling which photons were part of a successful measurement if their wavepackets are spaced too closely.
 
 General (conservative) separation time should therefore be set to
-$$T_{\text{separation}} = T_{\text{photon}} + J_{\text{emission}} + J_{\text{timing}}.$$
+$$T_{\text{separation}} \ge T_{\text{photon}} + J_{\text{emission}} + J_{\text{timing}}.$$
 
 The above discussion assumes that the photons can be generated nearly on-demand.
 This is a fair assumption in the case of quantum memories based on trapped ions [3].
@@ -334,9 +334,9 @@ The memory is then excited by a laser pulse of ~ $50\mu \text{s}$ that generates
 In the case of memory-less link architectures, the picture is slightly different.
 Here, EPPS nodes utilizing the principle of spontaneous parametric down-conversion (SPDC) generate entangled photon pairs.
 Each photon is sent to a different BSA, where they are measured with a photon originating from a different EPPS node.
-SPDC is an inefficient process with success probability of around $10^{-6}$ per pump photon.
+SPDC is an inefficient process with success probability of around $10^{-6}$ per pump photon. In system design, the intensity of the pump laser is adjusted so that the average number of photons is appropriate; generally this must be set below one photon per time window in order to avoid polluting the signal with two-photon states.
 This means that most of the time windows given by the separation time will not contain a photon.
-However, the separation time should be maintain in order to correcly identify the photons that were part of a successful measurement at the BSA.
+However, the separation time should be maintained in order to correcly identify the photons that were part of a successful measurement at the BSA.
 The separation time governs the maximum rate at which EPPS attempts to generate the entangled photon pairs, which is given by $1/T_{\text{separation}}$.
 
 # D. Measurement basis selection
@@ -362,11 +362,11 @@ where $|\alpha|^2+|\beta|^2=1$.
 Measurement in an arbitrary basis $\hat{M}$ projects the initial state $|\psi\rangle$ onto one of the eigenvectors of $\hat{M}$, given by $\\{|\phi\rangle,|\phi^{\perp}\rangle\\}$.
 Probabilities of the two possible measurement outcomes are given by the overlaps between the initial state $|\psi\rangle$ and the eigenvectors of the observable $\hat{M}$,
 $$\text{Pr}(|\phi\rangle;|\psi\rangle)=|\langle\phi|\psi\rangle|^2, \quad\text{and}\quad \text{Pr}(|\phi^{\perp}\rangle;|\psi\rangle)=|\langle\phi^{\perp}|\psi\rangle|^2.$$
-We read this notation as ``proability of the measurement outcome being the state $|\phi\rangle$, given that the initial state was $|\psi\rangle$''.
-For example, measurement in the Pauli $Z$ basis projects onto the states $\\{|0\rangle,|1\rangle\\}$, while measurement in the Pauli $X$ basis porjects onto the states $\\{|+\rangle,|-\rangle\\}$.
+We read this notation as ``probability of the measurement outcome being the state $|\phi\rangle$, given that the initial state was $|\psi\rangle$''.
+For example, measurement in the Pauli $Z$ basis projects onto the states $\\{|0\rangle,|1\rangle\\}$, while measurement in the Pauli $X$ basis projects onto the states $\\{|+\rangle,|-\rangle\\}$.
 
 It is often difficult to directly measure the qubit in an arbitrary basis when it comes to real-world implementation.
-In such a case, the qubit needs to be pre-rotated by an appropirate unitary operation, and then measured in the $Z$ basis, which can usually be implemented in a straightforward way.
+In such a case, the qubit needs to be pre-rotated by an appropriate unitary operation, and then measured in the $Z$ basis, which can usually be implemented in a straightforward way.
 This approach greatly simplifies the implementation of arbitrary measurements.
 
 Consider that the observable $\hat{M}$ is related to the Pauli $\hat{Z}$ by unitary $\hat{U}$,
@@ -409,9 +409,10 @@ Figure below demonstrates this method works.
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D2-shelving.png", width="250"/>
 </p>
 
-The ion is illuminated by light tuned to resonant with the transition $|g\rangle-|r\rangle$, represented by the red straight arrow in the Figure above.
+The ion is illuminated by light tuned to resonate with the transition $|g\rangle-|r\rangle$, represented by the red straight arrow in the Figure above.
 If fluorescence is immediately observed, this corresponds to measuring the ion in the ground state $|g\rangle$.
 If no fluorescence is observed, the ion is measured in the excited state $|e\rangle$.
+Hypothetically a single fluorescent photon would be sufficient, however, the fluorescent photons are only rarely captured into the measurement apparatus (typically involving lenses and a camera) and observed, and stray photons are also often captured, so a relatively long __integration time__ is used to confirm the fluorescence with high probability.  (Solid-state systems such as quantum dots and superconducting qubits also need relatively long integration times in their measurement processes.)
 Combined with laser pulses that apply a single-qubit rotation, measurement of a __single ion in an arbitrary basis__ can be performed in $1-2 \text{ ms}$ [3].
 
 The __CNOT gate__ can be applied in two different ways.
