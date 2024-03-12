@@ -193,7 +193,7 @@ We assume that the two spectral amplitude functions have the same standard devia
 $$p _{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}} \right).$$
 We observe that for identical photons, when $\bar{\omega}_a=\bar{\omega}_b$, the probability of a coincidence detection vanishes.
 For fully distinguishable wave packets, when $\bar{\omega}_a-\bar{\omega}_b\rightarrow\infty$, the probability approaches 1/2, as expected.
-We can now define visibility as a function of the differernce between the central frequencies $\bar{\omega}_a-\bar{\omega}_b$,
+We can now define visibility as a function of the difference between the central frequencies $\bar{\omega}_a-\bar{\omega}_b$,
 $$V(\bar{\omega}_a-\bar{\omega}_b) = e^{-\frac{(\bar{\omega}_a-\bar{\omega}_b)^2}{2\sigma^2}}.$$
 
 __Case B (different standard deviations):__
@@ -417,8 +417,8 @@ Combined with laser pulses that apply a single-qubit rotation, measurement of a 
 The __CNOT gate__ can be applied in two different ways.
 The original proposal is due to Cirac and Zoller [8], where the ions needed to be cooled to their collective motional ground state first.
 This approach was demonstrated experimentally using $^{40}\text{Ca}^+$ ions [9].
-Applicaiton of the take took around $600\mu\text{s}$, with the achieved fidelity being $<0.8$.
-The second apporach is due to Molmer and Sorensen [10], and is more robust against motional excitation.
+Application of the take took around $600\mu\text{s}$, with the achieved fidelity being $<0.8$.
+The second approach is due to Molmer and Sorensen [10], and is more robust against motional excitation.
 This led to high-fidelity demonstrations of $>0.99$, and gate times of around $50\mu\text{s}$ .
 
 __NV centers in diamond:__  
@@ -426,8 +426,15 @@ Text
 
 ## D.3. Measurements on photonic qubits
 
+# E. Optical Switch Control
 
+# F. Pre-configured Event-driven Tasks
 
+# G. Urgent but Not Synchronization-critical Tasks
+
+# H. Host-side Application-level Tasks
+
+# I. Background Tasks
 
 ## References
 
