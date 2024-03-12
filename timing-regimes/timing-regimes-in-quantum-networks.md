@@ -48,8 +48,8 @@ We are interested in the observed behavior at the output modes of the BS.
 There are four possible cases that may occur:
 - Case A: photon in mode _a_ is reflected, while photon in mode _b_ is transmitted.
 - Case B: both photons are transmitted.
-- Case C: both photons are reflected
-- Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflect.
+- Case C: both photons are reflected.
+- Case D: photon in mode _a_ is transmitted, while photon in mode _b_ is reflected.
 
 The action of the BS is represented by a unitary operator $\hat{U}_{ab}$,
 $$\hat{a}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{1-r}\hat{a}^{\dagger} + \sqrt{r}\hat{b}^{\dagger}, \qquad \hat{b}^{\dagger} \xrightarrow{\hat{U} _{ab}} \sqrt{r}\hat{a}^{\dagger} - \sqrt{1-r}\hat{b}^{\dagger}.$$
@@ -88,7 +88,7 @@ In the following subsections, we address and quantify how distinguishable photon
 
 ## A.2. Polarization
 
-We now consider the case when he input photons differ in their polrization degree of photons.
+We now consider the case when the input photons differ in their polrization degree of photons.
 The maximum probability of a coincidence detection is obtained for orthogonally polarized photons, for example when $j=H$ and $k=V$.
 The output state of the two photons is
 $$|\psi ^{\text{out}}\rangle _{ab} = \frac{1}{2} \left( |1;H\rangle_a |1;V\rangle_a + |1;V\rangle_a |1;H\rangle_b - |1;H\rangle_a |1;V\rangle_b - |1;H\rangle_b |1;V\rangle_b \right).$$
@@ -171,14 +171,14 @@ Previous discussion of pure states can be extended to include mixed states of th
 Such states will inevitably arise due to imperfections in the preparation procedure and due to the input photons being entangled with other degrees of freedom.
 These can include other photons or quantum memories.
 
-Mixed state of an input photon is described by the following density matrix,
+The mixed state of an input photon is described by the following density matrix,
 $$\rho_a = \sum_k u_k |1;\phi_k\rangle_a\langle1;\phi_k|_a,$$
 where the state of the photon is a mixture of pure single-photon states with spectral amplitude function $\phi_k(\omega)$, weighted by probability $u_k$.
 The normalization condition requires that $\sum_k u_k=1$.
 The two-photon input state can be written as
 $$\rho ^{\text{in}} _{ab} = \sum _{kk'} u_k v _{k'} |1;\phi_k\rangle_a |1;\varphi _{k'}\rangle_b \langle 1;\phi_k|_a \langle 1;\varphi _{k'}|_b.$$
 It is not necessary to repeat the entire calculation we did for pure states.
-Due to the linearity of quantum mechincs, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
+Due to the linearity of quantum mechanics, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\omega_1\phi^\ast_k(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
 
 __Example 1: Gaussian wave packets__  
@@ -214,7 +214,7 @@ The probability of coincidence and corresponding visibility for both Cases are s
 So far we have assumed that the two input photons arrive at the BS at exactly the same time.
 In this subsection, we address this unrealistic assumption and quantify how temporal distinguishability affects the visibility of HOM interference.
 Even for photons with identical spectral amplitude functions, different arrival times result in decreased overlap between the photons' wave packets, diminishing the visibility of the HOM interference.
-If the times of arrival are too different as shown inthe Figure below, probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
+If the times of arrival are too different as shown in the Figure below, probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
 
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-distinguish_temporal.png", width="800"/>
@@ -331,7 +331,7 @@ This is a fair assumption in the case of quantum memories based on trapped ions 
 Here, the memory must be first initialized by cooling it to its ground state, a process which takes $<1\text{ms}$.
 The memory is then excited by a laser pulse of ~ $50\mu \text{s}$ that generates a photon.
 
-In the cxase of memory-less link architectures, the picture is slightly different.
+In the case of memory-less link architectures, the picture is slightly different.
 Here, EPPS nodes utilizing the principle of spontaneous parametric down-conversion (SPDC) generate entangled photon pairs.
 Each photon is sent to a different BSA, where they are measured with a photon originating from a different EPPS node.
 SPDC is an inefficient process with success probability of around $10^{-6}$ per pump photon.
@@ -345,17 +345,17 @@ We have encountered Bell-state measurements performed by the BSA on photonic qub
 These measurements were static in the sense that we did not need to change the measurement basis.
 Observed detection pattern determined whether the post-measurement state of the remote quantum systems (either quantum memories or other photons) was $|\Psi^+\rangle$ or $|\Psi^-\rangle$.
 Projection onto two of the four Bell-basis states was achieved probabilistically without actively applying any transformations on the photonic qubits.
-We will see in this Section, that photonic BSA is a very special case in this regard, and that changing the basis of the measurement is an indispensable part of quantum networking.
+We will see in this Section that the photonic BSA is a very special case in this regard, and that changing the basis of the measurement is an indispensable part of quantum networking.
 Entanglement swapping on stationary qubits stored in quantum memories is not possible without applying appropriate unitaries first that change the basis of the measurement.
 There are also cases, where change of basis is required even when dealing with only photonic qubits.
-An example of this are teh so-called all-photonic quantum repeaters, where measurement basis is conditioned on the outcomes of previous measurements, leading to the requirement of very fast basis switching.
+An example of this are the so-called all-photonic quantum repeaters, where measurement basis is conditioned on the outcomes of previous measurements, leading to the requirement of very fast basis switching.
 
 ## D.1. Measurement basics
 
 We will first discuss quantum measurements in general before discussing concrete implementations and their timing requirements based on their physical implementations.
 
 __Single-qubit measurements:__  
-For simplicty, we begin with measurements on a single qubit before generalizing to two qubit measurements.
+For simplicity, we begin with measurements on a single qubit before generalizing to two qubit measurements.
 Consider a general state of the qubit,
 $$|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,$$
 where $|\alpha|^2+|\beta|^2=1$.
@@ -385,7 +385,7 @@ This is pictured in the Figure below.
 __Two-qubit measurements:__  
 The same principle of changing the measurement basis can be generalized to two qubits.
 This time state $|\psi\rangle$ represents a general two-qubit state, unitary $\hat{U}^{\dagger}$ acts on both qubits, which are both finally measured in Pauli $Z$ basis.
-In majority of cases, we are interested in performing measurements in the Bell basis.
+In the majority of cases, we are interested in performing measurements in the Bell basis.
 Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary that creates a Bell pair when the qubits are both initialized in $|0\rangle$, as shown in the Figure below, where we have dropped the $\hat{Z}$ label indicating the measurement basis.
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_2qubit.png", width="250"/>
@@ -414,7 +414,7 @@ If fluorescence is immediately observed, this corresponds to measuring the ion i
 If no fluorescence is observed, the ion is measured in the excited state $|e\rangle$.
 Combined with laser pulses that apply a single-qubit rotation, measurement of a __single ion in an arbitrary basis__ can be performed in $1-2 \text{ ms}$ [3].
 
-The __CNOT gate__ can be applied in two different ways
+The __CNOT gate__ can be applied in two different ways.
 The original proposal is due to Cirac and Zoller [8], where the ions needed to be cooled to their collective motional ground state first.
 This approach was demonstrated experimentally using $^{40}\text{Ca}^+$ ions [9].
 Applicaiton of the take took around $600\mu\text{s}$, with the achieved fidelity being $<0.8$.
