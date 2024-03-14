@@ -121,7 +121,7 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
 
 __Interference of photons from two independent EPPS__  
 The preceding discussion was concerned with two independent pure photons of different polarization.
-In the context of quantum networking, a much more common scenario is that of two entangled pairs of photons originating from two inpedendent EPPS nodes, where two qubits from each pair are incident onto a BS and undergo HOM interference.
+In the context of quantum networking, a much more common scenario is that of two entangled pairs of photons originating from two independent EPPS nodes, where two qubits, one from each pair, are incident onto a BS and undergo HOM interference.
 The two pairs are in the following initial state,
 $$|\psi^{\text{in}}\rangle_{ab} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{ab} + e^{i\theta_1} |VH\rangle_{ab} \right), \qquad |\psi^{\text{in}}\rangle_{cd} = \frac{1}{\sqrt{2}}\left( |HV\rangle_{cd} + e^{i\theta_2} |VH\rangle_{cd} \right),$$
 where $\theta_1$ and $\theta_2$ represent the polarization drift induced in the single-mode fiber.
@@ -436,7 +436,7 @@ Text
 # G. Urgent but Not Synchronization-critical Tasks
 
 # H. Host-side Application-level Tasks
-The service provided by a quantum network is entangled states, which may be either delivered to applications on quantum computers, held in limited-capability quantum memories, or directly measured as creation is completed, corresponding to the capabilities of COMP, STOR and MEAS end node types, respectively.
+The service provided by a quantum network is entangled states, which may be either delivered to applications on quantum computers, held in limited-capability quantum memories for later release and use, or directly measured as creation is completed, corresponding to the capabilities of COMP, STOR and MEAS end node types, respectively.
 
 An application that uses the services of a quantum network passes through several phases:
 
