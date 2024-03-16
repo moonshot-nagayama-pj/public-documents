@@ -429,6 +429,20 @@ Text
 
 ## D.3. Measurements on photonic qubits
 
+Measurement of polarization-encoded photonic qubits can be performed with the aid of a __polarizing beam splitter__ (PBS), a __half waveplate__ (HWP), a __quarter waveplate__ (QWP), and two detectors (one detector is enough in fact but less efficient).
+The idea is the same as in the case of measurements performed on stationary qubits discussed above.
+Setting the HWP and QWP at particular angles applies the unitary $\hat{U}^{\dagger}$ that picks the basis of the measurement, while the PBS filters out vertical and horizontal polarizations that then get detected by the detectors placed in the output paths of the PBS.
+Horizontal polarization gets transmitted through the PBS, while vertical polarization gets reflected.
+This setup is shown in the figure below.
+
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-2detector_setup.png", width="450"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-poincare.png", width="450"/>
+</p>
+
 # E. Optical Switch Control
 
 # F. Pre-configured Event-driven Tasks
@@ -473,4 +487,5 @@ Such tasks include:
 [8] J.I. Cirac, and P. Zoller, Quantum Computations with Cold Trapped Ions, [*Phys. Rev. Lett.* __74__, 4091 (1995)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4091).  
 [9] F. Schmidt-Kaler *et. al.*, Realization of the Cirac–Zoller controlled-NOT quantum gate, [*Nature* __422__, 408 (2003)](https://www.nature.com/articles/nature01494).  
 [10] K. Molmer, and A. Sorensen, Multiparticle Entanglement of Hot Trapped Ions, [*Phys. Rev. Lett.* __82__, 1835 (1999)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835).  
-[11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).
+[11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).  
+[12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).
