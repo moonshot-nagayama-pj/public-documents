@@ -429,15 +429,20 @@ Text
 
 ## D.3. Measurements on photonic qubits
 
-Measurement of polarization-encoded photonic qubits can be performed with the aid of a __polarizing beam splitter__ (PBS), a __half waveplate__ (HWP), a __quarter waveplate__ (QWP), and two detectors (one detector is enough in fact but less efficient).
+Measurement of polarization-encoded photonic qubits can be performed with the aid of a __polarizing beam splitter__ (PBS), a __half waveplate__ (HWP), a __quarter waveplate__ (QWP), and two detectors (one detector is enough in fact but less efficient) [12].
 The idea is the same as in the case of measurements performed on stationary qubits discussed above.
 Setting the HWP and QWP at particular angles applies the unitary $\hat{U}^{\dagger}$ that picks the basis of the measurement, while the PBS filters out vertical and horizontal polarizations that then get detected by the detectors placed in the output paths of the PBS.
 Horizontal polarization gets transmitted through the PBS, while vertical polarization gets reflected.
 This setup is shown in the figure below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-2detector_setup.png", width="450"/>
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-2detector_setup.png", width="300"/>
 </p>
+
+General pure state of a polarization-encoded qubit can be written as
+$$|\psi\rangle = \cos\left(\frac{\theta}{2}\right)|H\rangle + e^{i\phi}\sin\left(\frac{\theta}{2}\right)|V\rangle.$$
+This is directly equivalent to expressing the qubit state in the computational basis, and can be visualized with the help of the __Poincaré sphere__.
+The table below summarizes this equivalence.
 
 <p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-poincare.png", width="450"/>
