@@ -462,6 +462,13 @@ The action of the waveplates is captured by the corresponding unitary operations
 # E. Optical Switch Control
 
 # F. Pre-configured Event-driven Tasks
+In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
+
+Events can be _local_ to a quantum computer or repeater node, or _remote_, generally implying reception and processing of a classical message.
+
+In some cases, when a memory is used to emit a photon, the ultimate disposition of the qubit in memory might be measurement immediately after the emission of the photon (as in QKD). Alternatively, in systems involving QEC, immediately after emission of the photon, the memory qubit may be encoded into a logical qubit. In general, such events can trigger execution of a local quantum circuit.
+
+For links using HOM-based entanglement generation, inevitably there is a delay between the BSA operation completing successfully and the generation, transmission and reception of the confirmation message. Over distances of a few kilometers, this can require a few microseconds.
 
 # G. Urgent but Not Synchronization-critical Tasks
 
