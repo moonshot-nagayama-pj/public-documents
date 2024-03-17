@@ -445,8 +445,19 @@ This is directly equivalent to expressing the qubit state in the computational b
 The table below summarizes this equivalence.
 
 <p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-polarization_table.png", width="600"/>
+</p>
+
+The Figure below shows the Poincaré sphere along with the position of the polarization states.
+
+<p align="center">
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-poincare.png", width="450"/>
 </p>
+
+Polarization of light is manipulated by waveplates.
+Waveplate rotated by an angle $\alpha$ (zero is aligned with the fast axis) rotates the polarization state around an axis, located at an angle of $2\alpha$ with the horizontal state $|H\rangle$ in the horizontal plane, as shown in Figure above.
+Half waveplate rotates the polarization state by an angle $\pi$, while a quarter waveplate rotates by an angle $\pi/2$ in the Poincar\'{e} sphere.
+The action of the waveplates is captured by the corresponding unitary operations,
 
 # E. Optical Switch Control
 
