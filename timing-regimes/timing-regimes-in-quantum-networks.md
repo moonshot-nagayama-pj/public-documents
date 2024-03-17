@@ -311,12 +311,12 @@ Large acceptance windows produce high rates but low fidelity, while small accept
 The appropriate size of the acceptance window must be chosen in order to satisfy the demands of the application requesting the entangled states.
 Reaching the requested fidelity should take priority over high generation rate.
 
-## C.3. Wavepacket separation
+## C.3. Separation in a train of wavepackets
 
 Current experiments on quantum repeaters use single quantum memory per QNIC [3].
 As quantum technologies improve, it is likely that QNICs will be equipped with multiple quantum memories.
 This will allow for generation of link-level entanglement in a multiplexed manner, where trains of photons, each originating from a different memory inside the same QNIC, are sent to the BSA.
-The photons must be well separated such that upon a successful BSM, the BSA can uniquely identify which two photons were measured.
+The photons making up a train must be well separated such that upon a successful BSM, the BSA can uniquely identify which two photons were measured.
 We refer to the minimum separation between the photons as the __separation time__ $T_{\text{separation}}$.
 
 The size of the separation time depends on the following:
