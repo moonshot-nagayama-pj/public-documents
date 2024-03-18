@@ -459,6 +459,14 @@ Waveplate rotated by an angle $\alpha$ (zero is aligned with the fast axis) rota
 Half waveplate rotates the polarization state by an angle $\pi$, while a quarter waveplate rotates by an angle $\pi/2$ in the Poincaré sphere.
 The action of the waveplates is captured by the corresponding unitary operations,
 
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-waveplates_matrix.png", width="650"/>
+</p>
+
+The idea behind measurements in arbitrary basis $\\{|\psi\rangle, |\psi^{\dagger}\rangle\\}$ is to choose the angles for the waveplates such that the following transformation is achieved,
+$$U_{HWP}(\alpha_{HWP})U_{QWP}(\alpha_{QWP}) |\psi\rangle \rightarrow |H\rangle, \quad U_{HWP}(\alpha_{HWP})U_{QWP}(\alpha_{QWP}) |\psi^{\perp}\rangle \rightarrow |V\rangle.$$
+Settings for the three Pauli bases are summarized in the table below.
+
 # E. Optical Switch Control
 
 # F. Pre-configured Event-driven Tasks
