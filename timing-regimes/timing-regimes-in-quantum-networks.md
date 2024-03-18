@@ -456,7 +456,7 @@ The Figure below shows the Poincaré sphere along with the position of the polar
 
 Polarization of light is manipulated by waveplates.
 Waveplate rotated by an angle $\alpha$ (zero is aligned with the fast axis) rotates the polarization state around an axis, located at an angle of $2\alpha$ with the horizontal state $|H\rangle$ in the horizontal plane, as shown in Figure above.
-Half waveplate rotates the polarization state by an angle $\pi$, while a quarter waveplate rotates by an angle $\pi/2$ in the Poincar\'{e} sphere.
+Half waveplate rotates the polarization state by an angle $\pi$, while a quarter waveplate rotates by an angle $\pi/2$ in the Poincaré sphere.
 The action of the waveplates is captured by the corresponding unitary operations,
 
 # E. Optical Switch Control
