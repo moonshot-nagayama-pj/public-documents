@@ -467,6 +467,13 @@ The idea behind measurements in arbitrary basis $\\{|\psi\rangle, |\psi^{\dagger
 $$U_{HWP}(\alpha_{HWP})U_{QWP}(\alpha_{QWP}) |\psi\rangle \rightarrow |H\rangle, \quad U_{HWP}(\alpha_{HWP})U_{QWP}(\alpha_{QWP}) |\psi^{\perp}\rangle \rightarrow |V\rangle.$$
 Settings for the three Pauli bases are summarized in the table below.
 
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-waveplate_angles_table.png", width="325"/>
+</p>
+
+Changing the basis of measurement requires physical rotation of the waveplates and coordination with the detectors.
+
+
 # E. Optical Switch Control
 
 # F. Pre-configured Event-driven Tasks
