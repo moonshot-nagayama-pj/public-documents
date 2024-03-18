@@ -490,6 +490,7 @@ In some cases, when a memory is used to emit a photon, the ultimate disposition 
 For links using HOM-based entanglement generation, inevitably there is a delay between the BSA operation completing successfully and the generation, transmission and reception of the confirmation message. Over distances of a few kilometers, this can require a few microseconds.
 
 # G. Urgent but Not Synchronization-critical Tasks
+Some events trigger a computation, or series of computations, that are too complex to be compiled directly into a form for execution by an ASIC or FPGA. For example, hybrid or adaptive algorithms such as VQE, if executed in a distributed fashion, might require a substantial statistical computation to adjust the parameters used in the creation of the ansatz.
 
 # H. Host-side Application-level Tasks
 The service provided by a quantum network is entangled states, which may be either delivered to applications on quantum computers, held in limited-capability quantum memories for later release and use, or directly measured as creation is completed, corresponding to the capabilities of COMP, STOR and MEAS end node types, respectively.
