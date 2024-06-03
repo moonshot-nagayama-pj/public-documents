@@ -491,6 +491,12 @@ During the rotation interval, any results obtained from the detectors must be di
 
 
 # E. Optical Switch Control
+Optical switches play an essential role in distributed computing and communication systems.
+Their job is to guide light from a given input to the desired output.
+Optical switches have a numbre of important characteristics such as *indsertion loss*, *crosstalk*, and *size*.
+In the context of timing regimes, we will focus on the following characteristics in this section,
+- __Switching time:__ time required to reconfigure the the switch.
+- __Propagation time delay:__ time required for hte photon to travel across the switch.
 
 # F. Pre-configured Event-driven Tasks
 In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
