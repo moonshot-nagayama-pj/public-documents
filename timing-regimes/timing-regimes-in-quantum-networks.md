@@ -499,7 +499,7 @@ In the context of timing regimes, we will focus on the following characteristics
 - __Propagation time delay:__ time required for the photon to travel across the switch.
 
 Two approaches to switching are of relevance to our discussion.
-The first approach is the __crossbar switch__ with all-to-all connectivity. Such an $N\times N$ switch can be reconfigured to accomodate all possible $N!$ permutation of input-output pairs. One usual implementation of a crossbar switch is using microelectromechanical systems (MEMS) relying on small movable parts such as popup micromirrors, rotating prisms or spinning holographic disks [13]. 
+The first approach is the __crossbar switch__ with all-to-all connectivity. Such an $N\times N$ switch can be reconfigured to accomodate all possible $N!$ permutation of input-output pairs. One usual implementation of a crossbar switch is using microelectromechanical systems (MEMS) relying on small movable parts such as popup micromirrors, rotating prisms or spinning holographic disks [13]. MEMS have usually low insertion loss and crosstalk, however due to their physical nature they sufer from slow switching times, which range from $10\mu$s to 10ms. 
 
 # F. Pre-configured Event-driven Tasks
 In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
