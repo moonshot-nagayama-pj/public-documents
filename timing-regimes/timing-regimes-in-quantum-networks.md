@@ -493,10 +493,13 @@ During the rotation interval, any results obtained from the detectors must be di
 # E. Optical Switch Control
 Optical switches play an essential role in distributed computing and communication systems.
 Their job is to guide light from a given input to the desired output.
-Optical switches have a numbre of important characteristics such as *indsertion loss*, *crosstalk*, and *size*.
+Optical switches have a number of important characteristics such as *insertion loss*, *crosstalk*, and *size*.
 In the context of timing regimes, we will focus on the following characteristics in this section,
-- __Switching time:__ time required to reconfigure the the switch.
-- __Propagation time delay:__ time required for hte photon to travel across the switch.
+- __Switching time:__ time required to reconfigure the switch.
+- __Propagation time delay:__ time required for the photon to travel across the switch.
+
+Two approaches to switching are of relevance to our discussion.
+The first approach is the __crossbar switch__ with all-to-all connectivity. Such an $N\times N$ switch can be reconfigured to accomodate all possible $N!$ permutation of input-output pairs. One usual implementation of a crossbar switch is using microelectromechanical systems (MEMS) relying on small movable parts such as popup micromirrors, rotating prisms or spinning holographic disks [13]. 
 
 # F. Pre-configured Event-driven Tasks
 In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
@@ -549,4 +552,5 @@ Such tasks include:
 [9] F. Schmidt-Kaler *et. al.*, Realization of the Cirac–Zoller controlled-NOT quantum gate, [*Nature* __422__, 408 (2003)](https://www.nature.com/articles/nature01494).  
 [10] K. Molmer, and A. Sorensen, Multiparticle Entanglement of Hot Trapped Ions, [*Phys. Rev. Lett.* __82__, 1835 (1999)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835).  
 [11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).  
-[12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).
+[12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).  
+[13] B. E. A. Saleh, and M. C. Teich, Fundamentals of Photonics, [John Wiley & Sons](https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748).
