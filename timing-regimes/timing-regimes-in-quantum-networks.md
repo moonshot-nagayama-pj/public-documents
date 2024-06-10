@@ -509,7 +509,13 @@ Crossbar switches are important in classical switching networks and are use in c
 
 Both of these designs consider a $2\times 2$ switch as the basic building block, which is implemented with __integrated photonics__ and controlled electro-optically. Applied electric fields are used to alter the refractive index of the material (such as lithium niobate) to change the state of the switch from a BAR state to a CROSS state. Switching times for electro-optical switches are much faster, varying from 10 nanoseconds to 10 microseconds.
 
-The optical switch introduces a propagation time delay. For some MEMS, this delay can be as low as 25 nanoseconds [16]. In general, this delay time varies with the choice of input-output ports. This variation is probably insignificant in most classical contexts, but as discussed in Section A, any delay between the arrival times of photon pairs at the same BSA results in decreased visibility further lowering the fidelity of the post-measurement state. The issue of arrival time delay arises in the case of integrated switches used in paired-egress BSA pools. The propagation delay introduced by the switching fabric depends on the design of the switch. An extreme case is pictured in figure below
+The optical switch introduces a propagation time delay. For some MEMS, this delay can be as low as 25 nanoseconds [16]. In general, this delay time varies with the choice of input-output ports. This variation is probably insignificant in most classical contexts, but as discussed in Section A, any delay between the arrival times of photon pairs at the same BSA results in decreased visibility further lowering the fidelity of the post-measurement state. The issue of arrival time delay arises in the case of integrated switches used in paired-egress BSA pools. The propagation delay introduced by the switching fabric depends on the design of the switch. An extreme case is pictured in figure below,
+
+<p align="center">
+  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/E-time_delay.png", width="425"/>
+</p>
+
+In order to bring photons from inputs $X_0$ and $X_{11}$ together to the same BSA, photons from $X_0$ must travel through 10 $2\times 2$ switches while photons from input $X_{11}$ do not traverse a single switch.
 
 # F. Pre-configured Event-driven Tasks
 In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
