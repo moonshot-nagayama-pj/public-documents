@@ -509,7 +509,7 @@ Crossbar switches are important in classical switching networks and are use in c
 
 Both of these designs consider a $2\times 2$ switch as the basic building block, which is implemented with __integrated photonics__ and controlled electro-optically. Applied electric fields are used to alter the refractive index of the material (such as lithium niobate) to change the state of the switch from a BAR state to a CROSS state. Switching times for electro-optical switches are much faster, varying from 10 nanoseconds to 10 microseconds.
 
-Important 
+The optical switch introduces a propagation time delay. For some MEMS, this delay can be as low as 25 nanoseconds [16]. In general, this delay time varies with the choice of input-output ports. This variation is probably insignificant in most classical contexts, but as discussed in Section A, any delay between the arrival times of photon pairs at the same BSA results in decreased visibility further lowering the fidelity of the post-measurement state. 
 
 # F. Pre-configured Event-driven Tasks
 In this section, we discuss synchronization-critical tasks that must be conducted when an event occurs. Most stationary qubits are under the control of a classical analog circuit that includes a local oscillator (LO) coupled to the corresponding frequency of the qubit itself. Avoiding drift between the _understood_ phase of the qubit and the _actual_ phase of the LO is a key part of hardware design for a qubit, but is beyond the scope of this document.
@@ -565,4 +565,5 @@ Such tasks include:
 [12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).  
 [13] B. E. A. Saleh, and M. C. Teich, Fundamentals of Photonics, [John Wiley & Sons, (2019)](https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748).  
 [14] R. J. Drost, T. J. Moore, and M. Brodsky, Switching Networks for Pairwise-Entanglement Distribution, [*Journal of Optical Communications and Networking*, __8__, 331 (2016)](https://opg.optica.org/jocn/fulltext.cfm?uri=jocn-8-5-331&id=340335).  
-[15] M. Koyama, C. Yun, A. Taherkhani, N. Benchasattabuse, B. O. Sane, M. Hajdušek, S. Nagayama, R. Van Meter, Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).
+[15] M. Koyama, C. Yun, A. Taherkhani, N. Benchasattabuse, B. O. Sane, M. Hajdušek, S. Nagayama, R. Van Meter, Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).  
+[16] Polatis Series 6000i Instrument Optical Matrix Switch, [https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf](https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf).
