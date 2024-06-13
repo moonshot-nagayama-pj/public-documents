@@ -165,7 +165,7 @@ We begin the discussion by focusing on pure states of the input photons first.
 Single-photon state with a spectral amplitude function $\phi(\omega)$ is a superposition written as
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
 where $\hat{a}^{\dagger}(\omega)$ creates a photon in the BS input mode $a$ with frequency $\omega$.
-Two input photons with arbitrary spectral arbitrary functions $\phi$ and $\varphi$, are described by
+Two input photons with arbitrary spectral functions $\phi$ and $\varphi$ are described by
 $$|\psi ^{\text{in}}\rangle _{ab} = |1;\phi\rangle_a |1;\varphi\rangle_b = \int d\omega_1 \phi(\omega_1)\hat{a}^{\dagger}(\omega_1) \int d\omega_2 \varphi(\omega_2)\hat{b}^{\dagger}(\omega_2) |0\rangle _{ab}.$$
 We assume that the BS acts on the different frequency modes independently, and that the reflectivity is frequency-independent.
 Applying the same transformation rules for the creation operators, the output state of the two photons is
