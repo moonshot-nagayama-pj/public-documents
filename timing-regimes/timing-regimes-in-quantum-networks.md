@@ -6,7 +6,7 @@ In 1982, Digital Equipment Corporation, Intel, and Xerox published  __The Ethern
 
 Equally importantly, it specifies __timing requirements__.  For example, the rise time for a signal on the coaxial cable shall be $25\pm 5$ nanoseconds. The total worst-case round-trip delay is calculated in a table to be $46.38\mu\textrm{s}$. How the entries in that table are combined to produce that number is fairly obvious; however, the numerical entries themselves are mostly unjustified in the specification itself, only stated. One exception is the statement, "Rise and fall times meet 10,000 series ECL requirements," referring to a specific series of well-known digital emitter-coupled logic parts, and hence incorporating a great deal of prior knowledge and work by reference.
 
-In the quantum world, we are starting from first principles. Hence, we must begin at the beginning. We want to have specifications like Ethernet's, but first we must describe how the entries in e.g. the physical propagation delay budget are determined. The rols of this document is to provide the underpinnings that give a shared understanding of how the basic numbers are determined and how they can be combined in a particular system design.
+In the quantum world, we are starting from first principles. Hence, we must begin at the beginning. We want to have specifications like Ethernet's, but first we must describe how the entries in e.g. the physical propagation delay budget are determined. The role of this document is to provide the underpinnings that give a shared understanding of how the basic numbers are determined and how they can be combined in a particular system design.
 
 Thanks, DIX Ethernet creators, for showing the way!
 
@@ -18,15 +18,15 @@ The range of time scales of interest extends from ensuring the sub-wavelength st
 
 Summary of timing regimes:
 
-A. __interferometric stabilization:__ need for sub-wavelength stability is photonic qubit representation-dependent  
-B. __photon wave packet overlap:__ technology-dependent photon wave packet length, but roughly nanoseconds  
-C. __opening and closing of detector timing windows, detector recovery time:__ nanoseconds to microseconds  
-D. __measurement basis selection (if required in BSA):__ performance will constrain entanglement attempt rate  
-E. __optical switch control:__ switching of trains of wave packets  
-F. __pre-configured event-driven tasks such as timing-triggered or measurement-triggered execution of quantum circuits:__ microseconds  
-G. __urgent but not synchronization-critical tasks (e.g. execution of classical code that processes RuleSet messages and selects or creates new quantum circuits for execution):__ milliseconds  
-H. __host-side application-level tasks (e.g. post-measurement operations):__ milliseconds  
-I. __background tasks (link tomography calculations, routing table updates):__ seconds to minutes  
+A. __interferometric stabilization:__ need for sub-wavelength stability is photonic qubit representation-dependent
+B. __photon wave packet overlap:__ technology-dependent photon wave packet length, but roughly nanoseconds
+C. __opening and closing of detector timing windows, detector recovery time:__ nanoseconds to microseconds
+D. __measurement basis selection (if required in BSA):__ performance will constrain entanglement attempt rate
+E. __optical switch control:__ switching of trains of wave packets
+F. __pre-configured event-driven tasks such as timing-triggered or measurement-triggered execution of quantum circuits:__ microseconds
+G. __urgent but not synchronization-critical tasks (e.g. execution of classical code that processes RuleSet messages and selects or creates new quantum circuits for execution):__ milliseconds
+H. __host-side application-level tasks (e.g. post-measurement operations):__ milliseconds
+I. __background tasks (link tomography calculations, routing table updates):__ seconds to minutes
 
 Some of these can only be achieved using high-quality hardware, while others are software tasks. Detailed analysis of these regimes will affect core software design in each network node type.
 
@@ -119,7 +119,7 @@ $$p _{\text{coin}} = \langle\psi ^{\text{out}}| _{ab} \hat{P}_a \otimes \hat{P}_
 where the overlap between the polarization unit vectors is parametrized by $\theta$, and can be written as $\langle\vec{\epsilon}'|\vec{\epsilon}\rangle = \cos\theta$.
 
 Ensuring that the two input photons are indistinguishable in their polarization degree of freedom is critical for proper operation of the BSA.
-Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to __drift__ during its transmission and change its state from the one that the photon possessed immediately after emission. 
+Care must be therefore taken to characterize the photons just before they are incident onto the BS, as it is possible for the polarization of a photon to __drift__ during its transmission and change its state from the one that the photon possessed immediately after emission.
 This issue is mainly relevant in non-polarization-maintaining single-mode fibers.
 
 We can define the corresponding visibility as a function of the nagle between the two polarization vectors,
@@ -131,7 +131,7 @@ The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\t
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A2-visibility_polarization.png", width="400"/>
 </p>
 
-__Interference of photons from two independent EPPS__  
+__Interference of photons from two independent EPPS__
 The preceding discussion was concerned with two independent pure photons of different polarization.
 In the context of quantum networking, a much more common scenario is that of two entangled pairs of photons originating from two independent EPPS nodes, where two qubits, one from each pair, are incident onto a BS and undergo HOM interference.
 The two pairs are in the following initial state,
@@ -160,7 +160,7 @@ The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_
 </p>
 In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
-__Pure states.__  
+__Pure states.__
 We begin the discussion by focusing on pure states of the input photons first.
 Single-photon state with a spectral amplitude function $\phi(\omega)$ is a superposition written as
 $$|1;\phi\rangle_a = \int d\omega \phi(\omega) \hat{a}^{\dagger}(\omega) |0\rangle_a,$$
@@ -180,7 +180,7 @@ Now, $p _{\text{coin}}$ depends on the overlap between the spectral amplitude fu
 If the input photons are fully distinguishable, their respective spectral amplitude functions $\phi(\omega)$ and $\varphi(\omega)$ are orthogonal and the integrals vanish, meaning $p _{\text{coin}}=1/2$.
 On the other hand, for completely indistinguishable input photons we have $\phi(\omega)=\varphi(\omega)$, and due to the normalization condition we obtain $p _{\text{coin}}=0$.
 
-__Mixed states.__  
+__Mixed states.__
 Previous discussion of pure states can be extended to include mixed states of the input photons.
 Such states will inevitably arise due to imperfections in the preparation procedure and due to the input photons being entangled with other degrees of freedom.
 These can include other photons or quantum memories.
@@ -195,7 +195,7 @@ It is not necessary to repeat the entire calculation we did for pure states.
 Due to the linearity of quantum mechanics, we can immediately write the expression for the probability of coincidence as a sum of pure-state coincidence probabilities weighted by $u_k$ and $v'_k$,
 $$p _{\text{coin}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u _k v _{k'} \int d\omega_1\phi^\ast_k(\omega_1)\varphi _{k'}(\omega_1) \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2).$$
 
-__Example 1: Gaussian wave packets__  
+__Example 1: Gaussian wave packets__
 In this example, we consider input photons with Gaussian spectral amplitude functions.
 The spectral amplitude functions are given by
 $$\phi_i(\omega) = \frac{1}{\pi^{1/4}\sqrt{\sigma_i}} e ^{-\frac{(\omega-\bar{\omega}_i)^2}{2\sigma^2_i}},\quad\text{for } i=a,b.$$
@@ -246,7 +246,7 @@ $$p ^{\text{pure}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2}\int d\omega
 while for mixed states is can be generalized to the following form,
 $$p ^{\text{mix}} _{\text{coincidence}} = \frac{1}{2} - \frac{1}{2} \sum _{kk'} u_k v _{k'} \int d\omega_1\phi_k^\ast(\omega_1)\varphi _{k'}(\omega_1)e^{-i\omega_1\tau} \int d\omega_2 \varphi _{k'}^\ast(\omega_2) \phi_k(\omega_2) e^{i\omega_2\tau}.$$
 
-__Example: Gaussian wave packets__  
+__Example: Gaussian wave packets__
 Consider two identical wavepackets, which arrive at the BS with a time difference given by $\tau$.
 The probability of coincidence is given by
 $$p_{\text{coin}} = \frac{1}{2} \left( 1 - e^{-\frac{1}{2}\sigma^2\tau^2} \right) = \frac{1}{2} \left( 1 - e^{-\frac{1}{2}\tau^{\prime 2}} \right),$$
@@ -258,7 +258,7 @@ Figure below displays the visibility and probability of coincidence for this cas
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-visibility_temporal.png", width="400"/>
 </p>
 
-__Photon emission time jitter__  
+__Photon emission time jitter__
 Photon emission is fundamentally a __non-deterministic__ process, owing to the Heisenberg uncertainty principle $\Delta E \Delta t \geq \hbar/2$.
 Following our discussion in Section A.3 (Spectral distinguishability), it is desirable for the emitted photons to be spectrally pure, which corresponds to small $\Delta E$.
 This on the other hand results in a large uncertainty of the emission time, given by $\Delta t$.
@@ -368,7 +368,7 @@ An example of this are the so-called all-photonic quantum repeaters, where measu
 
 We will first discuss quantum measurements in general before discussing concrete implementations and their timing requirements based on their physical implementations.
 
-__Single-qubit measurements:__  
+__Single-qubit measurements:__
 For simplicity, we begin with measurements on a single qubit before generalizing to two qubit measurements.
 Consider a general state of the qubit,
 $$|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,$$
@@ -396,7 +396,7 @@ This is pictured in the Figure below.
   <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_1qubit.png", width="500"/>
 </p>
 
-__Two-qubit measurements:__  
+__Two-qubit measurements:__
 The same principle of changing the measurement basis can be generalized to two qubits.
 This time state $|\psi\rangle$ represents a general two-qubit state, unitary $\hat{U}^{\dagger}$ acts on both qubits, which are both finally measured in Pauli $Z$ basis.
 In the majority of cases, we are interested in performing measurements in the Bell basis.
@@ -411,7 +411,7 @@ In this Section, we discuss various methods of implementing measurements of quan
 These methods vary based on the quantum technology used as the quantum memory, and even within the same technology there are usually variations.
 We are mainly concerned with giving an overview of the different measurement methods, and their respective timing regimes.
 
-__Trapped ions:__  
+__Trapped ions:__
 Trapped ions possess two degrees of freedom [6].
 The first one is the motional degree of freedom, resulting from the ion oscillating around its equilibrium position in the trap.
 The second one is the internal degree of freedom, represented by the ground state $|g\rangle$ and the excited state $|e\rangle$.
@@ -436,7 +436,7 @@ Application of the take took around $600\mu\text{s}$, with the achieved fidelity
 The second approach is due to Molmer and Sorensen [10], and is more robust against motional excitation.
 This led to high-fidelity demonstrations of $>0.99$, and gate times of around $50\mu\text{s}$ .
 
-__NV centers in diamond:__  
+__NV centers in diamond:__
 Text
 
 ## D.3. Measurements on photonic qubits
@@ -565,19 +565,19 @@ Such tasks include:
 
 ## References
 
-[1] C.K. Hong, Z.Y. Ou, and L. Mandel, Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).  
-[2] A. M. Branczyk, Hong-Ou-Mandel Interference, [*arXiv:1711.00080* (2017)](https://arxiv.org/abs/1711.00080).  
-[3] V. Krutyanskiy _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).  
-[4] R. H. Hadfield, Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).  
-[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).  
-[6] D. Leibfried, R. Blatt, C. Monroe, and D. Wineland, Quantum dynamics of single trapped ions, [*Rev. Mod. Phys.* __75__, 281 (2003)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.75.281).  
-[7] C. Gardiner, and P. Zoller, The Quantum World of Ultra-Cold Atoms and Light: The Physics of Quantum-Optical Devices, [Imperial College Press, (2015)](https://www.amazon.co.jp/Quantum-World-Ultra-Cold-Atoms-Light/dp/1783266163).  
-[8] J.I. Cirac, and P. Zoller, Quantum Computations with Cold Trapped Ions, [*Phys. Rev. Lett.* __74__, 4091 (1995)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4091).  
-[9] F. Schmidt-Kaler *et. al.*, Realization of the Cirac–Zoller controlled-NOT quantum gate, [*Nature* __422__, 408 (2003)](https://www.nature.com/articles/nature01494).  
-[10] K. Molmer, and A. Sorensen, Multiparticle Entanglement of Hot Trapped Ions, [*Phys. Rev. Lett.* __82__, 1835 (1999)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835).  
-[11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).  
-[12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).  
-[13] B. E. A. Saleh, and M. C. Teich, Fundamentals of Photonics, [John Wiley & Sons, (2019)](https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748).  
-[14] R. J. Drost, T. J. Moore, and M. Brodsky, Switching Networks for Pairwise-Entanglement Distribution, [*Journal of Optical Communications and Networking*, __8__, 331 (2016)](https://opg.optica.org/jocn/fulltext.cfm?uri=jocn-8-5-331&id=340335).  
-[15] M. Koyama, C. Yun, A. Taherkhani, N. Benchasattabuse, B. O. Sane, M. Hajdušek, S. Nagayama, R. Van Meter, Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).  
+[1] C.K. Hong, Z.Y. Ou, and L. Mandel, Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).
+[2] A. M. Branczyk, Hong-Ou-Mandel Interference, [*arXiv:1711.00080* (2017)](https://arxiv.org/abs/1711.00080).
+[3] V. Krutyanskiy _et al._, Entanglement of Trapped-Ion Qubits Separated by 230 Meters, [*Phys. Rev. Lett.* __130__, 050803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.050803) (2023).
+[4] R. H. Hadfield, Single-photon detectors for optical quantum information applications, [*Nature Photonics* __3__, 696](https://www.nature.com/articles/nphoton.2009.230) (2009).
+[5] Single Quantum, [Link](https://singlequantum.com/wp-content/uploads/2022/12/SQ-General-Brochure.pdf).
+[6] D. Leibfried, R. Blatt, C. Monroe, and D. Wineland, Quantum dynamics of single trapped ions, [*Rev. Mod. Phys.* __75__, 281 (2003)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.75.281).
+[7] C. Gardiner, and P. Zoller, The Quantum World of Ultra-Cold Atoms and Light: The Physics of Quantum-Optical Devices, [Imperial College Press, (2015)](https://www.amazon.co.jp/Quantum-World-Ultra-Cold-Atoms-Light/dp/1783266163).
+[8] J.I. Cirac, and P. Zoller, Quantum Computations with Cold Trapped Ions, [*Phys. Rev. Lett.* __74__, 4091 (1995)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4091).
+[9] F. Schmidt-Kaler *et. al.*, Realization of the Cirac–Zoller controlled-NOT quantum gate, [*Nature* __422__, 408 (2003)](https://www.nature.com/articles/nature01494).
+[10] K. Molmer, and A. Sorensen, Multiparticle Entanglement of Hot Trapped Ions, [*Phys. Rev. Lett.* __82__, 1835 (1999)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835).
+[11] J. Benhelm *et al.*, Towards fault-tolerant quantum computing with trapped ions, [*Nature Physics* __4__ 463 (2008)](https://www.nature.com/articles/nphys961).
+[12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).
+[13] B. E. A. Saleh, and M. C. Teich, Fundamentals of Photonics, [John Wiley & Sons, (2019)](https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748).
+[14] R. J. Drost, T. J. Moore, and M. Brodsky, Switching Networks for Pairwise-Entanglement Distribution, [*Journal of Optical Communications and Networking*, __8__, 331 (2016)](https://opg.optica.org/jocn/fulltext.cfm?uri=jocn-8-5-331&id=340335).
+[15] M. Koyama, C. Yun, A. Taherkhani, N. Benchasattabuse, B. O. Sane, M. Hajdušek, S. Nagayama, R. Van Meter, Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).
 [16] Polatis Series 6000i Instrument Optical Matrix Switch, [https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf](https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf).

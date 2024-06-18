@@ -1,4 +1,4 @@
-# Timing Regimes for Quantum Networks
+# Timing Regimes in Quantum Networks
 
 The document is [here](timing-regimes-in-quantum-networks.md).
 
