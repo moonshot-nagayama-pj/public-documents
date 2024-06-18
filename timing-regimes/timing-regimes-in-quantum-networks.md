@@ -43,8 +43,9 @@ Consider two photons incident on a beamsplitter (BS) with reflectivity $r$.
 We label the input modes $a$ and $b$.
 The output modes of the BS are labelled with $a$ and $b$ as well, with the understanding that output mode $a$ corresponds to the input mode $a$ being transmitted.
 Similarly for output mode $b$, as shown in the Figure below.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A1-HOM.png"/>
+  <img src="A1-HOM.png"/>
 </p>
 
 The input state can be expressed as
@@ -129,8 +130,9 @@ $$V(\theta) = 1 - 2 p_{\text{coin}} = \cos^2\theta.$$
 When the photons have identical polarization, $\theta=0$, the visibility reaches its maximum of $V=1$.
 On the other hand, when the photons are fully distinguishable and their polarization vectors are orthogonal, $\theta=\pm\pi/2$, visibility is $V=0$.
 The visibility $V(\theta)$ and the probability of a coincidence detection $p_{\text{coin}}$ are both displayed in the Figure below.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A2-visibility_polarization.png", width="400"/>
+  <img src="A2-visibility_polarization.png" width="400"/>
 </p>
 
 #### Interference of photons from two independent EPPS
@@ -158,9 +160,11 @@ The photon wave packet of a photon is represented by its __spectral amplitude fu
 Two input photons become distinguishable if their respective spectral amplitude functions are not equal.
 The two photons may have different central frequencies $\bar{\omega}_a$ and $\bar{\omega}_b$.
 The input photons may be distinguishable even if $\bar{\omega}_a = \bar{\omega}_b$, provided that the shape of the wave packet is different, as shown in the Figure below.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A3-distinguish_spectral.png", width="800"/>
+  <img src="A3-distinguish_spectral.png" width="800"/>
 </p>
+
 In this subsection, we analyze the requirements in terms of the photonic spectral amplitude function that lead to high visibility of the HOM interference.
 
 #### Pure states.
@@ -224,7 +228,7 @@ $$V(\sigma_b/\sigma_a) = \frac{2\sigma_b/\sigma_a}{1 + (\sigma_b/\sigma_a)^2}.$$
 The probability of coincidence and corresponding visibility for both Cases are shown in the Figure below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/A3-visibility_spectral.png", width="800"/>
+  <img src="A3-visibility_spectral.png" width="800"/>
 </p>
 
 
@@ -236,7 +240,7 @@ Even for photons with identical spectral amplitude functions, different arrival 
 If the times of arrival are too different as shown in the Figure below, the probability of a coincidence detection will reach its maximum value of 1/2, and the visibility will vanish.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-distinguish_temporal.png", width="800"/>
+  <img src="B-distinguish_temporal.png" width="800"/>
 </p>
 
 Without loss of generality we assume that photon $b$ is delayed by a time $\tau$, which transforms its creation operator,
@@ -259,8 +263,9 @@ where we have defined a dimensionless time rescaled by the standard deviation of
 The corresponding visibility is given by
 $$V(\tau^{\prime}) = e^{-\frac{1}{2}\tau^{\prime 2}}.$$
 Figure below displays the visibility and probability of coincidence for this case.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/B-visibility_temporal.png", width="400"/>
+  <img src="B-visibility_temporal.png" width="400"/>
 </p>
 
 ### Photon emission time jitter
@@ -301,8 +306,9 @@ On the other hand, if the photon source is highly efficient, it is important to 
 - __Dark count rate:__ SPDs have a finite chance to produce an output electric signal even in the absence of a photon. This may be caused by materials properties of the detector, biasing conditions, or external noise. It is usually given in Hz [counts per second]. Dark counts decrease the fidelity of the distributed entangled states.
 - __Timing jitter:__ Denoted by $J_{\text{timing}}$.
 Describes the variation in time between the photon being absorbed and the output electric signal being generated. A few example profiles are shown in the Figure below taken from [4].
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/C-timing_jitter.png", width="500"/>
+  <img src="C-timing_jitter.png" width="500"/>
 </p>
 
 The table below shows the above characteristics for a SNSPD [5].
@@ -397,8 +403,9 @@ This can be easily verified by rewriting the above probabilities corresponding t
 $$\text{Pr}(|\phi\rangle;|\psi\rangle) = |\langle\phi|\psi\rangle|^2 = |\langle0|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|0\rangle;\hat{U}^{\dagger}|\psi\rangle),$$
 $$\text{Pr}(|\phi^{\perp}\rangle;|\psi\rangle) = |\langle\phi^{\perp}|\psi\rangle|^2 = |\langle1|\hat{U}^{\dagger}|\psi\rangle|^2 = \text{Pr}(|1\rangle;\hat{U}^{\dagger}|\psi\rangle).$$
 This is pictured in the Figure below.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_1qubit.png", width="500"/>
+  <img src="D1-meas_1qubit.png" width="500"/>
 </p>
 
 #### Two-qubit measurements:
@@ -406,8 +413,9 @@ The same principle of changing the measurement basis can be generalized to two q
 This time state $|\psi\rangle$ represents a general two-qubit state, unitary $\hat{U}^{\dagger}$ acts on both qubits, which are both finally measured in Pauli $Z$ basis.
 In the majority of cases, we are interested in performing measurements in the Bell basis.
 Required unitary $\hat{U}^{\dagger}$ is the Hermitian conjugate of the unitary that creates a Bell pair when the qubits are both initialized in $|0\rangle$, as shown in the Figure below, where we have dropped the $\hat{Z}$ label indicating the measurement basis.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D1-meas_2qubit.png", width="250"/>
+  <img src="D1-meas_2qubit.png" width="250"/>
 </p>
 
 ### D.2. Measurements on quantum memories
@@ -424,8 +432,9 @@ It is the latter degree of freedom which is used to encode a qubit and hence act
 
 Measurement in the __Pauli $\hat{Z}$__ basis is performed by __electron shelving__ via the use of a third atomic level $|r\rangle$, with much shorter life time than the excited state $|e\rangle$, $\tau_e \gg \tau_r$ [7].
 Figure below demonstrates this method works.
+
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D2-shelving.png", width="250"/>
+  <img src="D2-shelving.png" width="250"/>
 </p>
 
 The ion is illuminated by light tuned to resonate with the transition $|g\rangle\leftrightarrow|r\rangle$, represented by the red straight arrow in the Figure above.
@@ -453,7 +462,7 @@ Horizontal polarization gets transmitted through the PBS, while vertical polariz
 This setup is shown in the figure below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-2detector_setup.png", width="300"/>
+  <img src="D3-2detector_setup.png" width="300"/>
 </p>
 
 General pure state of a polarization-encoded qubit can be written as
@@ -462,13 +471,13 @@ This is directly equivalent to expressing the qubit state in the computational b
 The table below summarizes this equivalence.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-polarization_table.png", width="600"/>
+  <img src="D3-polarization_table.png" width="600"/>
 </p>
 
 The Figure below shows the Poincaré sphere along with the position of the polarization states.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-poincare.png", width="450"/>
+  <img src="D3-poincare.png" width="450"/>
 </p>
 
 Polarization of light is manipulated by waveplates.
@@ -477,7 +486,7 @@ Half waveplate rotates the polarization state by an angle $\pi$, while a quarter
 The action of the waveplates is captured by the corresponding unitary operations,
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-waveplates_matrix.png", width="650"/>
+  <img src="D3-waveplates_matrix.png" width="650"/>
 </p>
 
 The idea behind measurements in arbitrary basis $\\{|\psi\rangle, |\psi^{\dagger}\rangle\\}$ is to choose the angles for the waveplates such that the following transformation is achieved,
@@ -485,7 +494,7 @@ $$U_{HWP}(\alpha_{HWP})U_{QWP}(\alpha_{QWP}) |\psi\rangle \rightarrow |H\rangle,
 Settings for the three Pauli bases are summarized in the table below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/D3-waveplate_angles_table.png", width="325"/>
+  <img src="D3-waveplate_angles_table.png" width="325"/>
 </p>
 
 Changing the basis of measurement requires mechanical rotation of the waveplates and coordination with the detectors.
@@ -507,7 +516,7 @@ The first approach is the *crossbar switch* with all-to-all connectivity. Such a
 Crossbar switches are important in classical switching networks and are use in classical control systems in some quantum technologies. In the context of quantum networks, it is often not necessary for the switch to be able satisfy all possible $N!$ input-output permutations.  For example, the switch can be placed behind a pool of entangled photon pair sources (EPPS) in order to route entangled photons towards end nodes requesting a connection [14]. Or the switch can be placed before a pool of Bell State Analyzers (BSA) and route input pairs of photons to the desired BSA, where they undergo measurement in the Bell basis [15]. These approaches are pictured in the figure below.
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/E-optical_switch.png", width="625"/>
+  <img src="E-optical_switch.png" width="625"/>
 </p>
 
 Both of these designs consider a $2\times 2$ switch as the basic building block, which is implemented with __integrated photonics__ and controlled electro-optically. Applied electric fields are used to alter the refractive index of the material (such as lithium niobate) to change the state of the switch from a BAR state to a CROSS state. Switching times for electro-optical switches are much faster, varying from 10 nanoseconds to 10 microseconds.
@@ -515,7 +524,7 @@ Both of these designs consider a $2\times 2$ switch as the basic building block,
 The optical switch introduces a __propagation time delay__. For some MEMS switches, this delay can be as low as 25 nanoseconds [16]. In general, this delay time varies with the choice of input-output ports. This variation is probably insignificant in most classical contexts, but as discussed in Section A, any delay between the arrival times of photon pairs at the same BSA may result in decreased visibility further lowering the fidelity of the post-measurement state. The issue of arrival time delay arises in the case of integrated switches used in paired-egress BSA pools. The propagation delay introduced by the switching fabric depends on the design of the switch, as demonstrated in figure below,
 
 <p align="center">
-  <img src="https://github.com/moonshot-nagayama-pj/playground/blob/main/michal/E-time_delay.png", width="425"/>
+  <img src="E-time_delay.png" width="425"/>
 </p>
 
 This triangular switch design was introduced in [15]. Photons entering the switch from different ports need to traverse vastly different number of switching points. For example, photons from input port $X_0$ have to traverse at least 5 switching points, while photons from input port $X_{11}$ do not have to traverse any at all. Furthermore, if photons from these two input ports are required to undergo Bell-state measurement, both need to be routed to $\text{BSA}_5$. This requires photons from $X_0$ to traverse 10 switching points intoducing the largest possible time delay giventhis design and size of the switch.
