@@ -584,7 +584,11 @@ Such tasks include:
 | Wave packet (polarization) |               |           | fixed                     | design / monitored                            | minutes       |                          |           |
 | Pump laser                 | X nm          | linewidth | fixed                     | design                                        | none          |                          |           |
 | Coincidence window at BSA  |               | none      | required fidelity         | calculated                                    | none          |                          |           |
-| Meaurement basis change    | X ms          |           | fixed                     | design                                        | none          |                          |           |
+| Meaurement basis change    | seconds       |           | fixed                     | design                                        | none          |                          |           |
+| Timestamp resolution       | 5ps           |           | fixed                     | measured                                      | none          |                          |           |
+| Detector recovery time     | 15 ns         |           | fixed                     | measured                                      | none          |                          |           |
+| Optical switch control     |               | none      | theoretically fixed       | design                                        | none          |                          |           |
+| ODL control                | X ms - s      | none      | fixed                     | measured                                      | none          |                          |           |
 
 
 ## References
