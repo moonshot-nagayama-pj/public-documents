@@ -575,6 +575,18 @@ Such tasks include:
 * __Routing__: Creation and update of routing tables at each node is an ordinary, distributed classical task that shares the information collected about links as above. The expected completion time of this tasks should be quick enough that the network converges to provide seamless service upon topology changes.  Unless nodes are mobile, propagation and recalculation of such changes at the level of seconds should be acceptable.
 * __Malicious use monitoring__: It is known that a hijacked or malfunctioning repeater can be used to impede the overall service of the network or even to partition the network. It is also known that QKD-derived monitoring of the network using randomly selected measurement bases on a portion of the network capacity can serve as a detection mechanism for this malicious behavior.
 
+## J. Timing Profile
+| Concept                    | Nominal value | Variance  | Fixed / scales with       | By design / measured / monitored / calculated | Rate of drift | Link to calculation/data | References|
+|:---------------------------|:-------------:|:---------:|:-------------------------:|:---------------------------------------------:|:-------------:|:------------------------:|-----------|
+| Optical domain diameter    | X ns          | none      | physical reach of network | design                                        | none          |                          |           |
+| Wave packet (frequency)    | X nm          | linewidth | fixed                     | measured / calculated                         | none          |                          |           |
+| Wave packet (spatial)      |               |           |                           |                                               |               |                          |           |
+| Wave packet (polarization) |               |           | fixed                     | design / monitored                            | minutes       |                          |           |
+| Pump laser                 | X nm          | linewidth | fixed                     | design                                        | none          |                          |           |
+| Coincidence window at BSA  |               | none      | required fidelity         | calculated                                    | none          |                          |           |
+| Meaurement basis change    | X ms          |           | fixed                     | design                                        | none          |                          |           |
+
+
 ## References
 
 * [1] C.K. Hong, Z.Y. Ou, and L. Mandel, Measurement of subpicosecond time intervals between two photons by interference, [*Phys. Rev. Lett.* __59__, 2044 (1987)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.2044).
@@ -591,5 +603,5 @@ Such tasks include:
 * [12] J. Altepeter, D.F.V. James, and P.G. Kwiat, Qubit quantum state tomography, [*Lecture Notes in Physics* __649__, 113 (2004)](https://link.springer.com/chapter/10.1007/978-3-540-44481-7_4).
 * [13] B. E. A. Saleh, and M. C. Teich, Fundamentals of Photonics, [John Wiley & Sons, (2019)](https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748).
 * [14] R. J. Drost, T. J. Moore, and M. Brodsky, Switching Networks for Pairwise-Entanglement Distribution, [*Journal of Optical Communications and Networking*, __8__, 331 (2016)](https://opg.optica.org/jocn/fulltext.cfm?uri=jocn-8-5-331&id=340335).
-* [15] M. Koyama, C. Yun, A. Taherkhani, N. Benchasattabuse, B. O. Sane, M. Hajdušek, S. Nagayama, R. Van Meter, Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).
+* [15] M. Koyama _et al._ , Optimal Switching Networks for Paired-Egress Bell State Analyzer Pools, [*arXiv:2405.09860* (2024)](https://arxiv.org/abs/2405.09860).
 * [16] Polatis Series 6000i Instrument Optical Matrix Switch, [https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf](https://www.viavisolutions.com/en-us/literature/polatis-series-6000-osm-network-switch-module-data-sheets-en.pdf).
