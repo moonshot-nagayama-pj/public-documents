@@ -78,6 +78,12 @@ Write type-safe Python code. Use [mypy](https://mypy.readthedocs.io/en/stable/) 
 
 Automatically run static analysis and unit tests on each pull request. The same checks should be runnable locally. An implementation can be found in PnPQ's [`bin/check.bash`](https://github.com/moonshot-nagayama-pj/PnPQ/blob/main/bin/check.bash). Until we have the time to better standardize and automate across our projects, consider PnPQ's checks as the minimum baseline for static analysis.
 
+### Unit testing
+
+We should strive to write unit tests at the same time we implement new features, and keep code coverage high, at over 80%.
+
+Much of our code interfaces with real hardware. In order to allow unit testing, we should structure our code to isolate the hardware interfaces and make it easy to mock hardware behavior.
+
 ## Backwards compatibility
 
 * [semver](https://semver.org/) should be understood and used to version our projects. We should try to avoid making backwards-incompatible changes to our API.
