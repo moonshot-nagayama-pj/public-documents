@@ -55,7 +55,7 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team leader at [rdv@sfc.wide.ad.jp](mailto:rdv@sfc.wide.ad.jp). All
+reported by contacting the project team leader at [ms-engineer-admin@googlegroups.com](mailto:ms-engineer-admin@googlegroups.com). All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
