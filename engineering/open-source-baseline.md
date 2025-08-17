@@ -4,7 +4,7 @@
 
 Before releasing software to the world, we must ensure that it is made available in a way that is useful for others outside of our organization.
 
-There have been many attempts to model the traits of succesful, mature software, none of them perfect. This document draws on well-known [non-functional requirements](https://en.wikipedia.org/wiki/Non-functional_requirement) to produce a minimal baseline that projects should meet before they are widely shared with the world.
+There have been many attempts to model the traits of successful, mature software, none of them perfect. This document draws on well-known [non-functional requirements](https://en.wikipedia.org/wiki/Non-functional_requirement) to produce a minimal baseline that projects should meet before they are widely shared with the world.
 
 ## When to open-source
 
@@ -93,13 +93,33 @@ Much of our code interfaces with real hardware. In order to allow unit testing, 
 * The minimum required Python version should be clearly stated and used in testing. The minimum version should only be raised if necessary.
 * [Run tests against lowest acceptable dependency versions](https://github.com/moonshot-nagayama-pj/PnPQ/issues/87) in addition to the newest versions of dependencies.
 
-### Availability
+## Availability
 
 * The project should be uploaded to the commonly used package repository for that language.
     - Python projects should be uploaded to PyPI.
 * The release and upload process should be triggerable via GitHub Actions. It should not happen automatically on every merge to main. We should intentionally choose to release each new version, and intentionally choose the version number appropriately using [semver](https://semver.org/) guidelines.
-* Major projects should ideally have an associated paper or poster abstract which can be cited by other researchers. There should be a [Citation File Format (CFF)](https://citation-file-format.github.io/) file in the repository pointing to this paper, as well as a mention in the README.
 * When the project is sufficiently mature, it should be promoted through appropriate means, including Slack groups, conference posters, and word of mouth.
+
+## Citeability
+
+Major projects should be citeable in academic papers. In some cases, there may be an associated academic paper that can be cited; however, following [proposed software citation principles](https://doi.org/10.7717/peerj-cs.86), it is better to directly cite the software itself.
+
+In order to make a project citeable, citation metadata must first be added to the Git repository using the [Citation File Format (CFF)](https://citation-file-format.github.io/). Then, a [digital object identifier (DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier) must be generated using [Zenodo](https://zenodo.org/) to uniquely and reliably identify the project. Finally, this DOI must be added to the CFF file.
+
+* Add the `CITATION.cff` file to the repository.
+    - [The PR adding `CITATION.cff` to PnPQ](https://github.com/moonshot-nagayama-pj/PnPQ/pull/154) is a good example. At this point, the CFF file has no DOI and no version.
+    - Pay attention to [the list of CFF fields that Zenodo supports](https://help.zenodo.org/docs/github/describe-software/citation-file/).
+    - Be sure to validate the file using [`cffconvert`](https://github.com/citation-file-format/cffconvert). If this is a Python project, it is trivial to add `cffconvert` to the project's dev dependencies and run this command in `check.bash`.
+    - Try to make sure that the metadata in this file matches that in `Cargo.toml`, `pyproject.toml`, and the README.
+* [Link Zenodo to your GitHub repository](https://help.zenodo.org/docs/github/enable-repository/).
+* Create a GitHub release. Zenodo will automatically archive the release and create two DOIs: [a concept DOI and a version DOI](https://zenodo.org/help/versioning). The concept DOI points to the software project as a whole; the version DOI points to the files uploaded for a specific version of the software.
+* Obtain the concept DOI from Zenodo and add it to `CITATION.cff`. At the same time, update the project README to include information on how to cite the project.
+    - Again, be sure to validate the file using `cffconvert`.
+    - [The text in the PnPQ README can be re-used for new projects](https://github.com/moonshot-nagayama-pj/PnPQ/tree/main?tab=readme-ov-file#citing).
+
+At this point, it should be possible to cite the project. Zenodo will automatically create a new DOI for each subsequent GitHub release. Note that there is still no version number in `CITATION.cff`; we may improve automation to include this in the future.
+
+If you created an irregular release to trigger Zenodo the first time, you may wish to delete it and its associated tag. This will not delete the record at Zenodo.
 
 ## Further references
 
