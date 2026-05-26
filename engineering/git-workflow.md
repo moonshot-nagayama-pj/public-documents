@@ -34,7 +34,7 @@ Before beginning to write code, Git needs to be configured with your personal in
 
 Please [follow GitHub's instructions and turn on two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication). This will soon become mandatory.
 
-Using a password manager that supports TOTP, such as [`pass`](https://www.passwordstore.org/) + [`pass-otp`](https://github.com/tadfisher/pass-otp) or [1Password](https://1password.com/), is strongly recommended.
+Using a password manager that supports TOTP, such as [`pass`](https://www.passwordstore.org/) + [`pass-otp`](https://github.com/tadfisher/pass-otp), [KeePassXC](https://keepassxc.org/), or [1Password](https://1password.com/), is strongly recommended.
 
 ### Commit name and email address
 
@@ -68,11 +68,16 @@ git config --global pull.rebase false
 #
 # See "Avoiding line-ending confusion" below for more information.
 git config --global core.autocrlf false
+
+# Automatically add --recurse-submodules to most commands that support it.
+#
+# See the section on submodules below for more information.
+git config --global submodule.recurse true
 ```
 
 ### Avoiding line-ending confusion
 
-If you are using Windows, your editor might default to using Windows-style [CRLF line endings](https://en.wikipedia.org/wiki/Newline#Representation). However, our standard is to use Unix-style LF line endings. Editing a file in Windows, saving it, and commiting it to Git can cause spurious changes in the commit log as well as program errors.
+If you are using Windows, your editor might default to using Windows-style [CRLF line endings](https://en.wikipedia.org/wiki/Newline#Representation). However, our standard is to use Unix-style LF line endings. Editing a file in Windows, saving it, and committing it to Git can cause spurious changes in the commit log as well as program errors.
 
 There is another problem: by [default on Windows](https://stackoverflow.com/questions/39408793/git-core-autocrlf-line-ending-default-setting), Git's `core.autocrlf` setting is set to `true`. `autocrlf` is an attempt to transparently translate text files from LF line endings to CRLF line endings for Windows users.
 
@@ -84,7 +89,7 @@ Git is the wrong layer to handle CRLF/LF confusion. `autocrlf` makes it very dif
 
 If you followed the command-line instructions above, `autocrlf` is already turned off for the Git CLI.
 
-However, **if you are using Windows**, GitHub Desktop uses a separate configuration. You will need to find this configuration file and set `autocrlf` to `false` there. According to [this comment](https://github.com/desktop/desktop/issues/10666#issuecomment-2031102981), the configration file is located at `%localappdata%\GitHubDesktop\app-{your_github_desktop_version}\resources\app\git\etc\gitconfig`.
+However, **if you are using Windows**, GitHub Desktop uses a separate configuration. You will need to find this configuration file and set `autocrlf` to `false` there. According to [this comment](https://github.com/desktop/desktop/issues/10666#issuecomment-2031102981), the configuration file is located at `%localappdata%\GitHubDesktop\app-{your_github_desktop_version}\resources\app\git\etc\gitconfig`.
 
 #### Set your editor to LF
 
@@ -97,11 +102,9 @@ However, **if you are using Windows**, GitHub Desktop uses a separate configurat
 * [EditorConfig files](https://editorconfig.org/) files tell editors what kind of line ending to use. Please make sure that your editor supports EditorConfig.
 * [gitattributes files](https://git-scm.com/docs/gitattributes) allow us to turn off `autocrlf` for all files in a repository.
 
-Manually copying and synchronizing these files across our repositories would be difficult. Instead, we use [all-repos](https://github.com/moonshot-nagayama-pj/testbed-meta/tree/main/common-config) to automatically copy and update these configuration files across all of our repositories at once.
-
 ### Git credential helper
 
-Many of our projects depend directly on other Git repositories, which are accessed over HTTPS. In order to build the project, you will need to have GitHub credentials stored in a Git credential helper. For many people, this may already be configured.
+Many of our projects depend directly on other Git repositories, which are accessed over HTTPS. In order to build the project, you will need to have GitHub credentials stored in a Git credential helper. For many people, this may already be configured automatically through Visual Studio Code.
 
 #### Checking for an existing helper
 
@@ -111,7 +114,7 @@ The easiest way to check if this prerequisite is fulfilled is by trying to `git 
 git clone https://github.com/moonshot-nagayama-pj/testbed-meta.git
 ```
 
-If you are prompted for a username and password, `Ctrl-C` cancel the operation and read on. If you can successfully clone the repository without entering a username and password, this prerequisite is already fulfilled.
+If you are prompted for a username and password, `Ctrl-C` cancel the operation and read the following sections on configuring a helper. If you can successfully clone the repository without entering a username and password, this prerequisite is already fulfilled.
 
 #### Configuring a helper
 
@@ -151,7 +154,7 @@ When making a commit in Git, be careful about which files you are adding to the 
 
 Use [`.gitignore`](https://git-scm.com/docs/gitignore) appropriately.
 
-Commit messages should be written in English. They should be about one or two sentences in length. If you are looking at the commit log later, the commit message should help you quickly identify the change you are looking for. On the other hand, commit messages should not replace code comments. Important information about your code should be written in comments.
+Commit messages should be written in English. They should be about one or two sentences in length. If you are looking at the commit log later, the commit message should help you quickly identify the change you are looking for. On the other hand, commit messages should not replace code comments. Important information about your code should be written in code comments.
 
 ```sh
 # Check what changes exist in your repository
@@ -193,7 +196,7 @@ After a first written code review, it is often a good idea to discuss the commen
 
 Reviewers should try to be clear about the importance of their comments: when a reviewer requests a significant or non-obvious change, they should clarify whether it necessary for this pull request, or can be addressed in a future pull request.
 
-Avoid use of the "Resolve conversation" button. This hides pull request conversations that are considered complete. However, those conversations might be useful later on. The pull request might be easier to understand when all converstations are still visible.
+Avoid use of the "Resolve conversation" button. This hides pull request conversations that are considered complete. However, those conversations might be useful later on. The pull request might be easier to understand when all conversations are still visible.
 
 ### Merge your pull request
 
@@ -205,7 +208,7 @@ After merging a pull request, delete the merged branch.
 
 _After merging a pull request, delete the merged branch._
 
-A delete button will appear after you press the merge button.
+We have configured most of our repositories to do this automatically. If not, a delete button will appear after you press the merge button.
 
 It is critical to delete branches that are no longer in use. Otherwise, GitHub repositories become more and more cluttered with abandoned and completed branches.
 
@@ -221,6 +224,70 @@ git remote prune origin
 ```
 
 This will delete the branch locally and clean up the tracking branch that pointed to the branch in GitHub's repository.
+
+## Working with submodules
+
+We use Git submodules in some repositories. In particular, we keep Protobuf service definitions in separate repositories from server implementations in order to make it easier for clients to generate their own client code from the definition.
+
+While this is convenient, Git submodules also add significant confusion. Reading [the submodules chapter of the Git book](https://git-scm.com/book/en/v2/Git-Tools-Submodules) is recommended; the sections below have brief recipes for common situations.
+
+### One configuration change makes submodules much easier
+
+Many Git commands accept a `--recurse-submodules` option; when this option is not passed, the commands often ignore submodules or behave in surprising ways. It is easy to forget to pass `--recurse-submodules`, but a global configuration option, `submodule.recurse`, is available that ensures it is always used.
+
+`git clone` is an exception; `--recurse-submodules` must always be explicitly specified there.
+
+```
+git config --global submodule.recurse true
+```
+
+This value is not the default in order to avoid problems caused by large or untrusted submodules. If you are concerned about this, you could also set this config value on a per-repository basis.
+
+The sections below discuss submodule tasks that require more than just adding `--recurse-submodules`.
+
+### Cloning a repository with a submodule
+
+`--recurse-submodules` must always be explicitly specified, even if `submodule.recurse` is set to `true`.
+
+```
+git clone --recurse-submodules <project url>
+```
+
+If you forgot to pass `--recurse-submodules during `git clone`:
+
+```
+git submodule update --init --recursive
+```
+
+Do not confuse this with `update --remote`, below.
+
+### Adding a submodule
+
+To add a submodule to a project:
+
+```
+git submodule add <project url>
+git commit -m 'Added submodule'
+```
+
+This will create a subdirectory with the same name as the added repository. From this point on until it is explicitly updated with `update --remote`, the submodule will be pinned to the commit that was `HEAD` when the submodule was created.
+
+### Updating the contents of a submodule
+
+```
+git submodule update --remote
+git add .gitmodules <submodule paths>
+git commit -m 'Updated submodules'
+```
+
+### Removing a submodule
+
+```
+git rm <path-to-submodule>
+git commit -m 'Removed submodule'
+```
+
+(Credit and more details in [this StackOverflow answer](https://stackoverflow.com/a/1260982))
 
 ## Shared practices
 
@@ -246,18 +313,8 @@ To the greatest extent possible, policies should be enforced automatically.
 
 We enforce Git policy at two levels:
 
-* GitHub project/repository configuration. This configuration is automatically applied using OpenTofu. Even if you have admin privileges, do not apply changes manually to GitHub repository configuration.
+* GitHub project/repository configuration.
 * Configuration files in Git repositories, such as `.gitattributes` and `.editorconfig`. These files are applied using [all-repos](https://github.com/asottile/all-repos/). Do not manually apply changes to these files.
-
-### Creating new repositories
-
-New repositories should be created programmatically using OpenTofu, as described above.
-
-After creation, the GitHub Slack bot in \#testbed-software-github-notification should be informed about the new repository:
-
-```
-/github subscribe moonshot-nagayama-pj/<repository name>
-```
 
 ## Useful tools
 
